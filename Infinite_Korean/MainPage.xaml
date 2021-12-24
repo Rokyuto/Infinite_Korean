@@ -5,7 +5,7 @@
 
     <Grid>
         <Image Source="GradientBGD.png" HorizontalOptions="Fill" VerticalOptions="Fill" Aspect="AspectFill"/> <!-- Load Background Image -->
-        <ImageButton BackgroundColor="Transparent" Source="Play_Button.png" HeightRequest="100" WidthRequest="100" HorizontalOptions="Center" VerticalOptions="Center"/> 
+        <ImageButton BackgroundColor="Transparent" Source="Play_Button.png" HeightRequest="100" WidthRequest="100" HorizontalOptions="Center" VerticalOptions="Center"/> <!-- Load Play Button --> 
     </Grid>
     
 </ContentPage>
