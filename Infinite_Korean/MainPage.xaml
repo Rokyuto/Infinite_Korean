@@ -8,7 +8,7 @@
         <Frame BackgroundColor="Transparent" Padding="24" CornerRadius="0">
             <Label Text="Welcome to Xamarin.Forms!" HorizontalTextAlignment="Center" TextColor="Gray" FontSize="36"/>
         </Frame>
-        
+        <Label
         <!-- App Body -->
         
     </StackLayout>
