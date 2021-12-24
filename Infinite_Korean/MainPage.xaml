@@ -1,16 +1,10 @@
 ﻿<?xml version="1.0" encoding="utf-8" ?>
 <ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
              xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
-             x:Class="Infinite_Korean.MainPage">
+             x:Class="Infinite_Korean.MainPage" NavigationPage.HasNavigationBar="False">
 
-    <StackLayout>
-        <!-- App Title -->
-        <Frame BackgroundColor="Transparent" Padding="24" CornerRadius="0">
-            <Label Text="Welcome to Xamarin.Forms!" HorizontalTextAlignment="Center" TextColor="Gray" FontSize="36"/>
-        </Frame>
-        
-        <!-- App Body -->
-        
-    </StackLayout>
+    <Grid>
+        <Image Source="GradientBGD.png" HorizontalOptions="Center" VerticalOptions="Center"/>
+    </Grid>
 
 </ContentPage>
