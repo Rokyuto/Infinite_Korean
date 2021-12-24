@@ -9,8 +9,9 @@ namespace Infinite_Korean
         public App()
         {
             InitializeComponent();
-            Device.SetFlags(new[] { "Brush_Experimental" });
             MainPage = new MainPage();
+            Device.SetFlags(new[] { "Brush_Experimental" }); //Add Brush Experiment for Images
+            //NavigationPage.SetHasNavigationBar(this, false); // Set Navigation Bar HIDDEN
         }
 
         protected override void OnStart()

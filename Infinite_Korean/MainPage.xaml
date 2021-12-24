@@ -1,10 +1,11 @@
 ﻿<?xml version="1.0" encoding="utf-8" ?>
 <ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
              xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
-             x:Class="Infinite_Korean.MainPage" >
+             x:Class="Infinite_Korean.MainPage" NavigationPage.HasNavigationBar="True" NavigationPage.HasBackButton="True">
 
     <Grid>
-        <Image Source="GradientBGD.png" HorizontalOptions="Fill" VerticalOptions="Fill" Aspect="AspectFill"/>
+        <Image Source="GradientBGD.png" HorizontalOptions="Fill" VerticalOptions="Fill" Aspect="AspectFill"/> <!-- Load Background Image -->
+        <ImageButton BackgroundColor="Transparent" Source="Play_Button.png" HeightRequest="100" WidthRequest="100" HorizontalOptions="Center" VerticalOptions="Center"/> 
     </Grid>
     
 </ContentPage>
