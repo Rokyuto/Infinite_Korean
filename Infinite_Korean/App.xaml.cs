@@ -11,7 +11,6 @@ namespace Infinite_Korean
             InitializeComponent();
             MainPage = new MainPage();
             Device.SetFlags(new[] { "Brush_Experimental" }); //Add Brush Experiment for Images
-            //NavigationPage.SetHasNavigationBar(this, false); // Set Navigation Bar HIDDEN
         }
 
         protected override void OnStart()
