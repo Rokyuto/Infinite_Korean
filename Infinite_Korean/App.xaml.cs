@@ -10,7 +10,6 @@ namespace Infinite_Korean
         {
             InitializeComponent();
             Device.SetFlags(new[] { "Brush_Experimental" });
-            NavigationPage.SetHasNavigationBar(this, false);
             MainPage = new MainPage();
         }
 
