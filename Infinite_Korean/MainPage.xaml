@@ -4,10 +4,15 @@
              x:Class="Infinite_Korean.MainPage" NavigationPage.HasNavigationBar="False">
 
     <Grid>
-        <Image Source="GradientBGD.png" HorizontalOptions="Fill" VerticalOptions="Fill" Aspect="AspectFill"/> <!-- Load Background Image -->
+        <!-- Load Background Image -->
+        <Image Source="GradientBGD.png" HorizontalOptions="Fill" VerticalOptions="Fill" Aspect="AspectFill"/>
+        
+        <!-- Load Play Button -->
         <ImageButton BackgroundColor="Transparent" Source="Play_Button.png" HeightRequest="100" WidthRequest="100"
-                     HorizontalOptions="Center" VerticalOptions="Center" Clicked="ImageButton_Clicked"/> <!-- Load Play Button -->
-        <Label Text="Infinite Korean" TextColor="#54b4ff" FontSize="40" VerticalOptions="Start" HorizontalOptions="Center" /> <!-- Add Page Title -->
+                     HorizontalOptions="Center" VerticalOptions="Center" Clicked="ImageButton_Clicked"/>
+        
+        <!-- Add Page Title -->
+        <Label Text="Infinite Korean" TextColor="#54b4ff" FontSize="40" Margin="0,20,0,0" VerticalOptions="Start" HorizontalOptions="Center" /> <!-- Add Page Title -->
     </Grid>
     
 </ContentPage>

@@ -21,5 +21,15 @@ namespace Infinite_Korean
         {
             App.Current.MainPage = new MainPage();
         }
+
+        private void NumbersButton_Clicked(object sender, EventArgs e)
+        {
+            App.Current.MainPage = new Categories_Pages.Numbers_Category_Page();
+        }
+
+        private void ColorButton_Clicked(object sender, EventArgs e)
+        {
+
+        }
     }
 }

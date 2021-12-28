@@ -5,8 +5,9 @@
     
     <ContentPage.Content>
         <StackLayout>
-
-            <Image Source="GradientBGD.png" HorizontalOptions="Fill" VerticalOptions="Fill" Aspect="AspectFill"/> <!-- Load Page Background -->
+            
+            <!-- Load Page Background -->
+            <Image Source="GradientBGD.png" HorizontalOptions="Fill" VerticalOptions="Fill" Aspect="AspectFill"/>
 
             <Label Text="Numbers Category Page"
                 VerticalOptions="CenterAndExpand" 

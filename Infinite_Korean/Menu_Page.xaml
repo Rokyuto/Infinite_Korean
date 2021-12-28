@@ -2,13 +2,32 @@
 <ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
              xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
              x:Class="Infinite_Korean.Menu_Page">
-    
+
     <Grid>
-        <Image Source="GradientBGD.png" HorizontalOptions="Fill" VerticalOptions="Fill" Aspect="AspectFill"/> <!-- Load Menu Page Background -->
-        <Label Text="Categories" TextColor="#54b4ff" FontSize="30" VerticalOptions="Start" HorizontalOptions="CenterAndExpand" /> <!-- Page Title -->
-        <!-- Set Back Button -->
-        <ImageButton BackgroundColor="Transparent" Source="Back_Button.png" HeightRequest="50" WidthRequest="50"
-                     HorizontalOptions="Start" VerticalOptions="Start" Clicked="BackButton_Clicked"/> 
+
+        <!-- Load Menu Page Background -->
+        <Image Source="GradientBGD.png" HorizontalOptions="Fill" VerticalOptions="Fill" Aspect="AspectFill"/>
+        
+            <!-- Page Title -->
+            <Label Text="Categories" TextColor="#54b4ff" FontSize="40" Margin="0,20,0,0" VerticalOptions="Start" HorizontalOptions="CenterAndExpand" />
+
+            <!-- Set Back Button -->
+            <ImageButton BackgroundColor="Transparent" Source="Back_Button.png" HeightRequest="50" WidthRequest="50" Margin="20,20,0,0"
+                     HorizontalOptions="Start" VerticalOptions="Start" Clicked="BackButton_Clicked"/>
+       
+        <!-- Categories Buttons -->
+        <Grid Margin="10,150,0,25">
+            
+            <!-- Create Numers Category Button -->
+            <ImageButton BackgroundColor="Transparent" Source="Button_Default.png" HeightRequest="60" WidthRequest="200" 
+                        HorizontalOptions="Start" VerticalOptions="Start" Clicked="NumbersButton_Clicked" />
+
+            <!-- Create Colors Category Button -->
+            <ImageButton BackgroundColor="Transparent" Source="Button_Default.png" HeightRequest="60" WidthRequest="200" 
+                        HorizontalOptions="End" VerticalOptions="Start" Clicked="ColorButton_Clicked" />
+
+        </Grid>
+        
     </Grid>
 
 </ContentPage>
