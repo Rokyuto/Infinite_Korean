@@ -7,19 +7,14 @@ using System.Threading.Tasks;
 using Xamarin.Forms;
 using Xamarin.Forms.Xaml;
 
-namespace Infinite_Korean
+namespace Infinite_Korean.Categories_Pages
 {
     [XamlCompilation(XamlCompilationOptions.Compile)]
-    public partial class Menu_Page : ContentPage
+    public partial class Numbers_Category_Page : ContentPage
     {
-        public Menu_Page()
+        public Numbers_Category_Page()
         {
             InitializeComponent();
-        }
-
-        private void BackButton_Clicked(object sender, EventArgs e)
-        {
-            App.Current.MainPage = new MainPage();
         }
     }
 }

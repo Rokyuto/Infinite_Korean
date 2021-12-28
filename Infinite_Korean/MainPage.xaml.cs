@@ -17,9 +17,10 @@ namespace Infinite_Korean
             InitializeComponent();
         }
 
-        private async void ImageButton_Clicked(object sender, EventArgs e)
+        private void ImageButton_Clicked(object sender, EventArgs e)
         {
-            await Navigation.PushAsync(new Menu_Page());
+            App.Current.MainPage = new Menu_Page();
+            //App.Current.MainPage = new Categories_Pages.Numbers_Category_Page();
         }
     }
 }

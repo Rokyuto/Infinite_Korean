@@ -2,11 +2,13 @@
 <ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
              xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
              x:Class="Infinite_Korean.Menu_Page">
-    <ContentPage.Content>
-        <StackLayout>
-            <Label Text="Welcome to Xamarin.Forms!"
-                VerticalOptions="CenterAndExpand" 
-                HorizontalOptions="CenterAndExpand" />
-        </StackLayout>
-    </ContentPage.Content>
+    
+    <Grid>
+        <Image Source="GradientBGD.png" HorizontalOptions="Fill" VerticalOptions="Fill" Aspect="AspectFill"/> <!-- Load Menu Page Background -->
+        <Label Text="Categories" TextColor="#54b4ff" FontSize="30" VerticalOptions="Start" HorizontalOptions="CenterAndExpand" /> <!-- Page Title -->
+        <!-- Set Back Button -->
+        <ImageButton BackgroundColor="Transparent" Source="Back_Button.png" HeightRequest="50" WidthRequest="50"
+                     HorizontalOptions="Start" VerticalOptions="Start" Clicked="BackButton_Clicked"/> 
+    </Grid>
+
 </ContentPage>
