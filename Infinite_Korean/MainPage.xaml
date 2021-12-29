@@ -12,7 +12,7 @@
                      HorizontalOptions="Center" VerticalOptions="Center" Clicked="ImageButton_Clicked"/>
         
         <!-- Add Page Title -->
-        <Label Text="Infinite Korean" TextColor="#54b4ff" FontSize="40" Margin="0,20,0,0" VerticalOptions="Start" HorizontalOptions="Center" /> <!-- Add Page Title -->
+        <Label Text="Infinite Korean" TextColor="#54b4ff" FontSize="40" Margin="0,20,0,0" VerticalOptions="Start" HorizontalOptions="Center" />
     </Grid>
     
 </ContentPage>
