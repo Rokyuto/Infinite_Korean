@@ -9,7 +9,7 @@
         <Image Source="GradientBGD.png" HorizontalOptions="Fill" VerticalOptions="Fill" Aspect="AspectFill"/>
         
             <!-- Page Title -->
-            <Label Text="Categories" TextColor="#54b4ff" FontSize="40" Margin="0,20,0,0" VerticalOptions="Start" HorizontalOptions="CenterAndExpand" />
+        <Label Text="Categories" TextColor="#54b4ff" FontSize="40" FontAttributes="Bold,Italic" Margin="0,15,0,0" VerticalOptions="Start" HorizontalOptions="CenterAndExpand" />
 
             <!-- Set Back Button -->
             <ImageButton BackgroundColor="Transparent" Source="Back_Button.png" HeightRequest="50" WidthRequest="50" Margin="20,20,0,0"
@@ -21,10 +21,14 @@
             <!-- Create Numers Category Button -->
             <ImageButton BackgroundColor="Transparent" Source="Button_Default.png" HeightRequest="60" WidthRequest="200" 
                         HorizontalOptions="Start" VerticalOptions="Start" Clicked="NumbersButton_Clicked" />
+                <!-- Numbers' Button Text -->
+                <Label Text="Numbers" TextColor="White" FontSize="20" FontAttributes="Italic" Margin="60,12.5,0,25" VerticalOptions="Start" HorizontalOptions="Start" />
 
             <!-- Create Colors Category Button -->
             <ImageButton BackgroundColor="Transparent" Source="Button_Default.png" HeightRequest="60" WidthRequest="200" 
                         HorizontalOptions="End" VerticalOptions="Start" Clicked="ColorButton_Clicked" />
+                <!-- Colors' Button Text -->
+            <Label Text="Colors" TextColor="White" FontSize="20" FontAttributes="Italic" Margin="0,13,70,25" VerticalOptions="Start" HorizontalOptions="End" />
 
         </Grid>
         

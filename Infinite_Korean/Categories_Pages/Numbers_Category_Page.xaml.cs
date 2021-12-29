@@ -16,5 +16,10 @@ namespace Infinite_Korean.Categories_Pages
         {
             InitializeComponent();
         }
+
+        private void BackButton_Clicked(object sender, EventArgs e)
+        {
+            App.Current.MainPage = new Menu_Page();
+        }
     }
 }
