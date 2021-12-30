@@ -11,6 +11,18 @@
   </PropertyGroup>
 
   <ItemGroup>
+    <None Remove="Fonts\malgun.ttf" />
+    <None Remove="Fonts\malgunbd.ttf" />
+    <None Remove="Fonts\malgunsl.ttf" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <EmbeddedResource Include="Fonts\malgun.ttf" />
+    <EmbeddedResource Include="Fonts\malgunbd.ttf" />
+    <EmbeddedResource Include="Fonts\malgunsl.ttf" />
+  </ItemGroup>
+
+  <ItemGroup>
     <PackageReference Include="Xamarin.Forms" Version="5.0.0.2196" />
     <PackageReference Include="Xamarin.Essentials" Version="1.7.0" />
   </ItemGroup>

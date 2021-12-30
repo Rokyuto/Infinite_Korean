@@ -12,6 +12,10 @@ namespace Infinite_Korean.Categories_Pages.NumbersCategory_Levels
     [XamlCompilation(XamlCompilationOptions.Compile)]
     public partial class Transcription_Level : ContentPage
     {
+
+        //Variables
+        string[] KoreanNumbers_Arr = { };
+
         public Transcription_Level()
         {
             InitializeComponent();

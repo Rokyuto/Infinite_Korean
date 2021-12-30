@@ -9,7 +9,7 @@
         <Image Source="GradientBGD.png" HorizontalOptions="Fill" VerticalOptions="Fill" Aspect="AspectFill"/>
 
         <!-- Page instructions for the user -->
-        <Label Text="Choose the correct answer" TextColor="White" FontAttributes="Bold" FontSize="22" Margin="70,20" VerticalOptions="Start" HorizontalOptions="Center" />
+        <Label Text="Choose the correct answer" TextColor="White" FontFamily="MyFont_Malgun_Bold" FontAttributes="Bold" FontSize="22" Margin="70,20" VerticalOptions="Start" HorizontalOptions="Center" />
 
         <!-- Set Back Button -->
         <ImageButton BackgroundColor="Transparent" Source="Back_Button.png" HeightRequest="50" WidthRequest="50" 
@@ -19,32 +19,37 @@
         <Image Source="GuessWordBGD.png" HeightRequest="125" WidthRequest="400" Margin="0,75" VerticalOptions="Start" HorizontalOptions="Center"/>
 
         <!-- Answer Buttons -->
-        
+
+        <!-- Button1 -->
         <ImageButton BackgroundColor="Transparent" Source="Button_Default.png" HeightRequest="100" WidthRequest="400" 
                      Margin="0,200" HorizontalOptions="Center" VerticalOptions="Start" />
+            <Label Text="Hello Everyone" TextColor="White" FontFamily="MyFont_Malgun_Regular" FontSize="20" Margin="0,232" HorizontalOptions="Center" VerticalOptions="Start"/>
 
+        <!-- Button2 -->
         <ImageButton BackgroundColor="Transparent" Source="Button_Default.png" HeightRequest="100" WidthRequest="400" 
                      Margin="0,300,0,0" HorizontalOptions="Center" VerticalOptions="Start" />
+            <Label Text="1" TextColor="White" FontFamily="MyFont_Malgun_Regular" FontSize="20" Margin="0,332,0,0" HorizontalOptions="Center" VerticalOptions="Start"/>
 
+        <!-- Button3 -->
         <ImageButton BackgroundColor="Transparent" Source="Button_Default.png" HeightRequest="100" WidthRequest="400" 
                      Margin="0,400,0,0" HorizontalOptions="Center" VerticalOptions="Start" />
-        
+            <Label Text="2" TextColor="White" FontFamily="MyFont_Malgun_Regular" FontSize="20" Margin="0,432,0,0" HorizontalOptions="Center" VerticalOptions="Start"/>
+
         <!-- Answers Counters -->
         <Grid Margin="15,15,15,15">
-            
             <Image Source="CounterCorrect.png" HeightRequest="115" WidthRequest="115" HorizontalOptions="Start" VerticalOptions="End" /> <!-- Correct Counter Image -->
                
                 <!-- Correct Counter Texts -->
-                <Label Text="10" TextColor="White" FontSize="30" Margin="65,40" VerticalOptions="End" HorizontalOptions="Start" /> <!-- Max Level Correct Score -->
+                <Label Text="5" TextColor="White" FontSize="30" Margin="68,40" VerticalOptions="End" HorizontalOptions="Start" /> <!-- Max Level Correct Score -->
                 <Label Text="/" TextColor="White" FontSize="30" Margin="52,40" VerticalOptions="End" HorizontalOptions="Start" /> 
-                <Label Text="10" TextColor="White" FontSize="30" Margin="15,40" VerticalOptions="End" HorizontalOptions="Start" /> <!-- Player Correct Score -->
+                <Label Text="5" TextColor="White" FontSize="30" Margin="30,40" VerticalOptions="End" HorizontalOptions="Start" /> <!-- Player Correct Score -->
 
             <Image Source="CounterWrong.png" HeightRequest="115" WidthRequest="115" HorizontalOptions="End" VerticalOptions="End" /> <!-- Wrong Counter Image -->
                 
                 <!-- Wrong Counter Texts -->
-                <Label Text="5" TextColor="White" FontSize="30" Margin="0,0,67.5,40" VerticalOptions="End" HorizontalOptions="End" /> <!-- Max Level Wrong Score -->
+                <Label Text="2" TextColor="White" FontSize="30" Margin="0,0,67.5,40" VerticalOptions="End" HorizontalOptions="End" /> <!-- Max Level Wrong Score -->
                 <Label Text="/" TextColor="White" FontSize="30" Margin="50,40" VerticalOptions="End" HorizontalOptions="End" />
-                <Label Text="5" TextColor="White" FontSize="30" Margin="30,40" VerticalOptions="End" HorizontalOptions="End" /> <!-- Player Wrong Score -->
+                <Label Text="2" TextColor="White" FontSize="30" Margin="30,40" VerticalOptions="End" HorizontalOptions="End" /> <!-- Player Wrong Score -->
         </Grid>
 
     </Grid>
