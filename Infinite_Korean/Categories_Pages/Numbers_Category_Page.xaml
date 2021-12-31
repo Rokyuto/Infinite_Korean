@@ -8,7 +8,7 @@
         <!-- Load Page Background -->
         <Image Source="GradientBGD.png" HorizontalOptions="Fill" VerticalOptions="Fill" Aspect="AspectFill"/>
 
-        <Label Text="Numbers" TextColor="#54b4ff" FontSize="40" FontAttributes="Bold,Italic" Margin="0,15,0,0"
+        <Label Text="Numbers" TextColor="#54b4ff" FontSize="40" FontFamily="MyFont_Malgun_Bold" FontAttributes="Bold,Italic" Margin="0,20,0,0"
                VerticalOptions="Start" HorizontalOptions="CenterAndExpand" />
 
         <!-- Set Back Button -->
@@ -20,17 +20,17 @@
         <ImageButton BackgroundColor="Transparent" Source="Button_Default.png" HeightRequest="100" WidthRequest="400" 
                      Margin="0,225,0,0" HorizontalOptions="Center" VerticalOptions="Start" Clicked="TranscriptionButton_Clicked" />
             <!-- Transcription Level Button Text -->
-            <Label Text="Transcription" TextColor="White" FontSize="30" FontAttributes="Italic" Margin="0,249,121,25" VerticalOptions="Start" HorizontalOptions="End" />
+            <Label Text="Transcription" TextColor="White" FontSize="30" FontFamily="MyFont_Malgun_Semilight" FontAttributes="Italic" Margin="0,252,115,25" VerticalOptions="Start" HorizontalOptions="End" />
 
         <ImageButton BackgroundColor="Transparent" Source="Button_Default.png" HeightRequest="100" WidthRequest="400" 
                      Margin="0,325,0,0" HorizontalOptions="Center" VerticalOptions="Start" />
             <!-- Symbols Level Button Text -->
-            <Label Text="Symbols" TextColor="White" FontSize="30" FontAttributes="Italic" Margin="0,349,148,25" VerticalOptions="Start" HorizontalOptions="End" />
+            <Label Text="Symbols" TextColor="White" FontSize="30" FontFamily="MyFont_Malgun_Semilight" FontAttributes="Italic" Margin="0,352,140,25" VerticalOptions="Start" HorizontalOptions="End" />
 
         <ImageButton BackgroundColor="Transparent" Source="Button_Default.png" HeightRequest="100" WidthRequest="400" 
                      Margin="0,425,0,0" HorizontalOptions="Center" VerticalOptions="Start" />
             <!-- Translation Level Button Text -->
-            <Label Text="Translation" TextColor="White" FontSize="30" FontAttributes="Italic" Margin="0,449,134,25" VerticalOptions="Start" HorizontalOptions="End" />
+            <Label Text="Translation" TextColor="White" FontSize="30" FontAttributes="Italic" FontFamily="MyFont_Malgun_Semilight" Margin="0,452,122,25" VerticalOptions="Start" HorizontalOptions="End" />
 
     </Grid>
     
