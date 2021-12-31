@@ -17,7 +17,8 @@ namespace Infinite_Korean.Categories_Pages.NumbersCategory_Levels
         //Variables
         string[] Numbers_Transcription_Arr = {"yeong","hana","dul","sam","ne","daseos"}; //Array with Korean Numbers Transcription
         char[] Numbers_Translation_Arr = {'0','1','2','3','4','5'}; //Array with Translation of Numbers
-        int PlayerScore_Correct = 0, PlayerScore_Wrong = 0;
+        int PlayerScore_Correct;
+        int PlayerScore_Wrong;
         int GenIndex;
         int CorAswIndex;
 
@@ -25,9 +26,9 @@ namespace Infinite_Korean.Categories_Pages.NumbersCategory_Levels
         {
             InitializeComponent();
 
-         /*   Button1.Source = "Button_Default.png";
+            Button1.Source = "Button_Default.png";
             Button2.Source = "Button_Default.png";
-            Button3.Source = "Button_Default.png"; */
+            Button3.Source = "Button_Default.png";
 
             StartLevel();
         }
@@ -36,6 +37,11 @@ namespace Infinite_Korean.Categories_Pages.NumbersCategory_Levels
         {
             Generate_GuessNum(); //Call Function to Generate Guess Word
             Generate_ButtonsAswers(); //Call Function to Apply Correct and Wrong Answers to Buttons
+
+            PlayerScore_Correct = 0;
+            PlayerScoreCorrect_Label.Text = PlayerScore_Correct.ToString();
+            PlayerScore_Wrong = 0;
+            PlayerScoreWrong_Label.Text = PlayerScore_Correct.ToString();
         }
 
         private void Generate_GuessNum() //Generate Random Korean Number
@@ -134,7 +140,7 @@ namespace Infinite_Korean.Categories_Pages.NumbersCategory_Levels
                 Button1.Source ="Button_Wrong.png";
                 PlayerScore_Wrong++;
                 PlayerScoreWrong_Label.Text= PlayerScore_Wrong.ToString();
-
+                Button1.IsEnabled = false;
             }
         }
 
@@ -151,6 +157,7 @@ namespace Infinite_Korean.Categories_Pages.NumbersCategory_Levels
                 Button2.Source ="Button_Wrong.png";
                 PlayerScore_Wrong++;
                 PlayerScoreWrong_Label.Text= PlayerScore_Wrong.ToString();
+                Button2.IsEnabled = false;
             }
         }
 
@@ -167,6 +174,7 @@ namespace Infinite_Korean.Categories_Pages.NumbersCategory_Levels
                 Button3.Source ="Button_Wrong.png";
                 PlayerScore_Wrong++;
                 PlayerScoreWrong_Label.Text= PlayerScore_Wrong.ToString();
+                Button3.IsEnabled = false;
             }
         }
 
