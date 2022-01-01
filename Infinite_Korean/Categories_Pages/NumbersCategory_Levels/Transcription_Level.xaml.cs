@@ -2,6 +2,7 @@
 using System.Collections.Generic;
 using System.Linq;
 using System.Text;
+using System.Threading;
 using System.Threading.Tasks;
 
 using Xamarin.Forms;
@@ -17,6 +18,8 @@ namespace Infinite_Korean.Categories_Pages.NumbersCategory_Levels
         //Variables
         string[] Numbers_Transcription_Arr = {"yeong","hana","dul","sam","ne","daseos"}; //Array with Korean Numbers Transcription
         char[] Numbers_Translation_Arr = {'0','1','2','3','4','5'}; //Array with Translation of Numbers
+        //string[] Numbers_Translation_Arr2 = { "0", "1", "2", "3", "4", "5" }; //Array with Translation of Numbers
+
         int PlayerScore_Correct;
         int PlayerScore_Wrong;
         int GenIndex;
@@ -33,7 +36,7 @@ namespace Infinite_Korean.Categories_Pages.NumbersCategory_Levels
         private void StartLevel()
         {
             Generate_GuessNum(); //Call Function to Generate Guess Word
-            Generate_ButtonsAswers(); //Call Function to Apply Correct and Wrong Answers to Buttons
+            Generate_ButtonsAnswers(); //Call Function to Apply Correct and Wrong Answers to Buttons
 
             PlayerScore_Correct = 0;
             PlayerScoreCorrect_Label.Text = PlayerScore_Correct.ToString();
@@ -43,20 +46,35 @@ namespace Infinite_Korean.Categories_Pages.NumbersCategory_Levels
 
         private void ApplyButtImg()
         {
-            Button1.Source = "Button_Default.png";
-            Button2.Source = "Button_Default.png";
+            //Apply Button Default Image 
+            Button1.Source = "Button_Default.png"; 
+            Button2.Source = "Button_Default.png"; 
             Button3.Source = "Button_Default.png";
+
+            //Set Buttons are ENABLED
+            Button1.IsEnabled = true; 
+            Button2.IsEnabled = true;
+            Button3.IsEnabled = true;
+        }
+
+        private void BlockAllButtons()
+        {
+            //Set Buttons are DISABLED
+            Button1.IsEnabled = false;
+            Button2.IsEnabled = false;
+            Button3.IsEnabled = false;
         }
 
         private void Generate_GuessNum() //Generate Random Korean Number
         {
-            GenIndex = rand.Next(0, 6); //Generate Random Number [0 - 5] EQUAL to Index of Numbers_Transcription_Arr
+            GenIndex = rand.Next(6); //Generate Random Number [0 - 5] EQUAL to Index of Numbers_Transcription_Arr
             GuessWord_Label.Text = Numbers_Transcription_Arr[GenIndex]; //Show the Random Array Element on GuessWord Label
+            //GuessWord_Label.Text = Numbers_Translation_Arr2[GenIndex];
         }
-        private void Generate_ButtonsAswers()
+        private void Generate_ButtonsAnswers()
         {
             //Choose witch Button Label to contains the CORRECT Answer
-            CorAswIndex = rand.Next(1,4); //Genrate Random Number [1 - 4] EQUAL to Buttons Labels Quantity
+            CorAswIndex = rand.Next(3); //Genrate Random Number [0 - 2] EQUAL to Buttons Labels Quantity
 
             //Buttons are Free to apply Text
             bool IsButton1_Free = true;
@@ -68,30 +86,23 @@ namespace Infinite_Korean.Categories_Pages.NumbersCategory_Levels
 
             switch (CorAswIndex)
             {
-                case 1: //If Random Number is 1
+                case 0: //If Random Number is 0
                     Button1Text_Label.Text = GenIndex.ToString(); //Apply Correct Answer to Button1 Label 
 
                     //Update whitch Buttons are available 
                     IsButton1_Free = false;
-                    IsButton2_Free = true;
-                    IsButton3_Free = true;
                     break;
-                case 2: //If Random Number is 2
+                case 1: //If Random Number is 1
                     Button2Text_Label.Text = GenIndex.ToString(); //Apply Correct Answer to Button2 Label 
                    
                     //Update whitch Buttons are available 
                     IsButton2_Free = false;
-                    IsButton1_Free = true;
-                    IsButton3_Free = true;
-
                     break;
-                case 3: //If Random Number is 3
+                case 2: //If Random Number is 2
                     Button3Text_Label.Text = GenIndex.ToString(); //Apply Correct Answer to Button3 Label 
                     
                     //Update whitch Buttons are available 
                     IsButton3_Free = false;
-                    IsButton1_Free = true;
-                    IsButton2_Free = true;
                     break;
             }
 
@@ -128,7 +139,7 @@ namespace Infinite_Korean.Categories_Pages.NumbersCategory_Levels
 
         private void BackButton_Clicked(object sender, EventArgs e)
         {
-            App.Current.MainPage = new Numbers_Category_Page();
+            App.Current.MainPage = new Numbers_Category_Page(); //Return to Previous Page
         }
 
         private void Button1_Clicked(object sender, EventArgs e)
@@ -138,10 +149,11 @@ namespace Infinite_Korean.Categories_Pages.NumbersCategory_Levels
                 Button1.Source = "Button_Correct.png"; //Set new Image on the Button
                 PlayerScore_Correct++; //Update Correct Score
                 PlayerScoreCorrect_Label.Text = PlayerScore_Correct.ToString(); //Update Player Score Label
-                
-                Button1.IsEnabled = false; //Disable the Button
 
-                NewWord(); //Call Regeneration of the level
+                //Call Functions
+                BlockAllButtons();
+                DelayTime();
+
             }
             else
             {
@@ -159,10 +171,11 @@ namespace Infinite_Korean.Categories_Pages.NumbersCategory_Levels
                 Button2.Source = "Button_Correct.png"; //Set new Image on the Button
                 PlayerScore_Correct++; //Update Correct Score
                 PlayerScoreCorrect_Label.Text = PlayerScore_Correct.ToString(); //Update Player Score Label
-                
-                Button1.IsEnabled = false; //Disable the Button
 
-                NewWord(); //Call Regeneration of the level
+                //Call Functions
+                BlockAllButtons();
+                DelayTime();
+
             }
             else
             {
@@ -180,10 +193,11 @@ namespace Infinite_Korean.Categories_Pages.NumbersCategory_Levels
                 Button3.Source = "Button_Correct.png"; //Set new Image on the Button
                 PlayerScore_Correct++; //Update Correct Score
                 PlayerScoreCorrect_Label.Text = PlayerScore_Correct.ToString(); //Update Player Score Label
-                
-                Button1.IsEnabled = false; //Disable the Button
 
-                NewWord(); //Call Regeneration of the level
+                //Call Functions
+                BlockAllButtons();
+                DelayTime();
+
             }
             else
             {
@@ -194,15 +208,19 @@ namespace Infinite_Korean.Categories_Pages.NumbersCategory_Levels
             }
         }
 
+        private async void DelayTime()
+        {
+            await Task.Delay(250); // 1/4 second waiting before continue
+
+            NewWord(); 
+        }
+
         private void NewWord() //Regenerate the entire level after Player Answer Correct
         {
             Generate_GuessNum(); //Call Function to Generate Guess Word
-            Generate_ButtonsAswers(); //Call Function to Apply Correct and Wrong Answers to Buttons
-            Button1.IsEnabled = true;
-            Button2.IsEnabled = true;
-            Button3.IsEnabled = true;
+            Generate_ButtonsAnswers(); //Call Function to Apply Correct and Wrong Answers to Buttons
 
-            ApplyButtImg();
+            ApplyButtImg(); //Call Function to Apply the Default Image to the Buttons 
         }
 
     }

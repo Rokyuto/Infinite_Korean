@@ -43,20 +43,18 @@
                 <!-- Correct Counter Texts -->
                 
                 <!-- Max Level Correct Score -->
-                <Label Text="10" TextColor="White" FontFamily="MyFont_Malgun_Regular" FontSize="30" Margin="62,40" VerticalOptions="End" HorizontalOptions="Start" />
-                <Label Text="/" TextColor="White" FontFamily="MyFont_Malgun_Regular" FontSize="30" Margin="52,40" VerticalOptions="End" HorizontalOptions="Start" />
+                <Label Text="/10" TextColor="White" FontFamily="MyFont_Malgun_Regular" FontSize="30" Margin="50,40" VerticalOptions="End" HorizontalOptions="Start" />
                 <!-- Player Correct Score -->
-                <Label x:Name="PlayerScoreCorrect_Label" Text="" TextColor="White" FontFamily="MyFont_Malgun_Regular" FontSize="30" Margin="20,40" VerticalOptions="End" HorizontalOptions="Start" />
+                <Label x:Name="PlayerScoreCorrect_Label" Text="" TextColor="White" FontFamily="MyFont_Malgun_Regular" FontSize="30" Margin="10,40" WidthRequest="40" HorizontalTextAlignment="End" VerticalOptions="End" HorizontalOptions="Start" />
 
             <Image Source="CounterWrong.png" HeightRequest="115" WidthRequest="115" HorizontalOptions="End" VerticalOptions="End" /> <!-- Wrong Counter Image -->
                 
                 <!-- Wrong Counter Texts -->
             
                 <!-- Max Level Wrong Score -->
-                <Label Text="3" TextColor="White" FontFamily="MyFont_Malgun_Regular" FontSize="30" Margin="0,0,30,38" VerticalOptions="End" HorizontalOptions="End" /> 
-                <Label Text="/" TextColor="White" FontFamily="MyFont_Malgun_Regular" FontSize="30" Margin="0,0,52,39" VerticalOptions="End" HorizontalOptions="End" />
+                <Label Text="/3" TextColor="White" FontFamily="MyFont_Malgun_Regular" FontSize="30" Margin="0,0,30,40" VerticalOptions="End" HorizontalOptions="End" /> 
                 <!-- Player Wrong Score -->
-                <Label x:Name="PlayerScoreWrong_Label" Text="" TextColor="White" FontFamily="MyFont_Malgun_Regular" FontSize="30" Margin="68,38" VerticalOptions="End" HorizontalOptions="End" />
+            <Label x:Name="PlayerScoreWrong_Label" Text="" TextColor="White" FontFamily="MyFont_Malgun_Regular" FontSize="30" Margin="60,40" WidthRequest="40" HorizontalTextAlignment="End" VerticalOptions="End" HorizontalOptions="End" />
         </Grid>
 
     </Grid>
