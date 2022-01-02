@@ -21,10 +21,16 @@ namespace Infinite_Korean.Categories_Pages
         {
             App.Current.MainPage = new Menu_Page();
         }
+
+        private void LessonButton_Clicked(object sender, EventArgs e)
+        {
+            App.Current.MainPage = new NumbersCategory_Levels.Lesson_Page();
+        }
+
         private void TranscriptionButton_Clicked(object sender, EventArgs e)
         {
             App.Current.MainPage = new NumbersCategory_Levels.Transcription_Level();
-
         }
+
     }
 }

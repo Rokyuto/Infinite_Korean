@@ -16,28 +16,39 @@ namespace Infinite_Korean.Categories_Pages.NumbersCategory_Levels
         Random rand = new Random();
 
         //Variables
-        string[] Numbers_Transcription_Arr = {"yeong","hana","dul","sam","ne","daseos"}; //Array with Korean Numbers Transcription
-        char[] Numbers_Translation_Arr = {'0','1','2','3','4','5'}; //Array with Translation of Numbers
-        //string[] Numbers_Translation_Arr2 = { "0", "1", "2", "3", "4", "5" }; //Array with Translation of Numbers
+        string[] Numbers_Transcription_Arr = { "yeong", "hana", "dul", "sam", "ne", "daseos" }; //Array with Korean Numbers Transcription
+        string[] Numbers_Transcription_Lvl2_Arr = { "yug", "ilgob", "yeodeolb","ahob","sib"}; //Array with Korean Numbers Transcription Lvl 2
+        //char[] Numbers_Translation_Arr = { '0', '1', '2', '3', '4', '5' }; //Array with Translation of Numbers
+        //string[] Numbers_Translation_Lvl2_Arr = { "6", "7", "8", "9","10"}; //Array with Translation of Numbers
 
-        int PlayerScore_Correct;
-        int PlayerScore_Wrong;
-        int GenIndex;
-        int CorAswIndex;
+        List<string> Numbers_Transcription_List = new List<string>(); //List with Korean Numbers
+
+        int Elements_Quantity = 6; //Quantity of Numbers in the Level [0 - 5]
+        int PlayerScore_Correct; //Player Correct Score
+        int PlayerScore_Wrong; //Player Wrong Score
+        int GenIndex; //GuessWord Number
+        int CorAswIndex; //Number with Correct Answer
+        int Max_PlayerCorrectScore = 60;
 
         public Transcription_Level()
         {
             InitializeComponent();
 
-            ApplyButtImg();
-            StartLevel();
+            //On Level Load
+            ApplyButtImg(); //Setup Buttons
+            StartLevel(); //Start Game
         }
 
         private void StartLevel()
         {
+            for(int i = 0; i < Elements_Quantity; i++)
+            {
+                Numbers_Transcription_List.Add(Numbers_Transcription_Arr[i]); //Fill Numbers List
+            }
             Generate_GuessNum(); //Call Function to Generate Guess Word
             Generate_ButtonsAnswers(); //Call Function to Apply Correct and Wrong Answers to Buttons
 
+            //Set Player Score - Correct & Wrong
             PlayerScore_Correct = 0;
             PlayerScoreCorrect_Label.Text = PlayerScore_Correct.ToString();
             PlayerScore_Wrong = 0;
@@ -47,12 +58,12 @@ namespace Infinite_Korean.Categories_Pages.NumbersCategory_Levels
         private void ApplyButtImg()
         {
             //Apply Button Default Image 
-            Button1.Source = "Button_Default.png"; 
-            Button2.Source = "Button_Default.png"; 
+            Button1.Source = "Button_Default.png";
+            Button2.Source = "Button_Default.png";
             Button3.Source = "Button_Default.png";
 
             //Set Buttons are ENABLED
-            Button1.IsEnabled = true; 
+            Button1.IsEnabled = true;
             Button2.IsEnabled = true;
             Button3.IsEnabled = true;
         }
@@ -67,8 +78,8 @@ namespace Infinite_Korean.Categories_Pages.NumbersCategory_Levels
 
         private void Generate_GuessNum() //Generate Random Korean Number
         {
-            GenIndex = rand.Next(6); //Generate Random Number [0 - 5] EQUAL to Index of Numbers_Transcription_Arr
-            GuessWord_Label.Text = Numbers_Transcription_Arr[GenIndex]; //Show the Random Array Element on GuessWord Label
+            GenIndex = rand.Next(Elements_Quantity); //Generate Random Number EQUAL to Index of Numbers_Transcription_List
+            GuessWord_Label.Text = Numbers_Transcription_List[GenIndex]; //Show the Random Array Element on GuessWord Label
             //GuessWord_Label.Text = Numbers_Translation_Arr2[GenIndex];
         }
         private void Generate_ButtonsAnswers()
@@ -106,18 +117,22 @@ namespace Infinite_Korean.Categories_Pages.NumbersCategory_Levels
                     break;
             }
 
-            WrongButton_Ans1 = rand.Next(0, Numbers_Translation_Arr.Length - GenIndex); //Generate Wrong Answer 1
-            WrongButton_Ans2 = rand.Next(0, Numbers_Translation_Arr.Length - GenIndex); //Generate Wrong Answer 2
+            WrongButton_Ans1 = rand.Next(Numbers_Transcription_List.Count - GenIndex); //Generate Wrong Answer 1
+            WrongButton_Ans2 = rand.Next(Numbers_Transcription_List.Count - GenIndex); //Generate Wrong Answer 2
 
-            if(WrongButton_Ans1 == GenIndex)
+            if(WrongButton_Ans1 == GenIndex) //If Wrong Answer1 = Correct Answer
             {
-                WrongButton_Ans1 = rand.Next(0, Numbers_Translation_Arr.Length - GenIndex); //Generate Wrong Answer 1
+                WrongButton_Ans1 = rand.Next(0, Numbers_Transcription_List.Count - GenIndex); //Generate Wrong Answer 1
             }
-            if (WrongButton_Ans2 == WrongButton_Ans1 || WrongButton_Ans2 == GenIndex) //If Wrong Answer1 = Wrong Answer2
+            if (WrongButton_Ans2 == WrongButton_Ans1) //If Wrong Answer1 = Wrong Answer2
             {
-                WrongButton_Ans2 = rand.Next(0, Numbers_Translation_Arr.Length - GenIndex); //Generate new Wrong Answer2
+                WrongButton_Ans2 = rand.Next(0, Numbers_Transcription_List.Count - WrongButton_Ans1); //Generate new Wrong Answer2
             }
-                
+            if(WrongButton_Ans2 == GenIndex) //If Wrong Answer2 = Correct Answer
+            {
+                WrongButton_Ans2 = rand.Next(0, Numbers_Transcription_List.Count - GenIndex); //Generate new Wrong Answer2
+            }
+
             //Check witch Buttons are FREE to Apply Number
             if (IsButton1_Free == true && IsButton2_Free == true)
             {            
@@ -217,10 +232,30 @@ namespace Infinite_Korean.Categories_Pages.NumbersCategory_Levels
 
         private void NewWord() //Regenerate the entire level after Player Answer Correct
         {
+            UpdateLevel(); //Call Function to Update the Numbers to 10
             Generate_GuessNum(); //Call Function to Generate Guess Word
             Generate_ButtonsAnswers(); //Call Function to Apply Correct and Wrong Answers to Buttons
 
             ApplyButtImg(); //Call Function to Apply the Default Image to the Buttons 
+        }
+
+        private void UpdateLevel()
+        {
+            if(PlayerScore_Correct == 10) //If Player Score equal to 10
+            {
+                Numbers_Transcription_List.AddRange(Numbers_Transcription_Lvl2_Arr); //Add to Numbers list Numers to 10 
+                Elements_Quantity = 11; //Сet a new Quantity of Numbers in the level
+            }
+
+            ScoreCheck();
+        }
+
+        private void ScoreCheck()
+        {
+            if(PlayerScore_Correct == Max_PlayerCorrectScore)
+            {
+                App.Current.MainPage = new Passed_Page(); //Go to Congrats Page
+            }
         }
 
     }

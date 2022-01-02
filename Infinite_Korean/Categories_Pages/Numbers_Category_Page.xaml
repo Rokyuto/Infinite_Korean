@@ -14,23 +14,28 @@
         <!-- Set Back Button -->
         <ImageButton BackgroundColor="Transparent" Source="Back_Button.png" HeightRequest="50" WidthRequest="50" 
                      Margin="20,20,0,0" HorizontalOptions="Start" VerticalOptions="Start" Clicked="BackButton_Clicked"/>
-      
+
+        <!-- Numbers Lesson Page -->
+        <ImageButton BackgroundColor="Transparent" Source="Button_Default.png" HeightRequest="100" WidthRequest="400"
+                     Margin="0,175,0,0" HorizontalOptions="Center" VerticalOptions="Start" Clicked="LessonButton_Clicked"/>
+            <Label Text="Numbers" TextColor="White" FontSize="30" FontFamily="MyFont_Malgun_Semilight" FontAttributes="Italic" Margin="0,202,135,25" VerticalOptions="Start" HorizontalOptions="End" />
+        
         <!-- Levels Buttons -->
         
         <ImageButton BackgroundColor="Transparent" Source="Button_Default.png" HeightRequest="100" WidthRequest="400" 
-                     Margin="0,225,0,0" HorizontalOptions="Center" VerticalOptions="Start" Clicked="TranscriptionButton_Clicked" />
+                     Margin="0,275,0,0" HorizontalOptions="Center" VerticalOptions="Start" Clicked="TranscriptionButton_Clicked" />
             <!-- Transcription Level Button Text -->
-            <Label Text="Transcription" TextColor="White" FontSize="30" FontFamily="MyFont_Malgun_Semilight" FontAttributes="Italic" Margin="0,252,115,25" VerticalOptions="Start" HorizontalOptions="End" />
+            <Label Text="Transcription" TextColor="White" FontSize="30" FontFamily="MyFont_Malgun_Semilight" FontAttributes="Italic" Margin="0,302,115,25" VerticalOptions="Start" HorizontalOptions="End" />
 
         <ImageButton BackgroundColor="Transparent" Source="Button_Default.png" HeightRequest="100" WidthRequest="400" 
-                     Margin="0,325,0,0" HorizontalOptions="Center" VerticalOptions="Start" />
+                     Margin="0,375,0,0" HorizontalOptions="Center" VerticalOptions="Start" />
             <!-- Symbols Level Button Text -->
-            <Label Text="Symbols" TextColor="White" FontSize="30" FontFamily="MyFont_Malgun_Semilight" FontAttributes="Italic" Margin="0,352,140,25" VerticalOptions="Start" HorizontalOptions="End" />
+            <Label Text="Symbols" TextColor="White" FontSize="30" FontFamily="MyFont_Malgun_Semilight" FontAttributes="Italic" Margin="0,402,143,25" VerticalOptions="Start" HorizontalOptions="End" />
 
         <ImageButton BackgroundColor="Transparent" Source="Button_Default.png" HeightRequest="100" WidthRequest="400" 
-                     Margin="0,425,0,0" HorizontalOptions="Center" VerticalOptions="Start" />
+                     Margin="0,475,0,0" HorizontalOptions="Center" VerticalOptions="Start" />
             <!-- Translation Level Button Text -->
-            <Label Text="Translation" TextColor="White" FontSize="30" FontAttributes="Italic" FontFamily="MyFont_Malgun_Semilight" Margin="0,452,122,25" VerticalOptions="Start" HorizontalOptions="End" />
+            <Label Text="Translation" TextColor="White" FontSize="30" FontAttributes="Italic" FontFamily="MyFont_Malgun_Semilight" Margin="0,502,125,25" VerticalOptions="Start" HorizontalOptions="End" />
 
     </Grid>
     
