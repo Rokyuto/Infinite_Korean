@@ -16,8 +16,8 @@ namespace Infinite_Korean.Categories_Pages.NumbersCategory_Levels
         Random rand = new Random();
 
         //Variables
-        string[] Numbers_Transcription_Arr = { "yeong", "hana", "dul", "sam", "ne", "daseos" }; //Array with Korean Numbers Transcription
-        string[] Numbers_Transcription_Lvl2_Arr = { "yug", "ilgob", "yeodeolb","ahob","sib"}; //Array with Korean Numbers Transcription Lvl 2
+        string[] Numbers_Transcription_Arr = { "yeong", "hana", "dul", "set", "net", "daseot" }; //Array with Korean Numbers Transcription
+        string[] Numbers_Transcription_Lvl2_Arr = { "yeoseot", "ilgop", "yeodeol","ahop","yeol"}; //Array with Korean Numbers Transcription Lvl 2
         //char[] Numbers_Translation_Arr = { '0', '1', '2', '3', '4', '5' }; //Array with Translation of Numbers
         //string[] Numbers_Translation_Lvl2_Arr = { "6", "7", "8", "9","10"}; //Array with Translation of Numbers
 

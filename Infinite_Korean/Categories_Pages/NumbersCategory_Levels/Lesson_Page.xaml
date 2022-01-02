@@ -28,28 +28,28 @@
             <Label Text="dul - 2 - " TextColor="White" FontSize="30" VerticalTextAlignment="Center" Margin="0,100,150,0"
                    HorizontalTextAlignment="Start" VerticalOptions="Start" HorizontalOptions="Center" />
             <!-- 3 -->
-            <Label Text="sama - 3 - " TextColor="White" FontSize="30" VerticalTextAlignment="Center" Margin="0,150,150,0"
+            <Label Text="set - 3 - " TextColor="White" FontSize="30" VerticalTextAlignment="Center" Margin="0,150,150,0"
                    HorizontalTextAlignment="Start" VerticalOptions="Start" HorizontalOptions="Center" />
             <!-- 4 -->
-            <Label Text="ne - 4 - " TextColor="White" FontSize="30" VerticalTextAlignment="Center" Margin="0,200,150,0"
+            <Label Text="net - 4 - " TextColor="White" FontSize="30" VerticalTextAlignment="Center" Margin="0,200,150,0"
                    HorizontalTextAlignment="Start" VerticalOptions="Start" HorizontalOptions="Center" />
             <!-- 5 -->
-            <Label Text="deseos - 5 - " TextColor="White" FontSize="30" VerticalTextAlignment="Center" Margin="0,250,150,0"
+            <Label Text="deseot - 5 - " TextColor="White" FontSize="30" VerticalTextAlignment="Center" Margin="0,250,150,0"
                    HorizontalTextAlignment="Start" VerticalOptions="Start" HorizontalOptions="Center" />
             <!-- 6 -->
-            <Label Text="yug - 6 - " TextColor="White" FontSize="30" VerticalTextAlignment="Center" Margin="0,300,150,0"
+            <Label Text="yeoseot - 6 - " TextColor="White" FontSize="30" VerticalTextAlignment="Center" Margin="0,300,150,0"
                    HorizontalTextAlignment="Start" VerticalOptions="Start" HorizontalOptions="Center" />
             <!-- 7 -->
-            <Label Text="ilgob - 7 - " TextColor="White" FontSize="30" VerticalTextAlignment="Center" Margin="0,350,150,0"
+            <Label Text="ilgop - 7 - " TextColor="White" FontSize="30" VerticalTextAlignment="Center" Margin="0,350,150,0"
                    HorizontalTextAlignment="Start" VerticalOptions="Start" HorizontalOptions="Center" />
             <!-- 8 -->
             <Label Text="yeodeolb - 8 - " TextColor="White" FontSize="30" VerticalTextAlignment="Center" Margin="0,400,150,0"
                    HorizontalTextAlignment="Start" VerticalOptions="Start" HorizontalOptions="Center" />
             <!-- 9 -->
-            <Label Text="ahob - 9 - " TextColor="White" FontSize="30" VerticalTextAlignment="Center" Margin="0,450,150,0"
+            <Label Text="ahop - 9 - " TextColor="White" FontSize="30" VerticalTextAlignment="Center" Margin="0,450,150,0"
                    HorizontalTextAlignment="Start" VerticalOptions="Start" HorizontalOptions="Center" />
             <!-- 10 -->
-            <Label Text="sib - 10 - " TextColor="White" FontSize="30" VerticalTextAlignment="Center" Margin="0,500,150,0"
+            <Label Text="yeol - 10 - " TextColor="White" FontSize="30" VerticalTextAlignment="Center" Margin="0,500,150,0"
                    HorizontalTextAlignment="Start" VerticalOptions="Start" HorizontalOptions="Center" />
 
         </Grid>
