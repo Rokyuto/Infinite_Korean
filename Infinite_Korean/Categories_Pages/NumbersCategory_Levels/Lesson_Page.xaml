@@ -17,40 +17,40 @@
                      Margin="5,15,0,0" HorizontalOptions="Start" VerticalOptions="Start" Clicked="BackButton_Clicked"/>
 
         <!-- Numbers List -->
-        <Grid Margin="50,125,15,0">
+        <Grid Margin="25,150,25,0">
             <!-- 0 -->
-            <Label Text="yeong - 0 - " TextColor="White" FontSize="30" VerticalTextAlignment="Center" Margin="0,0,150,0"
-                   HorizontalTextAlignment="Start" VerticalOptions="Start" HorizontalOptions="Center" />
+            <Label Text="yeong - 0 - 영" TextColor="White" FontSize="30" VerticalTextAlignment="Center" 
+                   HorizontalTextAlignment="Center" VerticalOptions="Start" HorizontalOptions="Center" />
             <!-- 1 -->
-            <Label Text="hana - 2 - " TextColor="White" FontSize="30" VerticalTextAlignment="Center" Margin="0,50,150,0"
-                   HorizontalTextAlignment="Start" VerticalOptions="Start" HorizontalOptions="Center" />
+            <Label Text="hana - 1 - 하나" TextColor="White" FontSize="30" VerticalTextAlignment="Center" Margin="0,50,0,0"
+                   HorizontalTextAlignment="Center" VerticalOptions="Start" HorizontalOptions="Center" />
             <!-- 2 -->
-            <Label Text="dul - 2 - " TextColor="White" FontSize="30" VerticalTextAlignment="Center" Margin="0,100,150,0"
-                   HorizontalTextAlignment="Start" VerticalOptions="Start" HorizontalOptions="Center" />
+            <Label Text="dul - 2 - 둘" TextColor="White" FontSize="30" VerticalTextAlignment="Center" Margin="0,100,0,0"
+                   HorizontalTextAlignment="Center" VerticalOptions="Start" HorizontalOptions="Center" />
             <!-- 3 -->
-            <Label Text="set - 3 - " TextColor="White" FontSize="30" VerticalTextAlignment="Center" Margin="0,150,150,0"
-                   HorizontalTextAlignment="Start" VerticalOptions="Start" HorizontalOptions="Center" />
+            <Label Text="set - 3 - 셋" TextColor="White" FontSize="30" VerticalTextAlignment="Center" Margin="0,150,0,0"
+                   HorizontalTextAlignment="Center" VerticalOptions="Start" HorizontalOptions="Center" />
             <!-- 4 -->
-            <Label Text="net - 4 - " TextColor="White" FontSize="30" VerticalTextAlignment="Center" Margin="0,200,150,0"
-                   HorizontalTextAlignment="Start" VerticalOptions="Start" HorizontalOptions="Center" />
+            <Label Text="net - 4 - 넷" TextColor="White" FontSize="30" VerticalTextAlignment="Center" Margin="0,200,0,0"
+                   HorizontalTextAlignment="Center" VerticalOptions="Start" HorizontalOptions="Center" />
             <!-- 5 -->
-            <Label Text="deseot - 5 - " TextColor="White" FontSize="30" VerticalTextAlignment="Center" Margin="0,250,150,0"
-                   HorizontalTextAlignment="Start" VerticalOptions="Start" HorizontalOptions="Center" />
+            <Label Text="deseot - 5 - 다섯" TextColor="White" FontSize="30" VerticalTextAlignment="Center" Margin="0,250,0,0"
+                   HorizontalTextAlignment="Center" VerticalOptions="Start" HorizontalOptions="Center" />
             <!-- 6 -->
-            <Label Text="yeoseot - 6 - " TextColor="White" FontSize="30" VerticalTextAlignment="Center" Margin="0,300,150,0"
-                   HorizontalTextAlignment="Start" VerticalOptions="Start" HorizontalOptions="Center" />
+            <Label Text="yeoseot - 6 - 여섯" TextColor="White" FontSize="30" VerticalTextAlignment="Center" Margin="0,300,0,0"
+                   HorizontalTextAlignment="Center" VerticalOptions="Start" HorizontalOptions="Center" />
             <!-- 7 -->
-            <Label Text="ilgop - 7 - " TextColor="White" FontSize="30" VerticalTextAlignment="Center" Margin="0,350,150,0"
-                   HorizontalTextAlignment="Start" VerticalOptions="Start" HorizontalOptions="Center" />
+            <Label Text="ilgop - 7 - 일곱" TextColor="White" FontSize="30" VerticalTextAlignment="Center" Margin="0,350,0,0"
+                   HorizontalTextAlignment="Center" VerticalOptions="Start" HorizontalOptions="Center" />
             <!-- 8 -->
-            <Label Text="yeodeolb - 8 - " TextColor="White" FontSize="30" VerticalTextAlignment="Center" Margin="0,400,150,0"
-                   HorizontalTextAlignment="Start" VerticalOptions="Start" HorizontalOptions="Center" />
+            <Label Text="yeodeolb - 8 - 여덟" TextColor="White" FontSize="30" VerticalTextAlignment="Center" Margin="0,400,0,0"
+                   HorizontalTextAlignment="Center" VerticalOptions="Start" HorizontalOptions="Center" />
             <!-- 9 -->
-            <Label Text="ahop - 9 - " TextColor="White" FontSize="30" VerticalTextAlignment="Center" Margin="0,450,150,0"
-                   HorizontalTextAlignment="Start" VerticalOptions="Start" HorizontalOptions="Center" />
+            <Label Text="ahop - 9 - 아홉" TextColor="White" FontSize="30" VerticalTextAlignment="Center" Margin="0,450,0,0"
+                   HorizontalTextAlignment="Center" VerticalOptions="Start" HorizontalOptions="Center" />
             <!-- 10 -->
-            <Label Text="yeol - 10 - " TextColor="White" FontSize="30" VerticalTextAlignment="Center" Margin="0,500,150,0"
-                   HorizontalTextAlignment="Start" VerticalOptions="Start" HorizontalOptions="Center" />
+            <Label Text="yeol - 10 - 열" TextColor="White" FontSize="30" VerticalTextAlignment="Center" Margin="0,500,0,0"
+                   HorizontalTextAlignment="Center" VerticalOptions="Start" HorizontalOptions="Center" />
 
         </Grid>
 

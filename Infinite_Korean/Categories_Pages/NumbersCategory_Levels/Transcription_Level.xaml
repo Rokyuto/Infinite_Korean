@@ -24,18 +24,36 @@
         <!-- Button1 -->
         <ImageButton x:Name="Button1" BackgroundColor="Transparent" Source="Button_Default.png" HeightRequest="100" WidthRequest="400" 
                      Margin="0,225,0,0" HorizontalOptions="Center" VerticalOptions="Start" Clicked="Button1_Clicked" />
-            <Label x:Name="Button1Text_Label" Text="" TextColor="White" FontFamily="MyFont_Malgun_Regular" FontSize="20" Margin="0,260,180,0" WidthRequest="35" HorizontalTextAlignment="Center" HorizontalOptions="End" VerticalOptions="Start"/>
+            <Label x:Name="Button1Text_Label" Text="" TextColor="White" FontFamily="MyFont_Malgun_Regular" FontSize="20" Margin="0,260,180,0"
+                   WidthRequest="35" HorizontalTextAlignment="Center" HorizontalOptions="End" VerticalOptions="Start" >
+                <Label.GestureRecognizers>
+                    <TapGestureRecognizer
+                        Tapped="Button1_Clicked"/>
+                </Label.GestureRecognizers>
+            </Label>
 
         <!-- Button2 -->
         <ImageButton x:Name="Button2" BackgroundColor="Transparent" Source="Button_Default.png" HeightRequest="100" WidthRequest="400" 
                      Margin="0,325,0,0" HorizontalOptions="Center" VerticalOptions="Start" Clicked="Button2_Clicked" />
-            <Label x:Name="Button2Text_Label" Text="" TextColor="White" FontFamily="MyFont_Malgun_Regular" FontSize="20" Margin="0,360,180,0" WidthRequest="35" HorizontalTextAlignment="Center" HorizontalOptions="End" VerticalOptions="Start"/>
+            <Label x:Name="Button2Text_Label" Text="" TextColor="White" FontFamily="MyFont_Malgun_Regular" FontSize="20" Margin="0,360,180,0" 
+                   WidthRequest="35" HorizontalTextAlignment="Center" HorizontalOptions="End" VerticalOptions="Start">
+                <Label.GestureRecognizers>
+                    <TapGestureRecognizer
+                        Tapped="Button2_Clicked"/>
+                </Label.GestureRecognizers>
+            </Label>
 
         <!-- Button3 -->
         <ImageButton x:Name="Button3" BackgroundColor="Transparent" Source="Button_Default.png" HeightRequest="100" WidthRequest="400" 
                      Margin="0,425,0,0" HorizontalOptions="Center" VerticalOptions="Start" Clicked="Button3_Clicked" />
-            <Label x:Name="Button3Text_Label" Text="" TextColor="White" FontFamily="MyFont_Malgun_Regular" FontSize="20" Margin="0,460,180,0" WidthRequest="35" HorizontalTextAlignment="Center" HorizontalOptions="End" VerticalOptions="Start"/>
-        
+            <Label x:Name="Button3Text_Label" Text="" TextColor="White" FontFamily="MyFont_Malgun_Regular" FontSize="20" Margin="0,460,180,0" 
+                   WidthRequest="35" HorizontalTextAlignment="Center" HorizontalOptions="End" VerticalOptions="Start">
+                <Label.GestureRecognizers>
+                    <TapGestureRecognizer
+                        Tapped="Button3_Clicked"/>
+                </Label.GestureRecognizers>
+            </Label>
+
         <!-- Answers Counters -->
         <Grid Margin="15,600,15,15">
             <Image Source="CounterCorrect.png" HeightRequest="115" WidthRequest="115" HorizontalOptions="Start" VerticalOptions="End" /> <!-- Correct Counter Image -->
