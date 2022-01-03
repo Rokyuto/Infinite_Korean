@@ -34,7 +34,13 @@
     <EmbeddedResource Update="Categories_Pages\NumbersCategory_Levels\Passed_Page.xaml">
       <Generator>MSBuild:UpdateDesignTimeXaml</Generator>
     </EmbeddedResource>
+    <EmbeddedResource Update="Categories_Pages\NumbersCategory_Levels\Symbol_Level.xaml">
+      <Generator>MSBuild:UpdateDesignTimeXaml</Generator>
+    </EmbeddedResource>
     <EmbeddedResource Update="Categories_Pages\NumbersCategory_Levels\Transcription_Level.xaml">
+      <Generator>MSBuild:UpdateDesignTimeXaml</Generator>
+    </EmbeddedResource>
+    <EmbeddedResource Update="Categories_Pages\NumbersCategory_Levels\TryAgain_Page.xaml">
       <Generator>MSBuild:UpdateDesignTimeXaml</Generator>
     </EmbeddedResource>
     <EmbeddedResource Update="Categories_Pages\Numbers_Category_Page.xaml">

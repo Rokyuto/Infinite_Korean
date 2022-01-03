@@ -1,0 +1,25 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             x:Class="Infinite_Korean.Categories_Pages.NumbersCategory_Levels.Symbol_Level">
+
+    <Grid>
+
+        <!-- Load Page Background -->
+        <Image Source="GradientBGD.png" HorizontalOptions="Fill" VerticalOptions="Fill" Aspect="AspectFill"/>
+
+        <!-- Page instructions for the user -->
+        <Label Text="Choose the correct answer" TextColor="White" FontFamily="MyFont_Malgun_Bold" FontSize="22" Margin="40,22,15,15" VerticalOptions="Start" HorizontalOptions="Center" />
+
+        <!-- Set Back Button -->
+        <ImageButton BackgroundColor="Transparent" Source="Back_Button.png" HeightRequest="50" WidthRequest="50" 
+                     Margin="10,10,10,10" HorizontalOptions="Start" VerticalOptions="Start" Clicked="BackButton_Clicked" />
+
+        <!-- Guessing's Word Background -->
+        <Image Source="GuessWordBGD.png" HeightRequest="125" WidthRequest="400" Margin="10,75" VerticalOptions="Start" HorizontalOptions="Center"/>
+        <Label x:Name="GuessWord_Label" Text="" TextColor="White" FontFamily="MyFont_Malgun_Semilight" FontSize="30" Margin="0,120"
+                   HorizontalTextAlignment="Center" VerticalOptions="Start" HorizontalOptions="Center"/>
+
+    </Grid>
+
+</ContentPage>

@@ -29,6 +29,7 @@ namespace Infinite_Korean.Categories_Pages.NumbersCategory_Levels
         int GenIndex; //GuessWord Number
         int CorAswIndex; //Number with Correct Answer
         int Max_PlayerCorrectScore = 60;
+        int Max_PlayerWrongScore = 5;
 
         public Transcription_Level()
         {
@@ -176,6 +177,8 @@ namespace Infinite_Korean.Categories_Pages.NumbersCategory_Levels
                 PlayerScore_Wrong++; //Update Wrong Score
                 PlayerScoreWrong_Label.Text= PlayerScore_Wrong.ToString(); //Update Player Wrong Label
                 Button1.IsEnabled = false; //Disable the Button
+
+                ScoreCheck();
             }
         }
 
@@ -198,6 +201,8 @@ namespace Infinite_Korean.Categories_Pages.NumbersCategory_Levels
                 PlayerScore_Wrong++; //Update Wrong Score
                 PlayerScoreWrong_Label.Text= PlayerScore_Wrong.ToString(); //Update Player Wrong Label
                 Button2.IsEnabled = false; //Disable the Button
+
+                ScoreCheck();
             }
         }
 
@@ -220,6 +225,8 @@ namespace Infinite_Korean.Categories_Pages.NumbersCategory_Levels
                 PlayerScore_Wrong++; //Update Wrong Score
                 PlayerScoreWrong_Label.Text= PlayerScore_Wrong.ToString(); //Update Player Wrong Label
                 Button3.IsEnabled = false; //Disable the Button
+
+                ScoreCheck();
             }
         }
 
@@ -227,7 +234,9 @@ namespace Infinite_Korean.Categories_Pages.NumbersCategory_Levels
         {
             await Task.Delay(250); // 1/4 second waiting before continue
 
-            NewWord(); 
+            //Call Funtions
+            ScoreCheck(); //Track Score
+            NewWord(); //Regenerate the entire level
         }
 
         private void NewWord() //Regenerate the entire level after Player Answer Correct
@@ -239,7 +248,7 @@ namespace Infinite_Korean.Categories_Pages.NumbersCategory_Levels
             ApplyButtImg(); //Call Function to Apply the Default Image to the Buttons 
         }
 
-        private void UpdateLevel()
+        private void UpdateLevel() //Increase the Difficulty of the level
         {
             if(PlayerScore_Correct == 10) //If Player Score equal to 10
             {
@@ -247,14 +256,18 @@ namespace Infinite_Korean.Categories_Pages.NumbersCategory_Levels
                 Elements_Quantity = 11; //Сet a new Quantity of Numbers in the level
             }
 
-            ScoreCheck();
         }
 
-        private void ScoreCheck()
+        private async void ScoreCheck() //Track Player Scores
         {
             if(PlayerScore_Correct == Max_PlayerCorrectScore)
             {
                 App.Current.MainPage = new Passed_Page(); //Go to Congrats Page
+            }
+            if(PlayerScore_Wrong == Max_PlayerWrongScore)
+            {
+                await Task.Delay(250); // 1/4 second waiting before continue
+                App.Current.MainPage = new TryAgain_Page(); //Go to Try Again Page
             }
         }
 

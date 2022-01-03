@@ -40,15 +40,21 @@
             </Label>
 
         <ImageButton BackgroundColor="Transparent" Source="Button_Default.png" HeightRequest="100" WidthRequest="400" 
-                     Margin="0,375,0,0" HorizontalOptions="Center" VerticalOptions="Start" />
+                     Margin="0,375,0,0" HorizontalOptions="Center" VerticalOptions="Start" Clicked="SymbolButton_Clicked"/>
             <!-- Symbols Level Button Text -->
-        <Label Text="Symbols" TextColor="White" FontSize="30" FontFamily="MyFont_Malgun_Semilight"
-                   FontAttributes="Italic" Margin="0,402,143,25" VerticalOptions="Start" HorizontalOptions="End" />
+            <Label Text="Symbols" TextColor="White" FontSize="30" FontFamily="MyFont_Malgun_Semilight"
+                   FontAttributes="Italic" Margin="0,402,143,25" VerticalOptions="Start" HorizontalOptions="End" >
+                <Label.GestureRecognizers>
+                    <TapGestureRecognizer
+                        Tapped="SymbolButton_Clicked"/>
+                </Label.GestureRecognizers>
+            </Label>
 
         <ImageButton BackgroundColor="Transparent" Source="Button_Default.png" HeightRequest="100" WidthRequest="400" 
                      Margin="0,475,0,0" HorizontalOptions="Center" VerticalOptions="Start" />
             <!-- Translation Level Button Text -->
-            <Label Text="Translation" TextColor="White" FontSize="30" FontAttributes="Italic" FontFamily="MyFont_Malgun_Semilight" Margin="0,502,125,25" VerticalOptions="Start" HorizontalOptions="End" />
+            <Label Text="Translation" TextColor="White" FontSize="30" FontFamily="MyFont_Malgun_Semilight" 
+                   Margin="0,502,125,25" VerticalOptions="Start" HorizontalOptions="End" />
 
     </Grid>
     

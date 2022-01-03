@@ -6,6 +6,8 @@
     <Grid>
         <!-- Load Page Background -->
         <Image Source="GradientBGD.png" HorizontalOptions="Fill" VerticalOptions="Fill" Aspect="AspectFill"/>
+        
+        <!-- Add Stars -->
 
         <!-- Page Texts-->
         <Label Text="Congratulations" TextColor="LightBlue" FontFamily="MyFont_Malgun_Bold" FontSize="40" 

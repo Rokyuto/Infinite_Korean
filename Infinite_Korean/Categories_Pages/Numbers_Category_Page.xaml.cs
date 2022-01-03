@@ -32,5 +32,9 @@ namespace Infinite_Korean.Categories_Pages
             App.Current.MainPage = new NumbersCategory_Levels.Transcription_Level();
         }
 
+        private void SymbolButton_Clicked(object sender, EventArgs e)
+        {
+
+        }
     }
 }
