@@ -19,6 +19,63 @@
         <Image Source="GuessWordBGD.png" HeightRequest="125" WidthRequest="400" Margin="10,75" VerticalOptions="Start" HorizontalOptions="Center"/>
         <Label x:Name="GuessWord_Label" Text="" TextColor="White" FontFamily="MyFont_Malgun_Semilight" FontSize="30" Margin="0,120"
                    HorizontalTextAlignment="Center" VerticalOptions="Start" HorizontalOptions="Center"/>
+        
+        <!-- Answer Buttons -->
+
+        <!-- Button1 -->
+        <ImageButton x:Name="My_Button1" BackgroundColor="Transparent" Source="Button_Default.png" HeightRequest="100" WidthRequest="400" 
+                     Margin="0,225,0,0" HorizontalOptions="Center" VerticalOptions="Start" Clicked="Button1_Clicked"/>
+            <Label x:Name="My_Button1Text_Label" Text="" TextColor="White" FontFamily="MyFont_Malgun_Regular" FontSize="20" Margin="0,260,0,0" 
+                   WidthRequest="100" HorizontalTextAlignment="Center" HorizontalOptions="Center" VerticalOptions="Start" >
+                <Label.GestureRecognizers>
+                    <TapGestureRecognizer
+                        Tapped="Button1_Clicked"/>
+                </Label.GestureRecognizers>
+            </Label>
+        
+        <!-- Button2 -->
+        <ImageButton x:Name="My_Button2" BackgroundColor="Transparent" Source="Button_Default.png" HeightRequest="100" WidthRequest="400" 
+                     Margin="0,325,0,0" HorizontalOptions="Center" VerticalOptions="Start" Clicked="Button2_Clicked"/>
+            <Label x:Name="My_Button2Text_Label" Text="" TextColor="White" FontFamily="MyFont_Malgun_Regular" FontSize="20" Margin="0,360,0,0" 
+                   WidthRequest="100" HorizontalTextAlignment="Center" HorizontalOptions="Center" VerticalOptions="Start">
+                <Label.GestureRecognizers>
+                    <TapGestureRecognizer
+                        Tapped="Button2_Clicked"/>
+                </Label.GestureRecognizers>
+            </Label>
+
+        <!-- Button3 -->
+        <ImageButton x:Name="My_Button3" BackgroundColor="Transparent" Source="Button_Default.png" HeightRequest="100" WidthRequest="400" 
+                     Margin="0,425,0,0" HorizontalOptions="Center" VerticalOptions="Start" Clicked="Button3_Clicked"/>
+            <Label x:Name="My_Button3Text_Label" Text="" TextColor="White" FontFamily="MyFont_Malgun_Regular" FontSize="20" Margin="0,460,0,0" 
+                   WidthRequest="100" HorizontalTextAlignment="Center" HorizontalOptions="Center" VerticalOptions="Start">
+                <Label.GestureRecognizers>
+                    <TapGestureRecognizer
+                        Tapped="Button3_Clicked"/>
+                </Label.GestureRecognizers>
+            </Label>
+
+        <!-- Answers Counters -->
+        <Grid Margin="15,600,15,15">
+            <Image Source="CounterCorrect.png" HeightRequest="115" WidthRequest="115" HorizontalOptions="Start" VerticalOptions="End" /> <!-- Correct Counter Image -->
+               
+                <!-- Correct Counter Texts -->
+                
+                <!-- Max Level Correct Score -->
+                <Label Text="/99" TextColor="White" FontFamily="MyFont_Malgun_Regular" FontSize="30" Margin="50,40" VerticalOptions="End" HorizontalOptions="Start" />
+                <!-- Player Correct Score -->
+                <Label x:Name="PlayerScoreCorrect_Label" Text="" TextColor="White" FontFamily="MyFont_Malgun_Regular" FontSize="30" Margin="10,40" WidthRequest="40" HorizontalTextAlignment="End" VerticalOptions="End" HorizontalOptions="Start" />
+
+            <Image Source="CounterWrong.png" HeightRequest="115" WidthRequest="115" HorizontalOptions="End" VerticalOptions="End" /> <!-- Wrong Counter Image -->
+                
+                <!-- Wrong Counter Texts -->
+            
+                <!-- Max Level Wrong Score -->
+                <Label Text="/15" TextColor="White" FontFamily="MyFont_Malgun_Regular" FontSize="30" Margin="0,0,20,40" VerticalOptions="End" HorizontalOptions="End" /> 
+                <!-- Player Wrong Score -->
+            <Label x:Name="PlayerScoreWrong_Label" Text="" TextColor="White" FontFamily="MyFont_Malgun_Regular" FontSize="30" Margin="65,40" WidthRequest="40" HorizontalTextAlignment="End" VerticalOptions="End" HorizontalOptions="End" />
+        </Grid>
+
 
     </Grid>
 

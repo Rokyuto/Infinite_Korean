@@ -34,7 +34,7 @@ namespace Infinite_Korean.Categories_Pages
 
         private void SymbolButton_Clicked(object sender, EventArgs e)
         {
-
+            App.Current.MainPage = new NumbersCategory_Levels.Symbol_Level();
         }
     }
 }
