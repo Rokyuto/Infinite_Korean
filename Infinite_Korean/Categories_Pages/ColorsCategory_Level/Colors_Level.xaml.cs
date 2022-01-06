@@ -35,28 +35,24 @@ namespace Infinite_Korean.Categories_Pages.ColorsCategory_Level
         //Lists
         List<string> Numbers_Transcription_List = new List<string>(); //Transcription List
         List<string> Numbers_Symbol_List = new List<string>(); //Symbol List 
-        List<string> Numbers_Translate_List = new List<string>(); //???
+        List<string> Numbers_Translate_List = new List<string>(); //Translate List
 
         //Mutual for All Levels Variables 
         int Elements_Quantity = 6; //Quantity of Numbers in the list [0 - 5]
-        int GuessWord; //GuessWord Number
-        int GenIndex;
+        int GenIndex; //Generate Guess Word
+        int CorAswIndex; //Button with Correct Answer
+        string SymbolCorrect_Ans; //Symbol Level Correct Answer
+
         int PlayerScore_Correct; //Player Correct Score
         int PlayerScore_Wrong; //Player Wrong Score
-        int Level2_Req = 10;
-        int CorAswIndex; //Number with Correct Answer
-
-        string MyCorrect_Answer;
+        int Level2_Req = 10; //Requarment for Level 2
 
         //Score Requarments for Transcription Level
         int Max_PlayerCorrectScore_TranscrLvl = 60;
         int Max_PlayerWrongScore_TranscrLvl = 5;
 
-        //Symbols Level Score Requarments
-        int Max_PlayerCorrect_Score = 99;
-        int Max_PlayerWrong_Score = 15;
-        int Level3_Req = 50;
-
+        //Score Requarments for Symbol Level
+        int Level3_Req = 50;//Requarment for Level 3 in Symbol Level
 
         public static string PageAdress; //Initialize to which Page to Append End Level Pages ( Passed Page and Try Again Page )
 
@@ -138,8 +134,8 @@ namespace Infinite_Korean.Categories_Pages.ColorsCategory_Level
             GuessWordBGD.IsVisible = false;
             GuessWord_Label.IsVisible = false;
             Instruction_Label.IsVisible = false;
-                //Hide Score Items
-            CounterCorrect_Img.IsVisible = false;
+            //Hide Score Items
+            CounterCorrect_Img.IsVisible = false; 
             CorrectScore_Req.IsVisible = false;
             PlayerScoreCorrect_Label.IsVisible = false;
             CounterWrong_Img.IsVisible = false;
@@ -155,6 +151,10 @@ namespace Infinite_Korean.Categories_Pages.ColorsCategory_Level
             //Show Lesson Button
             Lesson_Button.IsVisible = true;
             LessonButton_Label.IsVisible = true;
+
+            //Update Player Scores
+            PlayerScore_Correct = 0;
+            PlayerScore_Wrong = 0;
 
             SetButtonsImg();
 
@@ -183,7 +183,7 @@ namespace Infinite_Korean.Categories_Pages.ColorsCategory_Level
             My_Button_Pressed = 1;
             Build_Level();
 
-            if (Button1_Label.Text ==  GenIndex.ToString())
+            if (Button1_Label.Text ==  GenIndex.ToString() || Button1_Label.Text ==  SymbolCorrect_Ans)
             {
                 My_Button1.Source = "Button_Correct.png"; //Set new Image on the Button
                 PlayerScore_Correct++; //Update Correct Score
@@ -194,7 +194,7 @@ namespace Infinite_Korean.Categories_Pages.ColorsCategory_Level
                 DelayTime();
 
             }
-            else if (Button1_Label.Text !=  GenIndex.ToString())
+            else 
             {
                 My_Button1.Source ="Button_Wrong.png"; //Set new Image on the Button
                 PlayerScore_Wrong++; //Update Wrong Score
@@ -210,7 +210,7 @@ namespace Infinite_Korean.Categories_Pages.ColorsCategory_Level
             My_Button_Pressed = 2;
             Build_Level();
 
-            if (Button2_Label.Text ==  GenIndex.ToString())
+            if (Button2_Label.Text ==  GenIndex.ToString() || Button2_Label.Text ==  SymbolCorrect_Ans)
             {
                 My_Button2.Source = "Button_Correct.png"; //Set new Image on the Button
                 PlayerScore_Correct++; //Update Correct Score
@@ -221,7 +221,7 @@ namespace Infinite_Korean.Categories_Pages.ColorsCategory_Level
                 DelayTime();
 
             }
-            else if(Button2_Label.Text != GenIndex.ToString())
+            else
             {
                 My_Button2.Source ="Button_Wrong.png"; //Set new Image on the Button
                 PlayerScore_Wrong++; //Update Wrong Score
@@ -237,7 +237,7 @@ namespace Infinite_Korean.Categories_Pages.ColorsCategory_Level
             My_Button_Pressed = 3;
             Build_Level();
 
-            if (Button3_Label.Text == GenIndex.ToString())
+            if (Button3_Label.Text == GenIndex.ToString() || Button3_Label.Text ==  SymbolCorrect_Ans)
             {
                 My_Button3.Source = "Button_Correct.png"; //Set new Image on the Button
                 PlayerScore_Correct++; //Update Correct Score
@@ -248,7 +248,7 @@ namespace Infinite_Korean.Categories_Pages.ColorsCategory_Level
                 DelayTime();
 
             }
-            else if(Button3_Label.Text != GenIndex.ToString())
+            else
             {
                 My_Button3.Source ="Button_Wrong.png"; //Set new Image on the Button
                 PlayerScore_Wrong++; //Update Wrong Score
@@ -276,7 +276,9 @@ namespace Infinite_Korean.Categories_Pages.ColorsCategory_Level
                         break;
                     case 2: // If Symbol Button is Pressed
                         Loaded_Level = "Symbol";
+                        await Task.Delay(250); // 1/4 second waiting before continue
                         Levels_Design(); //Load Level Design & UI
+                        Level_Start(); //Start Symbol Level
                         break;
                     case 3: // If Translate Button is Pressed
                         Loaded_Level = "Translate";
@@ -316,6 +318,7 @@ namespace Infinite_Korean.Categories_Pages.ColorsCategory_Level
         private void Level_Start()
         {
             SetButtonsImg();
+            Elements_Quantity = 6;
 
             for (int CurrentItem = 0; CurrentItem < Elements_Quantity; CurrentItem++)
             {
@@ -344,12 +347,20 @@ namespace Infinite_Korean.Categories_Pages.ColorsCategory_Level
 
         private void Generate_GuessNum() //Generate Random Korean Number
         {
-            GenIndex = MyRandom.Next(Elements_Quantity); //Generate Random Number EQUAL to Index of Numbers_Transcription_List
-            GuessWord_Label.Text = Numbers_Transcription_List[GenIndex]; //Show the Random Array Element on GuessWord Label
-            Generate_TranscriptionButtonsAnswers(); //Call Function to Apply Correct and Wrong Answers to Buttons
+            if (Loaded_Level == "Transcription")
+            {
+                GenIndex = MyRandom.Next(Elements_Quantity); //Generate Random Number EQUAL to Index of Numbers_Transcription_List
+                GuessWord_Label.Text = Numbers_Transcription_List[GenIndex]; //Show the Random Array Element on GuessWord Label
+            }
+            else if(Loaded_Level == "Symbol")
+            {
+                GenIndex = MyRandom.Next(Elements_Quantity);
+                GuessWord_Label.Text = Numbers_Symbol_List[GenIndex];
+            }
+            Generate_ButtonsAnswers(); //Call Function to Apply Correct and Wrong Answers to Buttons
         }
 
-        private void Generate_TranscriptionButtonsAnswers() //Generate Transcription Buttons Answers
+        private void Generate_ButtonsAnswers() //Generate Transcription Buttons Answers
         {
             //Choose witch Button Label to contains the CORRECT Answer
             CorAswIndex = MyRandom.Next(3); //Genrate Random Number [0 - 2] EQUAL to Buttons Labels Quantity
@@ -359,45 +370,86 @@ namespace Infinite_Korean.Categories_Pages.ColorsCategory_Level
             bool IsButton2_Free = true;
             bool IsButton3_Free = true;
 
-            int WrongButton_Ans1; //First Button with Wrong Answer
-            int WrongButton_Ans2; //Second Button with Wrong Answer
+            //Wrong Buttons Answers
+            int WrongButton_Ans1 = 0;
+            int WrongButton_Ans2 = 0;
 
-            switch (CorAswIndex)
+            if (Loaded_Level == "Transcription")
             {
-                case 0: //If Random Number is 0
-                    Button1_Label.Text = GenIndex.ToString(); //Apply Correct Answer to Button1 Label 
+                switch (CorAswIndex)
+                {
+                    case 0: //If Random Number is 0
+                        Button1_Label.Text = GenIndex.ToString(); //Apply Correct Answer to Button1 Label 
+                        IsButton1_Free = false; //Update whitch Buttons are available 
+                        break;
+                    case 1: //If Random Number is 1
+                        Button2_Label.Text = GenIndex.ToString(); //Apply Correct Answer to Button2 Label 
+                        IsButton2_Free = false; //Update whitch Buttons are available 
+                        break;
+                    case 2: //If Random Number is 2
+                        Button3_Label.Text = GenIndex.ToString(); //Apply Correct Answer to Button3 Label  
+                        IsButton3_Free = false; //Update whitch Buttons are available 
+                        break;
+                }
 
-                    //Update whitch Buttons are available 
-                    IsButton1_Free = false;
-                    break;
-                case 1: //If Random Number is 1
-                    Button2_Label.Text = GenIndex.ToString(); //Apply Correct Answer to Button2 Label 
+                WrongButton_Ans1 = MyRandom.Next(Numbers_Transcription_List.Count); //Generate Wrong Answer 1
+                WrongButton_Ans2 = MyRandom.Next(Numbers_Transcription_List.Count); //Generate Wrong Answer 2
 
-                    //Update whitch Buttons are available 
-                    IsButton2_Free = false;
-                    break;
-                case 2: //If Random Number is 2
-                    Button3_Label.Text = GenIndex.ToString(); //Apply Correct Answer to Button3 Label 
-
-                    //Update whitch Buttons are available 
-                    IsButton3_Free = false;
-                    break;
+                if (WrongButton_Ans1 == GenIndex) //If Wrong Answer1 = Correct Answer
+                {
+                    WrongButton_Ans1 = MyRandom.Next(Numbers_Transcription_List.Count - GenIndex); //Generate Wrong Answer 1
+                }
+                if (WrongButton_Ans2 == WrongButton_Ans1) //If Wrong Answer1 = Wrong Answer2
+                {
+                    WrongButton_Ans2 = MyRandom.Next(Numbers_Transcription_List.Count - WrongButton_Ans1); //Generate new Wrong Answer2
+                }
+                if (WrongButton_Ans2 == GenIndex) //If Wrong Answer2 = Correct Answer
+                {
+                    WrongButton_Ans2 = MyRandom.Next(Numbers_Transcription_List.Count - GenIndex); //Generate new Wrong Answer2
+                }
             }
+            else if (Loaded_Level == "Symbol")
+            {
+                if(PlayerScore_Correct < Level3_Req)
+                {
+                    SymbolCorrect_Ans = Numbers_Translate_List[GenIndex]; //Get Element which is correct answer
+                }
+                if(PlayerScore_Correct >= Level3_Req)
+                {
+                    SymbolCorrect_Ans = Numbers_Transcription_List[GenIndex]; //Get Element which is correct answer
+                }
 
-            WrongButton_Ans1 = MyRandom.Next(Numbers_Transcription_List.Count - GenIndex); //Generate Wrong Answer 1
-            WrongButton_Ans2 = MyRandom.Next(Numbers_Transcription_List.Count - GenIndex); //Generate Wrong Answer 2
+                switch (CorAswIndex)
+                {
+                    case 0: //If ID is 0 => Button1 contains the correct answer
+                        Button1_Label.Text = SymbolCorrect_Ans; //Print it on Button1 Label
+                        IsButton1_Free = false;
+                        break;
+                    case 1: //If ID is 1 => Button2 contains the correct answer
+                        Button2_Label.Text = SymbolCorrect_Ans; //Print it on Button2 Label
+                        IsButton2_Free = false;
+                        break;
+                    case 2: //If ID is 2 => Button3 contains the correct answer
+                        Button3_Label.Text = SymbolCorrect_Ans; //Print it on Button3 Label
+                        IsButton3_Free = false;
+                        break;
+                }
 
-            if (WrongButton_Ans1 == GenIndex) //If Wrong Answer1 = Correct Answer
-            {
-                WrongButton_Ans1 = MyRandom.Next(0, Numbers_Transcription_List.Count - GenIndex); //Generate Wrong Answer 1
-            }
-            if (WrongButton_Ans2 == WrongButton_Ans1) //If Wrong Answer1 = Wrong Answer2
-            {
-                WrongButton_Ans2 = MyRandom.Next(0, Numbers_Transcription_List.Count - WrongButton_Ans1); //Generate new Wrong Answer2
-            }
-            if (WrongButton_Ans2 == GenIndex) //If Wrong Answer2 = Correct Answer
-            {
-                WrongButton_Ans2 = MyRandom.Next(0, Numbers_Transcription_List.Count - GenIndex); //Generate new Wrong Answer2
+                WrongButton_Ans1 = MyRandom.Next(Numbers_Translate_List.Count); //Generate Wrong Answer 1
+                WrongButton_Ans2 = MyRandom.Next(Numbers_Translate_List.Count); //Generate Wrong Answer 2
+
+                if (WrongButton_Ans1.ToString() == SymbolCorrect_Ans) //If Wrong Answer1 = Correct Answer
+                {
+                    WrongButton_Ans1 = MyRandom.Next(Numbers_Translate_List.Count); //Generate Wrong Answer 1
+                }
+                if (WrongButton_Ans2.ToString() == WrongButton_Ans1.ToString() ) //If Wrong Answer1 = Wrong Answer2
+                {
+                    WrongButton_Ans2 = MyRandom.Next(Numbers_Translate_List.Count - WrongButton_Ans1); //Generate new Wrong Answer2
+                }
+                if (WrongButton_Ans2.ToString() == SymbolCorrect_Ans) //If Wrong Answer2 = Correct Answer
+                {
+                    WrongButton_Ans2 = MyRandom.Next(Numbers_Translate_List.Count); //Generate new Wrong Answer2
+                }
             }
 
             //Check witch Buttons are FREE to Apply Number
@@ -432,17 +484,33 @@ namespace Infinite_Korean.Categories_Pages.ColorsCategory_Level
         {
             UpdateLevel(); //Call Function to Update the Numbers to 10
             Generate_GuessNum(); //Call Function to Generate Guess Word
-            Generate_TranscriptionButtonsAnswers(); //Call Function to Apply Correct and Wrong Answers to Buttons
+            Generate_ButtonsAnswers(); //Call Function to Apply Correct and Wrong Answers to Buttons
 
             SetButtonsImg(); //Call Function to Apply the Default Image to the Buttons 
         }
 
         private void UpdateLevel() //Increase the Difficulty of the level
         {
-            if (PlayerScore_Correct == Level2_Req) //If Player Score equal to 10
+            if (Loaded_Level == "Transcription")
             {
-                Numbers_Transcription_List.AddRange(Numbers_Transcription_Lvl2_Arr); //Add to Numbers list Numers to 10 
-                Elements_Quantity = 11; //Сet a new Quantity of Numbers in the level
+                if (PlayerScore_Correct == Level2_Req) //If Player Score equal to 10
+                {
+                    Numbers_Transcription_List.AddRange(Numbers_Transcription_Lvl2_Arr); //Add to Numbers list Numers to 10 
+                    Elements_Quantity = 11; //Get a new Quantity of Numbers in the level
+                }
+            }
+            else if (Loaded_Level == "Symbol")
+            {
+                if (PlayerScore_Correct == Level2_Req) //If Player Score equal to 10
+                {
+                    Numbers_Symbol_List.AddRange(Numbers_Symbol_Lvl2_Arr);
+                    Elements_Quantity = 11; //Get a new Quantity of Numbers in the level
+                    Numbers_Translate_List.AddRange(Numbers_Translate_Lvl2_Arr);
+                }
+                else if(PlayerScore_Correct == Level3_Req)
+                {
+                    Numbers_Transcription_List.AddRange(Numbers_Transcription_Lvl2_Arr);
+                }
             }
         }
 

@@ -29,9 +29,9 @@ namespace Infinite_Korean.Categories_Pages.Level_End_Pages
                 ColorsCategory_Level.Colors_Level.PageAdress = "";
                 App.Current.MainPage = new ColorsCategory_Level.Colors_Level();
             }
-            else if (NumbersCategory_Levels.Transcription_Level.PageAdress == Numbers_Page)
+            else if (Numbers_Category_Page.PageAdress == Numbers_Page)
             {
-                NumbersCategory_Levels.Transcription_Level.PageAdress = "";
+                Numbers_Category_Page.PageAdress = "";
                 App.Current.MainPage = new Numbers_Category_Page();
             }
         }
