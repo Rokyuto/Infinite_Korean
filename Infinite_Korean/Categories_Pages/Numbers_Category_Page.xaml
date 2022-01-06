@@ -16,63 +16,101 @@
                      Margin="15,15,0,0" HorizontalOptions="Start" VerticalOptions="Start" Clicked="BackButton_Clicked"/>
 
         <!-- Page instructions for the user -->
-        <Label x:Name="Instruction_Label" Text="Choose the correct answer" TextColor="White" FontFamily="MyFont_Malgun_Bold" FontSize="22" Margin="40,22,15,15" VerticalOptions="Start" HorizontalOptions="Center" />
+        <Label x:Name="Instruction_Label" Text="Choose the correct answer" TextColor="White" FontFamily="MyFont_Malgun_Bold" FontSize="22"
+               Margin="40,22,15,15" VerticalOptions="Start" HorizontalOptions="Center" />
 
         <!-- Guessing's Word Background -->
         <Image x:Name="GuessWordBGD" Source="GuessWordBGD.png" HeightRequest="125" WidthRequest="400" Margin="10,75" VerticalOptions="Start" HorizontalOptions="Center"/>
         <Label x:Name="GuessWord_Label" Text="" TextColor="White" FontFamily="MyFont_Malgun_Semilight" FontSize="30" Margin="0,120"
                    HorizontalTextAlignment="Center" VerticalOptions="Start" HorizontalOptions="Center"/>
 
-        <!-- Colors Lesson Page -->
+        <!-- Numbers Lesson Page -->
         <ImageButton x:Name="Lesson_Button" BackgroundColor="Transparent" Source="Button_Default.png" HeightRequest="100" WidthRequest="400" InputTransparent="True"
                      Margin="0,175,0,0" HorizontalOptions="Center" VerticalOptions="Start" Clicked="Lesson_Button_Clicked"/>
-        <Label x:Name="LessonButton_Label" Text="Lesson" TextColor="White" FontSize="30" FontFamily="MyFont_Malgun_Semilight" FontAttributes="Italic"
+            <Label x:Name="LessonButton_Label" Text="Lesson" TextColor="White" FontSize="30" FontFamily="MyFont_Malgun_Semilight" FontAttributes="Italic"
                    Margin="0,202,0,0" HorizontalTextAlignment="Center" VerticalOptions="Start" HorizontalOptions="Center" >
-            <Label.GestureRecognizers>
-                <TapGestureRecognizer
+                <Label.GestureRecognizers>
+                    <TapGestureRecognizer
                         Tapped="Lesson_Button_Clicked"/>
-            </Label.GestureRecognizers>
-        </Label>
+                </Label.GestureRecognizers>
+            </Label>
+
+                <!-- Numbers List -->
+                <Grid x:Name="LessonText_Grid" Margin="25,150,25,0" IsVisible="False">
+                    <!-- 0 -->
+                    <Label Text="yeong - 0 - 영" TextColor="White" FontSize="30" VerticalTextAlignment="Center" 
+                           HorizontalTextAlignment="Center" VerticalOptions="Start" HorizontalOptions="Center" />
+                    <!-- 1 -->
+                    <Label Text="hana - 1 - 하나" TextColor="White" FontSize="30" VerticalTextAlignment="Center" Margin="0,50,0,0"
+                           HorizontalTextAlignment="Center" VerticalOptions="Start" HorizontalOptions="Center" />
+                    <!-- 2 -->
+                    <Label Text="dul - 2 - 둘" TextColor="White" FontSize="30" VerticalTextAlignment="Center" Margin="0,100,0,0"
+                           HorizontalTextAlignment="Center" VerticalOptions="Start" HorizontalOptions="Center" />
+                    <!-- 3 -->
+                    <Label Text="set - 3 - 셋" TextColor="White" FontSize="30" VerticalTextAlignment="Center" Margin="0,150,0,0"
+                          HorizontalTextAlignment="Center" VerticalOptions="Start" HorizontalOptions="Center" />
+                    <!-- 4 -->
+                    <Label Text="net - 4 - 넷" TextColor="White" FontSize="30" VerticalTextAlignment="Center" Margin="0,200,0,0"
+                           HorizontalTextAlignment="Center" VerticalOptions="Start" HorizontalOptions="Center" />
+                    <!-- 5 -->
+                    <Label Text="deseot - 5 - 다섯" TextColor="White" FontSize="30" VerticalTextAlignment="Center" Margin="0,250,0,0"
+                           HorizontalTextAlignment="Center" VerticalOptions="Start" HorizontalOptions="Center" />
+                    <!-- 6 -->
+                    <Label Text="yeoseot - 6 - 여섯" TextColor="White" FontSize="30" VerticalTextAlignment="Center" Margin="0,300,0,0"
+                           HorizontalTextAlignment="Center" VerticalOptions="Start" HorizontalOptions="Center" />
+                    <!-- 7 -->
+                    <Label Text="ilgop - 7 - 일곱" TextColor="White" FontSize="30" VerticalTextAlignment="Center" Margin="0,350,0,0"
+                           HorizontalTextAlignment="Center" VerticalOptions="Start" HorizontalOptions="Center" />
+                    <!-- 8 -->
+                    <Label Text="yeodeolb - 8 - 여덟" TextColor="White" FontSize="30" VerticalTextAlignment="Center" Margin="0,400,0,0"
+                           HorizontalTextAlignment="Center" VerticalOptions="Start" HorizontalOptions="Center" />
+                    <!-- 9 -->
+                    <Label Text="ahop - 9 - 아홉" TextColor="White" FontSize="30" VerticalTextAlignment="Center" Margin="0,450,0,0"
+                           HorizontalTextAlignment="Center" VerticalOptions="Start" HorizontalOptions="Center" />
+                    <!-- 10 -->
+                    <Label Text="yeol - 10 - 열" TextColor="White" FontSize="30" VerticalTextAlignment="Center" Margin="0,500,0,0"
+                           HorizontalTextAlignment="Center" VerticalOptions="Start" HorizontalOptions="Center" />
+
+                </Grid>
 
         <!-- Levels Buttons -->
 
         <ImageButton x:Name="My_Button1" BackgroundColor="Transparent" Source="Button_Default.png" HeightRequest="100" WidthRequest="400" InputTransparent="True"
                      Margin="0,275,0,0" HorizontalOptions="Center" VerticalOptions="Start" Clicked="My_Button1_Clicked" />
-        <!-- Level Button1 Text -->
-        <Label x:Name="Button1_Label" Text="" TextColor="White" FontSize="30" FontFamily="MyFont_Malgun_Semilight" 
+            <!-- Level Button1 Text -->
+            <Label x:Name="Button1_Label" Text="" TextColor="White" FontSize="30" FontFamily="MyFont_Malgun_Semilight" 
                    FontAttributes="Italic" Margin="0,302,0,0" HorizontalTextAlignment="Center" VerticalOptions="Start" HorizontalOptions="Center" >
-            <Label.GestureRecognizers>
-                <TapGestureRecognizer
-                    Tapped="My_Button1_Clicked"/>
-            </Label.GestureRecognizers>
-        </Label>
+                <Label.GestureRecognizers>
+                    <TapGestureRecognizer
+                        Tapped="My_Button1_Clicked"/>
+                </Label.GestureRecognizers>
+            </Label>
 
         <ImageButton x:Name="My_Button2" BackgroundColor="Transparent" Source="Button_Default.png" HeightRequest="100" WidthRequest="400" InputTransparent="True"
                      Margin="0,375,0,0" HorizontalOptions="Center" VerticalOptions="Start" Clicked="My_Button2_Clicked"/>
-        <!-- Level Button2 Text -->
-        <Label x:Name="Button2_Label" Text="" TextColor="White" FontSize="30" FontFamily="MyFont_Malgun_Semilight"
+            <!-- Level Button2 Text -->
+            <Label x:Name="Button2_Label" Text="" TextColor="White" FontSize="30" FontFamily="MyFont_Malgun_Semilight"
                    FontAttributes="Italic" Margin="0,402,0,0" HorizontalTextAlignment="Center" VerticalOptions="Start" HorizontalOptions="Center" >
-            <Label.GestureRecognizers>
-                <TapGestureRecognizer
-                    Tapped="My_Button2_Clicked"/>
-            </Label.GestureRecognizers>
-        </Label>
+                <Label.GestureRecognizers>
+                    <TapGestureRecognizer
+                        Tapped="My_Button2_Clicked"/>
+                </Label.GestureRecognizers>
+            </Label>
 
         <ImageButton x:Name="My_Button3" BackgroundColor="Transparent" Source="Button_Default.png" HeightRequest="100" WidthRequest="400" InputTransparent="True"
                      Margin="0,475,0,0" HorizontalOptions="Center" VerticalOptions="Start" Clicked="My_Button3_Clicked" />
-        <!-- Level Button3 Text -->
-        <Label x:Name="Button3_Label" Text="" TextColor="White" FontSize="30" FontFamily="MyFont_Malgun_Semilight" 
+            <!-- Level Button3 Text -->
+            <Label x:Name="Button3_Label" Text="" TextColor="White" FontSize="30" FontFamily="MyFont_Malgun_Semilight" 
                    Margin="0,502,0,0" HorizontalTextAlignment="Center" VerticalOptions="Start" HorizontalOptions="Center" >
-            <Label.GestureRecognizers>
-                <TapGestureRecognizer
-                    Tapped="My_Button3_Clicked"/>
-            </Label.GestureRecognizers>
-        </Label>
+                <Label.GestureRecognizers>
+                    <TapGestureRecognizer
+                        Tapped="My_Button3_Clicked"/>
+                </Label.GestureRecognizers>
+            </Label>
 
         <!-- Answers Counters -->
-        <Grid Margin="15,600,15,15">
-            <Image x:Name="CounterCorrect_Img" Source="CounterCorrect.png" HeightRequest="115" WidthRequest="115" HorizontalOptions="Start" VerticalOptions="End" />
-            <!-- Correct Counter Image -->
+        <Grid x:Name="Scores_Grid" IsVisible="False" Margin="15,600,15,15">
+            <Image x:Name="CounterCorrect_Img" Source="CounterCorrect.png" HeightRequest="115" WidthRequest="115" HorizontalOptions="Start" VerticalOptions="End" /> <!-- Correct Counter Image -->
 
             <!-- Correct Counter Texts -->
 
@@ -81,8 +119,7 @@
             <!-- Player Correct Score -->
             <Label x:Name="PlayerScoreCorrect_Label" Text="" TextColor="White" FontFamily="MyFont_Malgun_Regular" FontSize="30" Margin="10,40" WidthRequest="40" HorizontalTextAlignment="End" VerticalOptions="End" HorizontalOptions="Start" />
 
-            <Image x:Name="CounterWrong_Img" Source="CounterWrong.png" HeightRequest="115" WidthRequest="115" HorizontalOptions="End" VerticalOptions="End" />
-            <!-- Wrong Counter Image -->
+            <Image x:Name="CounterWrong_Img" Source="CounterWrong.png" HeightRequest="115" WidthRequest="115" HorizontalOptions="End" VerticalOptions="End" /> <!-- Wrong Counter Image -->
 
             <!-- Wrong Counter Texts -->
 

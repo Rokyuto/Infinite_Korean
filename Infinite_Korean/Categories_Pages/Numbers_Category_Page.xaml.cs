@@ -85,7 +85,7 @@ namespace Infinite_Korean.Categories_Pages
             PlayerScoreWrong_Label.IsVisible = false;
 
             Loaded_Level = "Categories"; //Set the Page is Category Page
-            SetButtonsImg();
+            SetButtonsImg(); //Set Buttons Image
         }
 
         private void SetButtonsImg() //Set Buttons Images
@@ -133,27 +133,24 @@ namespace Infinite_Korean.Categories_Pages
             GuessWordBGD.IsVisible = false;
             GuessWord_Label.IsVisible = false;
             Instruction_Label.IsVisible = false;
-            //Hide Score Items
-            CounterCorrect_Img.IsVisible = false;
-            CorrectScore_Req.IsVisible = false;
-            PlayerScoreCorrect_Label.IsVisible = false;
-            CounterWrong_Img.IsVisible = false;
-            WrongScore_Req.IsVisible = false;
-            PlayerScoreWrong_Label.IsVisible = false;
+
+            Scores_Grid.IsVisible = false; //Hide Scores Items
+
+            //Update Player Scores
+            PlayerScore_Correct = 0;
+            PlayerScore_Wrong = 0;
+
+            LessonText_Grid.IsVisible = false; //Hide Lesson Text
+
+            //Show Lesson Button
+            Lesson_Button.IsVisible = true;
+            LessonButton_Label.IsVisible = true;
 
             //Set Buttons Text
             LessonButton_Label.Text = "Lesson";
             Button1_Label.Text = "Transcription";
             Button2_Label.Text = "Symbols";
             Button3_Label.Text = "Translation";
-
-            //Show Lesson Button
-            Lesson_Button.IsVisible = true;
-            LessonButton_Label.IsVisible = true;
-
-            //Update Player Scores
-            PlayerScore_Correct = 0;
-            PlayerScore_Wrong = 0;
 
             SetButtonsImg();
 
@@ -266,7 +263,7 @@ namespace Infinite_Korean.Categories_Pages
                 {
                     case 0: // If Lesson Button is Pressed
                         Loaded_Level = "Lesson"; //Set Loaded is Lesson
-                        Load_LessonPage(); //Show Lesson Text
+                        LessonText_Grid.IsVisible = true; //Show Lesson Text
                         break;
 
                     case 1: // If Transcription Button is Pressed
@@ -335,6 +332,8 @@ namespace Infinite_Korean.Categories_Pages
 
         private void Level_Start()
         {
+            Scores_Grid.IsVisible = true;
+
             SetButtonsImg(); //Call Function to Set to All Buttons Image 
             Elements_Quantity = 6;
 
@@ -546,14 +545,5 @@ namespace Infinite_Korean.Categories_Pages
             }
         }
 
-        private void LevelsScores()
-        {
-
-        }
-        //Lesson Page
-        private void Load_LessonPage()
-        {
-
-        }
     }
 }

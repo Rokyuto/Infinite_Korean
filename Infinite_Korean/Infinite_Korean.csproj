@@ -37,9 +37,6 @@
     <EmbeddedResource Update="Categories_Pages\Level_End_Pages\TryAgain_Page.xaml">
       <Generator>MSBuild:UpdateDesignTimeXaml</Generator>
     </EmbeddedResource>
-    <EmbeddedResource Update="Categories_Pages\NumbersCategory_Levels\Lesson_Page.xaml">
-      <Generator>MSBuild:UpdateDesignTimeXaml</Generator>
-    </EmbeddedResource>
     <EmbeddedResource Update="Categories_Pages\Numbers_Category_Page.xaml">
       <Generator>MSBuild:UpdateDesignTimeXaml</Generator>
     </EmbeddedResource>
