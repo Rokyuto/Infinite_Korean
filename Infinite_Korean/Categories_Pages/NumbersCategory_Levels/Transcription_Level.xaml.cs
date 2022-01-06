@@ -32,7 +32,7 @@ namespace Infinite_Korean.Categories_Pages.NumbersCategory_Levels
         int Max_PlayerWrongScore = 5;
 
         //Public for all files variable to Initialize to which Page to Append End Level Pages ( Passed Page and Try Again Page )
-        public static string PageAdress = "Numbers";
+        public static string PageAdress;
 
         public Transcription_Level()
         {
@@ -263,7 +263,9 @@ namespace Infinite_Korean.Categories_Pages.NumbersCategory_Levels
 
         private async void ScoreCheck() //Track Player Scores
         {
-            if(PlayerScore_Correct == Max_PlayerCorrectScore)
+            PageAdress = "Numbers";
+
+            if (PlayerScore_Correct == Max_PlayerCorrectScore)
             {
                 App.Current.MainPage = new Level_End_Pages.Passed_Page(); //Go to Congrats Page
             }

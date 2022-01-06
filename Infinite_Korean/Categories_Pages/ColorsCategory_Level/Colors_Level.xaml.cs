@@ -44,8 +44,9 @@ namespace Infinite_Korean.Categories_Pages.ColorsCategory_Level
         int PlayerScore_Correct; //Player Correct Score
         int PlayerScore_Wrong; //Player Wrong Score
         int Level2_Req = 10;
-        string MyCorrect_Answer;
         int CorAswIndex; //Number with Correct Answer
+
+        string MyCorrect_Answer;
 
         //Score Requarments for Transcription Level
         int Max_PlayerCorrectScore_TranscrLvl = 60;
@@ -54,11 +55,10 @@ namespace Infinite_Korean.Categories_Pages.ColorsCategory_Level
         //Symbols Level Score Requarments
         int Max_PlayerCorrect_Score = 99;
         int Max_PlayerWrong_Score = 15;
-
         int Level3_Req = 50;
 
 
-        public static string PageAdress = "Colors"; //Initialize to which Page to Append End Level Pages ( Passed Page and Try Again Page )
+        public static string PageAdress; //Initialize to which Page to Append End Level Pages ( Passed Page and Try Again Page )
 
         public Colors_Level()
         {
@@ -315,8 +315,7 @@ namespace Infinite_Korean.Categories_Pages.ColorsCategory_Level
         //Transcription Level
         private void Level_Start()
         {
-            My_Button1.Source = "Button_Default.png";
-            Elements_Quantity = 6;
+            SetButtonsImg();
 
             for (int CurrentItem = 0; CurrentItem < Elements_Quantity; CurrentItem++)
             {
@@ -440,7 +439,7 @@ namespace Infinite_Korean.Categories_Pages.ColorsCategory_Level
 
         private void UpdateLevel() //Increase the Difficulty of the level
         {
-            if (PlayerScore_Correct == 10) //If Player Score equal to 10
+            if (PlayerScore_Correct == Level2_Req) //If Player Score equal to 10
             {
                 Numbers_Transcription_List.AddRange(Numbers_Transcription_Lvl2_Arr); //Add to Numbers list Numers to 10 
                 Elements_Quantity = 11; //Сet a new Quantity of Numbers in the level
@@ -449,6 +448,7 @@ namespace Infinite_Korean.Categories_Pages.ColorsCategory_Level
 
         public async void ScoreCheck() //Track Player Scores
         {
+            PageAdress = "Colors";
             if (PlayerScore_Correct == Max_PlayerCorrectScore_TranscrLvl) //If Player Correct Score = Max Allowed
             {
                 App.Current.MainPage = new Level_End_Pages.Passed_Page(); //Go to Congrats Page

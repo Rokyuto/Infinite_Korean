@@ -26,10 +26,12 @@ namespace Infinite_Korean.Categories_Pages.Level_End_Pages
         {
             if (ColorsCategory_Level.Colors_Level.PageAdress == Color_Page)
             {
+                ColorsCategory_Level.Colors_Level.PageAdress = "";
                 App.Current.MainPage = new ColorsCategory_Level.Colors_Level();
             }
-            if (NumbersCategory_Levels.Transcription_Level.PageAdress == Numbers_Page)
+            else if (NumbersCategory_Levels.Transcription_Level.PageAdress == Numbers_Page)
             {
+                NumbersCategory_Levels.Transcription_Level.PageAdress = "";
                 App.Current.MainPage = new Numbers_Category_Page();
             }
         }
