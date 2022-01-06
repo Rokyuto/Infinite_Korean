@@ -29,7 +29,7 @@ namespace Infinite_Korean
 
         private void ColorButton_Clicked(object sender, EventArgs e)
         {
-
+            App.Current.MainPage = new Categories_Pages.ColorsCategory_Level.Colors_Level();
         }
     }
 }

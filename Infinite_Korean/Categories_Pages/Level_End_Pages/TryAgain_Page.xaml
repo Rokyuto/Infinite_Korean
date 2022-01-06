@@ -1,7 +1,7 @@
 ﻿<?xml version="1.0" encoding="utf-8" ?>
 <ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
              xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
-             x:Class="Infinite_Korean.Categories_Pages.NumbersCategory_Levels.TryAgain_Page">
+             x:Class="Infinite_Korean.Categories_Pages.Level_End_Pages.TryAgain_Page">
 
     <Grid>
 
@@ -17,9 +17,9 @@
         <!-- Return to Level Page -->
         <Label Text="Try Again" TextColor="IndianRed" FontFamily="MyFont_Malgun_Semilight" FontSize="25" 
                Margin="0,0,0,200" HorizontalTextAlignment="Center" VerticalOptions="End" HorizontalOptions="Center" />
-        <ImageButton BackgroundColor="Transparent" Source="Play_Button.png" WidthRequest="100" HeightRequest="100"
-                     Margin="0,0,0,75" VerticalOptions="End" HorizontalOptions="Center" Clicked="TryButton_Clicked" />
+        <ImageButton x:Name="TryAgain_Button" BackgroundColor="Transparent" Source="Play_Button.png" WidthRequest="100" HeightRequest="100"
+                     Margin="0,0,0,75" VerticalOptions="End" HorizontalOptions="Center" Clicked="TryAgain_Button_Clicked" />
 
     </Grid>
-    
+
 </ContentPage>

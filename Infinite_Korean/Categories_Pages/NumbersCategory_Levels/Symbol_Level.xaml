@@ -26,7 +26,7 @@
         <ImageButton x:Name="My_Button1" BackgroundColor="Transparent" Source="Button_Default.png" HeightRequest="100" WidthRequest="400" 
                      Margin="0,225,0,0" HorizontalOptions="Center" VerticalOptions="Start" Clicked="Button1_Clicked"/>
             <Label x:Name="My_Button1Text_Label" Text="" TextColor="White" FontFamily="MyFont_Malgun_Regular" FontSize="20" Margin="0,260,0,0" 
-                   WidthRequest="100" HorizontalTextAlignment="Center" HorizontalOptions="Center" VerticalOptions="Start" >
+                   HorizontalTextAlignment="Center" HorizontalOptions="Center" VerticalOptions="Start" >
                 <Label.GestureRecognizers>
                     <TapGestureRecognizer
                         Tapped="Button1_Clicked"/>
@@ -37,7 +37,7 @@
         <ImageButton x:Name="My_Button2" BackgroundColor="Transparent" Source="Button_Default.png" HeightRequest="100" WidthRequest="400" 
                      Margin="0,325,0,0" HorizontalOptions="Center" VerticalOptions="Start" Clicked="Button2_Clicked"/>
             <Label x:Name="My_Button2Text_Label" Text="" TextColor="White" FontFamily="MyFont_Malgun_Regular" FontSize="20" Margin="0,360,0,0" 
-                   WidthRequest="100" HorizontalTextAlignment="Center" HorizontalOptions="Center" VerticalOptions="Start">
+                   HorizontalTextAlignment="Center" HorizontalOptions="Center" VerticalOptions="Start">
                 <Label.GestureRecognizers>
                     <TapGestureRecognizer
                         Tapped="Button2_Clicked"/>
@@ -48,7 +48,7 @@
         <ImageButton x:Name="My_Button3" BackgroundColor="Transparent" Source="Button_Default.png" HeightRequest="100" WidthRequest="400" 
                      Margin="0,425,0,0" HorizontalOptions="Center" VerticalOptions="Start" Clicked="Button3_Clicked"/>
             <Label x:Name="My_Button3Text_Label" Text="" TextColor="White" FontFamily="MyFont_Malgun_Regular" FontSize="20" Margin="0,460,0,0" 
-                   WidthRequest="100" HorizontalTextAlignment="Center" HorizontalOptions="Center" VerticalOptions="Start">
+                   HorizontalTextAlignment="Center" HorizontalOptions="Center" VerticalOptions="Start">
                 <Label.GestureRecognizers>
                     <TapGestureRecognizer
                         Tapped="Button3_Clicked"/>

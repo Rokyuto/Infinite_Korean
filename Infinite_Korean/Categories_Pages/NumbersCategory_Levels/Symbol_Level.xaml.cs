@@ -43,6 +43,8 @@ namespace Infinite_Korean.Categories_Pages.NumbersCategory_Levels
 
         int My_Button_Pressed = 0; //Track for which Button is pressed 
 
+        public static string PageAdress = "Numbers"; //Initialize to which Page to Append End Level Pages ( Passed Page and Try Again Page )
+
         public Symbol_Level()
         {
             InitializeComponent();
@@ -272,12 +274,12 @@ namespace Infinite_Korean.Categories_Pages.NumbersCategory_Levels
         {
             if (PlayerCorrect_Score == Max_PlayerCorrect_Score)
             {
-                App.Current.MainPage = new Passed_Page(); //Go to Congrats Page
+                 App.Current.MainPage = new Level_End_Pages.Passed_Page(); //Go to Congrats Page
             }
             if (PlayerWrong_Score == Max_PlayerWrong_Score)
             {
                 await Task.Delay(250); // 1/4 second waiting before continue
-                App.Current.MainPage = new TryAgain_Page(); //Go to Try Again Page
+                App.Current.MainPage = new Level_End_Pages.TryAgain_Page(); //Go to Try Again Page
             }
         }
 

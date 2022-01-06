@@ -31,6 +31,9 @@ namespace Infinite_Korean.Categories_Pages.NumbersCategory_Levels
         int Max_PlayerCorrectScore = 60;
         int Max_PlayerWrongScore = 5;
 
+        //Public for all files variable to Initialize to which Page to Append End Level Pages ( Passed Page and Try Again Page )
+        public static string PageAdress = "Numbers";
+
         public Transcription_Level()
         {
             InitializeComponent();
@@ -262,12 +265,12 @@ namespace Infinite_Korean.Categories_Pages.NumbersCategory_Levels
         {
             if(PlayerScore_Correct == Max_PlayerCorrectScore)
             {
-                App.Current.MainPage = new Passed_Page(); //Go to Congrats Page
+                App.Current.MainPage = new Level_End_Pages.Passed_Page(); //Go to Congrats Page
             }
             if(PlayerScore_Wrong == Max_PlayerWrongScore)
             {
                 await Task.Delay(250); // 1/4 second waiting before continue
-                App.Current.MainPage = new TryAgain_Page(); //Go to Try Again Page
+                App.Current.MainPage = new Level_End_Pages.TryAgain_Page(); //Go to Try Again Page
             }
         }
 

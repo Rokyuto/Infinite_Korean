@@ -27,12 +27,12 @@ namespace Infinite_Korean.Categories_Pages
             App.Current.MainPage = new NumbersCategory_Levels.Lesson_Page();
         }
 
-        private void TranscriptionButton_Clicked(object sender, EventArgs e)
+        private void Button1_Clicked(object sender, EventArgs e)
         {
             App.Current.MainPage = new NumbersCategory_Levels.Transcription_Level();
         }
 
-        private void SymbolButton_Clicked(object sender, EventArgs e)
+        private void Button2_Clicked(object sender, EventArgs e)
         {
             App.Current.MainPage = new NumbersCategory_Levels.Symbol_Level();
         }
