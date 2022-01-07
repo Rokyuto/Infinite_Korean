@@ -25,7 +25,7 @@
                    HorizontalTextAlignment="Center" VerticalOptions="Start" HorizontalOptions="Center"/>
 
         <!-- Numbers Lesson Page -->
-        <ImageButton x:Name="Lesson_Button" BackgroundColor="Transparent" Source="Button_Default.png" HeightRequest="100" WidthRequest="400" InputTransparent="True"
+        <ImageButton x:Name="Lesson_Button" BackgroundColor="Transparent" Source="Button_Default.png" HeightRequest="100" WidthRequest="400" 
                      Margin="0,175,0,0" HorizontalOptions="Center" VerticalOptions="Start" Clicked="Lesson_Button_Clicked"/>
             <Label x:Name="LessonButton_Label" Text="Lesson" TextColor="White" FontSize="30" FontFamily="MyFont_Malgun_Semilight" FontAttributes="Italic"
                    Margin="0,202,0,0" HorizontalTextAlignment="Center" VerticalOptions="Start" HorizontalOptions="Center" >
@@ -75,7 +75,7 @@
 
         <!-- Levels Buttons -->
 
-        <ImageButton x:Name="My_Button1" BackgroundColor="Transparent" Source="Button_Default.png" HeightRequest="100" WidthRequest="400" InputTransparent="True"
+        <ImageButton x:Name="My_Button1" BackgroundColor="Transparent" Source="Button_Default.png" HeightRequest="100" WidthRequest="400"
                      Margin="0,275,0,0" HorizontalOptions="Center" VerticalOptions="Start" Clicked="My_Button1_Clicked" />
             <!-- Level Button1 Text -->
             <Label x:Name="Button1_Label" Text="" TextColor="White" FontSize="30" FontFamily="MyFont_Malgun_Semilight" 
@@ -86,7 +86,7 @@
                 </Label.GestureRecognizers>
             </Label>
 
-        <ImageButton x:Name="My_Button2" BackgroundColor="Transparent" Source="Button_Default.png" HeightRequest="100" WidthRequest="400" InputTransparent="True"
+        <ImageButton x:Name="My_Button2" BackgroundColor="Transparent" Source="Button_Default.png" HeightRequest="100" WidthRequest="400"
                      Margin="0,375,0,0" HorizontalOptions="Center" VerticalOptions="Start" Clicked="My_Button2_Clicked"/>
             <!-- Level Button2 Text -->
             <Label x:Name="Button2_Label" Text="" TextColor="White" FontSize="30" FontFamily="MyFont_Malgun_Semilight"
@@ -97,7 +97,7 @@
                 </Label.GestureRecognizers>
             </Label>
 
-        <ImageButton x:Name="My_Button3" BackgroundColor="Transparent" Source="Button_Default.png" HeightRequest="100" WidthRequest="400" InputTransparent="True"
+        <ImageButton x:Name="My_Button3" BackgroundColor="Transparent" Source="Button_Default.png" HeightRequest="100" WidthRequest="400"
                      Margin="0,475,0,0" HorizontalOptions="Center" VerticalOptions="Start" Clicked="My_Button3_Clicked" />
             <!-- Level Button3 Text -->
             <Label x:Name="Button3_Label" Text="" TextColor="White" FontSize="30" FontFamily="MyFont_Malgun_Semilight" 
