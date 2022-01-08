@@ -181,23 +181,11 @@ namespace Infinite_Korean.Categories_Pages
 
             if (Button1_Label.Text ==  GenIndex.ToString() || Button1_Label.Text ==  SymbolCorrect_Ans)
             {
-                My_Button1.Source = "Button_Correct.png"; //Set new Image on the Button
-                PlayerScore_Correct++; //Update Correct Score
-                PlayerScoreCorrect_Label.Text = PlayerScore_Correct.ToString(); //Update Player Score Label
-
-                //Call Functions
-                BlockAllButtons();
-                DelayTime();
-
+                ButtonCorrect();
             }
             else
             {
-                My_Button1.Source ="Button_Wrong.png"; //Set new Image on the Button
-                PlayerScore_Wrong++; //Update Wrong Score
-                PlayerScoreWrong_Label.Text= PlayerScore_Wrong.ToString(); //Update Player Wrong Label
-                My_Button1.IsEnabled = false; //Disable the Button
-
-                ScoreCheck();
+                ButtonWrong();
             }
         }
 
@@ -208,23 +196,11 @@ namespace Infinite_Korean.Categories_Pages
 
             if (Button2_Label.Text ==  GenIndex.ToString() || Button2_Label.Text ==  SymbolCorrect_Ans)
             {
-                My_Button2.Source = "Button_Correct.png"; //Set new Image on the Button
-                PlayerScore_Correct++; //Update Correct Score
-                PlayerScoreCorrect_Label.Text = PlayerScore_Correct.ToString(); //Update Player Score Label
-
-                //Call Functions
-                BlockAllButtons();
-                DelayTime();
-
+                ButtonCorrect();
             }
             else
             {
-                My_Button2.Source ="Button_Wrong.png"; //Set new Image on the Button
-                PlayerScore_Wrong++; //Update Wrong Score
-                PlayerScoreWrong_Label.Text= PlayerScore_Wrong.ToString(); //Update Player Wrong Label
-                My_Button2.IsEnabled = false; //Disable the Button
-
-                ScoreCheck();
+                ButtonWrong();
             }
         }
 
@@ -235,23 +211,12 @@ namespace Infinite_Korean.Categories_Pages
 
             if (Button3_Label.Text == GenIndex.ToString() || Button3_Label.Text ==  SymbolCorrect_Ans)
             {
-                My_Button3.Source = "Button_Correct.png"; //Set new Image on the Button
-                PlayerScore_Correct++; //Update Correct Score
-                PlayerScoreCorrect_Label.Text = PlayerScore_Correct.ToString(); //Update Player Score Label
-
-                //Call Functions
-                BlockAllButtons();
-                DelayTime();
+                ButtonCorrect();
 
             }
             else
             {
-                My_Button3.Source ="Button_Wrong.png"; //Set new Image on the Button
-                PlayerScore_Wrong++; //Update Wrong Score
-                PlayerScoreWrong_Label.Text= PlayerScore_Wrong.ToString(); //Update Player Wrong Label
-                My_Button3.IsEnabled = false; //Disable the Button
-
-                ScoreCheck();
+                ButtonWrong();
             }
         }
 
@@ -488,6 +453,62 @@ namespace Infinite_Korean.Categories_Pages
 
         }
 
+        private void ButtonCorrect()
+        {
+            switch(My_Button_Pressed)
+            {
+                case 1:
+                    My_Button1.Source = "Button_Correct.png"; //Set new Image on the Button
+                    PlayerScore_Correct++; //Update Correct Score
+                    PlayerScoreCorrect_Label.Text = PlayerScore_Correct.ToString(); //Update Player Score Label
+                    break;
+
+               case 2:
+                    My_Button2.Source = "Button_Correct.png"; //Set new Image on the Button
+                    PlayerScore_Correct++; //Update Correct Score
+                    PlayerScoreCorrect_Label.Text = PlayerScore_Correct.ToString(); //Update Player Score Label
+                    break;
+
+                case 3:
+                    My_Button3.Source = "Button_Correct.png"; //Set new Image on the Button
+                    PlayerScore_Correct++; //Update Correct Score
+                    PlayerScoreCorrect_Label.Text = PlayerScore_Correct.ToString(); //Update Player Score Label
+                    break;
+            }
+            //Call Functions
+            BlockAllButtons();
+            DelayTime();
+        }
+
+        private void ButtonWrong()
+        {
+            switch(My_Button_Pressed)
+            {
+                case 1:
+                    My_Button1.Source ="Button_Wrong.png"; //Set new Image on the Button
+                    PlayerScore_Wrong++; //Update Wrong Score
+                    PlayerScoreWrong_Label.Text= PlayerScore_Wrong.ToString(); //Update Player Wrong Label
+                    My_Button1.IsEnabled = false; //Disable the Button
+                    break;
+
+                case 2:
+                    My_Button2.Source ="Button_Wrong.png"; //Set new Image on the Button
+                    PlayerScore_Wrong++; //Update Wrong Score
+                    PlayerScoreWrong_Label.Text= PlayerScore_Wrong.ToString(); //Update Player Wrong Label
+                    My_Button2.IsEnabled = false; //Disable the Button
+                    break;
+
+                case 3:
+                    My_Button3.Source ="Button_Wrong.png"; //Set new Image on the Button
+                    PlayerScore_Wrong++; //Update Wrong Score
+                    PlayerScoreWrong_Label.Text= PlayerScore_Wrong.ToString(); //Update Player Wrong Label
+                    My_Button3.IsEnabled = false; //Disable the Button
+                    break;
+
+            }
+            ScoreCheck();
+        }
+        
         private async void DelayTime()
         {
             await Task.Delay(250); // 1/4 second waiting before continue
