@@ -358,6 +358,40 @@ namespace Infinite_Korean.Categories_Pages
 
             if (Loaded_Level == "Transcription")
             {
+                Generate_TranscrAnswers();
+            }
+            else if (Loaded_Level == "Symbol")
+            {
+                if (PlayerScore_Correct < Level3_Req)
+                {
+                    SymbolCorrect_Ans = Numbers_Translate_List[GenIndex]; //Get Element which is correct answer
+                    Generate_SymbolsAnswers_Lvl1_Lvl2();
+                }
+                if (PlayerScore_Correct >= Level3_Req)
+                {
+                    SymbolCorrect_Ans = Numbers_Transcription_List[GenIndex]; //Get Element which is correct answer
+                    Generate_SymbolsAnswers_Lvl3();
+                }
+
+                switch (CorAswIndex)
+                {
+                    case 0: //If ID is 0 => Button1 contains the correct answer
+                        Button1_Label.Text = SymbolCorrect_Ans; //Print it on Button1 Label
+                        IsButton1_Free = false;
+                        break;
+                    case 1: //If ID is 1 => Button2 contains the correct answer
+                        Button2_Label.Text = SymbolCorrect_Ans; //Print it on Button2 Label
+                        IsButton2_Free = false;
+                        break;
+                    case 2: //If ID is 2 => Button3 contains the correct answer
+                        Button3_Label.Text = SymbolCorrect_Ans; //Print it on Button3 Label
+                        IsButton3_Free = false;
+                        break;
+                }
+            }
+
+            void Generate_TranscrAnswers()
+            {
                 switch (CorAswIndex)
                 {
                     case 0: //If Random Number is 0
@@ -389,34 +423,29 @@ namespace Infinite_Korean.Categories_Pages
                 {
                     WrongButton_Ans2 = MyRandom.Next(Numbers_Transcription_List.Count - GenIndex); //Generate new Wrong Answer2
                 }
+
+                //Check witch Buttons are FREE to Apply Number
+                if (IsButton1_Free == true && IsButton2_Free == true)
+                {
+                    Button1_Label.Text = WrongButton_Ans1.ToString(); //Apply Wrong Answer to Button1 Label 
+                    Button2_Label.Text = WrongButton_Ans2.ToString(); //Apply Wrong Answer to Button2 Label   
+                }
+                if (IsButton1_Free == true && IsButton3_Free == true)
+                {
+                    Button1_Label.Text = WrongButton_Ans1.ToString(); //Apply Wrong Answer to Button1 Label 
+                    Button3_Label.Text = WrongButton_Ans2.ToString(); //Apply Wrong Answer to Button3 Label   
+                }
+                if (IsButton2_Free == true && IsButton3_Free == true)
+                {
+                    Button2_Label.Text = WrongButton_Ans1.ToString(); //Apply Wrong Answer to Button2 Label   
+                    Button3_Label.Text = WrongButton_Ans2.ToString(); //Apply Wrong Answer to Button3 Label   
+                }
+
             }
-            else if (Loaded_Level == "Symbol")
+        
+            void Generate_SymbolsAnswers_Lvl1_Lvl2()
             {
-                if (PlayerScore_Correct < Level3_Req)
-                {
-                    SymbolCorrect_Ans = Numbers_Translate_List[GenIndex]; //Get Element which is correct answer
-                }
-                if (PlayerScore_Correct >= Level3_Req)
-                {
-                    SymbolCorrect_Ans = Numbers_Transcription_List[GenIndex]; //Get Element which is correct answer
-                }
-
-                switch (CorAswIndex)
-                {
-                    case 0: //If ID is 0 => Button1 contains the correct answer
-                        Button1_Label.Text = SymbolCorrect_Ans; //Print it on Button1 Label
-                        IsButton1_Free = false;
-                        break;
-                    case 1: //If ID is 1 => Button2 contains the correct answer
-                        Button2_Label.Text = SymbolCorrect_Ans; //Print it on Button2 Label
-                        IsButton2_Free = false;
-                        break;
-                    case 2: //If ID is 2 => Button3 contains the correct answer
-                        Button3_Label.Text = SymbolCorrect_Ans; //Print it on Button3 Label
-                        IsButton3_Free = false;
-                        break;
-                }
-
+                
                 WrongButton_Ans1 = MyRandom.Next(Numbers_Translate_List.Count); //Generate Wrong Answer 1
                 WrongButton_Ans2 = MyRandom.Next(Numbers_Translate_List.Count); //Generate Wrong Answer 2
 
@@ -432,23 +461,60 @@ namespace Infinite_Korean.Categories_Pages
                 {
                     WrongButton_Ans2 = MyRandom.Next(Numbers_Translate_List.Count); //Generate new Wrong Answer2
                 }
+
+                //Check witch Buttons are FREE to Apply Number
+                if (IsButton1_Free == true && IsButton2_Free == true)
+                {
+                    Button1_Label.Text = WrongButton_Ans1.ToString(); //Apply Wrong Answer to Button1 Label 
+                    Button2_Label.Text = WrongButton_Ans2.ToString(); //Apply Wrong Answer to Button2 Label   
+                }
+                if (IsButton1_Free == true && IsButton3_Free == true)
+                {
+                    Button1_Label.Text = WrongButton_Ans1.ToString(); //Apply Wrong Answer to Button1 Label 
+                    Button3_Label.Text = WrongButton_Ans2.ToString(); //Apply Wrong Answer to Button3 Label   
+                }
+                if (IsButton2_Free == true && IsButton3_Free == true)
+                {
+                    Button2_Label.Text = WrongButton_Ans1.ToString(); //Apply Wrong Answer to Button2 Label   
+                    Button3_Label.Text = WrongButton_Ans2.ToString(); //Apply Wrong Answer to Button3 Label   
+                }
+
             }
 
-            //Check witch Buttons are FREE to Apply Number
-            if (IsButton1_Free == true && IsButton2_Free == true)
+            void Generate_SymbolsAnswers_Lvl3()
             {
-                Button1_Label.Text = WrongButton_Ans1.ToString(); //Apply Wrong Answer to Button1 Label 
-                Button2_Label.Text = WrongButton_Ans2.ToString(); //Apply Wrong Answer to Button2 Label   
-            }
-            if (IsButton1_Free == true && IsButton3_Free == true)
-            {
-                Button1_Label.Text = WrongButton_Ans1.ToString(); //Apply Wrong Answer to Button1 Label 
-                Button3_Label.Text = WrongButton_Ans2.ToString(); //Apply Wrong Answer to Button3 Label   
-            }
-            if (IsButton2_Free == true && IsButton3_Free == true)
-            {
-                Button2_Label.Text = WrongButton_Ans1.ToString(); //Apply Wrong Answer to Button2 Label   
-                Button3_Label.Text = WrongButton_Ans2.ToString(); //Apply Wrong Answer to Button3 Label   
+                WrongButton_Ans1 = MyRandom.Next(Numbers_Transcription_List.Count); //Generate Wrong Answer 1
+                WrongButton_Ans2 = MyRandom.Next(Numbers_Transcription_List.Count); //Generate Wrong Answer 2
+
+                if (WrongButton_Ans1.ToString() == SymbolCorrect_Ans) //If Wrong Answer1 = Correct Answer
+                {
+                    WrongButton_Ans1 = MyRandom.Next(Numbers_Transcription_List.Count); //Generate Wrong Answer 1
+                }
+                if (WrongButton_Ans2.ToString() == WrongButton_Ans1.ToString()) //If Wrong Answer1 = Wrong Answer2
+                {
+                    WrongButton_Ans2 = MyRandom.Next(Numbers_Transcription_List.Count - WrongButton_Ans1); //Generate new Wrong Answer2
+                }
+                if (WrongButton_Ans2.ToString() == SymbolCorrect_Ans) //If Wrong Answer2 = Correct Answer
+                {
+                    WrongButton_Ans2 = MyRandom.Next(Numbers_Transcription_List.Count); //Generate new Wrong Answer2
+                }
+
+                //Check witch Buttons are FREE to Apply Number
+                if (IsButton1_Free == true && IsButton2_Free == true)
+                {
+                    Button1_Label.Text = Numbers_Transcription_List[WrongButton_Ans1]; //Apply Wrong Answer to Button1 Label 
+                    Button2_Label.Text = Numbers_Transcription_List[WrongButton_Ans2]; //Apply Wrong Answer to Button2 Label   
+                }
+                if (IsButton1_Free == true && IsButton3_Free == true)
+                {
+                    Button1_Label.Text = Numbers_Transcription_List[WrongButton_Ans1]; //Apply Wrong Answer to Button1 Label 
+                    Button3_Label.Text = Numbers_Transcription_List[WrongButton_Ans2]; //Apply Wrong Answer to Button3 Label   
+                }
+                if (IsButton2_Free == true && IsButton3_Free == true)
+                {
+                    Button2_Label.Text = Numbers_Transcription_List[WrongButton_Ans1]; //Apply Wrong Answer to Button2 Label   
+                    Button3_Label.Text = Numbers_Transcription_List[WrongButton_Ans2]; //Apply Wrong Answer to Button3 Label   
+                }
             }
 
         }
