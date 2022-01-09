@@ -17,11 +17,11 @@
 
         <!-- Page instructions for the user -->
         <Label x:Name="Instruction_Label" Text="Choose the correct answer" TextColor="White" FontFamily="MyFont_Malgun_Bold" FontSize="22"
-               Margin="40,22,15,15" VerticalOptions="Start" HorizontalOptions="Center" />
+               Margin="40,25,15,15" VerticalOptions="Start" HorizontalOptions="Center" />
 
         <!-- Guessing's Word Background -->
-        <Image x:Name="GuessWordBGD" Source="GuessWordBGD.png" HeightRequest="125" WidthRequest="400" Margin="10,75" VerticalOptions="Start" HorizontalOptions="Center"/>
-        <Label x:Name="GuessWord_Label" Text="" TextColor="White" FontFamily="MyFont_Malgun_Semilight" FontSize="30" Margin="0,120"
+        <Image x:Name="GuessWordBGD" Source="GuessWordBGD.png" HeightRequest="125" WidthRequest="400" Margin="10, 90" VerticalOptions="Start" HorizontalOptions="Center"/>
+        <Label x:Name="GuessWord_Label" Text="" TextColor="White" FontFamily="MyFont_Malgun_Semilight" FontSize="30" Margin="0,135"
                    HorizontalTextAlignment="Center" VerticalOptions="Start" HorizontalOptions="Center"/>
 
         <!-- Numbers Lesson Page -->
@@ -109,8 +109,9 @@
             </Label>
 
         <!-- Answers Counters -->
-        <Grid x:Name="Scores_Grid" IsVisible="False" Margin="15,600,15,15">
-            <Image x:Name="CounterCorrect_Img" Source="CounterCorrect.png" HeightRequest="115" WidthRequest="115" HorizontalOptions="Start" VerticalOptions="End" /> <!-- Correct Counter Image -->
+        <Grid x:Name="Scores_Grid" IsVisible="False" Margin="5,600,5,10">
+            <Image x:Name="CounterCorrect_Img" Source="CounterCorrect.png" HeightRequest="115" WidthRequest="115" HorizontalOptions="Start" VerticalOptions="End" />
+            <!-- Correct Counter Image -->
 
             <!-- Correct Counter Texts -->
 
@@ -119,7 +120,8 @@
             <!-- Player Correct Score -->
             <Label x:Name="PlayerScoreCorrect_Label" Text="" TextColor="White" FontFamily="MyFont_Malgun_Regular" FontSize="30" Margin="10,40" WidthRequest="40" HorizontalTextAlignment="End" VerticalOptions="End" HorizontalOptions="Start" />
 
-            <Image x:Name="CounterWrong_Img" Source="CounterWrong.png" HeightRequest="115" WidthRequest="115" HorizontalOptions="End" VerticalOptions="End" /> <!-- Wrong Counter Image -->
+            <Image x:Name="CounterWrong_Img" Source="CounterWrong.png" HeightRequest="115" WidthRequest="115" HorizontalOptions="End" VerticalOptions="End" />
+            <!-- Wrong Counter Image -->
 
             <!-- Wrong Counter Texts -->
 
@@ -130,6 +132,25 @@
 
         </Grid>
 
+        <!-- Dropdown for Level Choice -->
+        <Picker x:Name="Level_Choice_Dropdown" Title="Levels" TitleColor="White" TextColor="White" VerticalOptions="End" HorizontalOptions="Center" HorizontalTextAlignment="Center" Margin="0,0,0,80" WidthRequest="160" >
+            <Picker.Items>
+                <x:String>Level 1 - Translate Numbers [0 - 5]</x:String>
+                <x:String>Level 2 - Translate Numbers [0 - 10]</x:String>
+                <x:String>Lvl3 - Transcription Numbers [0 - 10]</x:String>
+            </Picker.Items>
+        </Picker>
+            <ImageButton x:Name="Level_Choice_Btn" IsVisible="False" BackgroundColor="Transparent" Source="Button_Default.png" Clicked="Level_Choice_Btn_Clicked" WidthRequest="200" HorizontalOptions="Center" VerticalOptions="End" Margin="0,0,0,20"/>
+                <Label x:Name="Level_Choice_BtnText" IsVisible="False" Text="Choice" TextColor="White" FontSize="20" VerticalOptions="End" HorizontalOptions="Center" 
+                           HorizontalTextAlignment="Center" Margin="0,0,0,38" >
+                    <Label.GestureRecognizers>
+                        <TapGestureRecognizer
+                            Tapped="Level_Choice_Btn_Clicked"/>
+                    </Label.GestureRecognizers>
+                </Label>
+
+        <Label x:Name="Test_Label" Text="" TextColor="White" FontSize="22" WidthRequest="200" HorizontalOptions="Center" VerticalOptions="Start" Margin="0,200,0,0"></Label>
+        
     </Grid>
 
 </ContentPage>
