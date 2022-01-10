@@ -140,12 +140,12 @@
                 <x:String>Lvl3 - Transcription Numbers [0 - 10]</x:String>
             </Picker.Items>
         </Picker>
-            <ImageButton x:Name="Level_Choice_Btn" IsVisible="False" BackgroundColor="Transparent" Source="Button_Default.png" Clicked="Level_Choice_Btn_Clicked" WidthRequest="200" HorizontalOptions="Center" VerticalOptions="End" Margin="0,0,0,20"/>
+            <ImageButton x:Name="Symbol_Level_Choice_Btn" IsVisible="False" BackgroundColor="Transparent" Source="Button_Default.png" Clicked="Symbol_Level_Choice_Btn_Clicked" WidthRequest="200" HorizontalOptions="Center" VerticalOptions="End" Margin="0,0,0,20"/>
                 <Label x:Name="Level_Choice_BtnText" IsVisible="False" Text="Choice" TextColor="White" FontSize="20" VerticalOptions="End" HorizontalOptions="Center" 
                            HorizontalTextAlignment="Center" Margin="0,0,0,38" >
                     <Label.GestureRecognizers>
                         <TapGestureRecognizer
-                            Tapped="Level_Choice_Btn_Clicked"/>
+                            Tapped="Symbol_Level_Choice_Btn_Clicked"/>
                     </Label.GestureRecognizers>
                 </Label>
 

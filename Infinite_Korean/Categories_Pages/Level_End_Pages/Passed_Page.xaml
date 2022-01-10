@@ -12,7 +12,7 @@
         <!-- Page Texts-->
         <Label Text="Congratulations" TextColor="LightBlue" FontFamily="MyFont_Malgun_Bold" FontSize="40" 
                Margin="15,200,15,15" VerticalOptions="Start" HorizontalOptions="Center" />
-        <Label Text="You complete the Numbers Transcription Lesson" TextColor="LightBlue" FontFamily="MyFont_Malgun_Semilight" FontSize="30" 
+        <Label x:Name="Page_Congrats_Text" Text="" TextColor="LightBlue" FontFamily="MyFont_Malgun_Semilight" FontSize="30" 
                HorizontalTextAlignment="Center" VerticalOptions="Center" HorizontalOptions="Center" />
 
         <!-- Return to Category Page -->
