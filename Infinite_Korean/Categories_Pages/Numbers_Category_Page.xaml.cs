@@ -55,6 +55,7 @@ namespace Infinite_Korean.Categories_Pages
         string Level_Choosed;
 
         public static string PageAdress; //Initialize to which Page to Append End Level Pages ( Passed Page and Try Again Page )
+        public static string LevelAdress; //Initialize to which Level to Append End Level Pages ( Passed Page and Try Again Page )
 
         public Numbers_Category_Page()
         {
@@ -130,7 +131,7 @@ namespace Infinite_Korean.Categories_Pages
             Instruction_Label.IsVisible = false;
             Scores_Grid.IsVisible = false; //Hide Scores Items
             Level_Choice_Dropdown.IsVisible = false; //Hide Level Choice Combo Box
-            Level_Choice_Btn.IsVisible = false;
+            Symbol_Level_Choice_Btn.IsVisible = false;
             Level_Choice_BtnText.IsVisible = false;
 
             //Update Player Scores
@@ -209,7 +210,6 @@ namespace Infinite_Korean.Categories_Pages
             if (Button3_Label.Text == GenIndex.ToString() || Button3_Label.Text ==  SymbolCorrect_Ans)
             {
                 ButtonCorrect();
-
             }
             else
             {
@@ -237,12 +237,12 @@ namespace Infinite_Korean.Categories_Pages
                         WrongScore_Req.Text = "/" + Max_PlayerWrongScore; //Show in UI Max Wrong Score
                         WrongScore_Req.Margin = new Thickness(0, 0, 30, 40); //Update Wrong Score Requarment Margin
                         PlayerScoreWrong_Label.Margin = new Thickness(0, 0, 60,40); //Update Player Wrong Score Margin
-
+                        LevelAdress = "Transcription"; //Initialize Loaded Level is Transcription
                         await Task.Delay(250); // 1/4 second waiting before continue
                         Levels_Design(); //Load Level Design & UI
                         Level_Start(); //Start Transription Level
-
                         break;
+
                     case 2: // If Symbol Button is Pressed
 
                         Loaded_Level = "Symbol"; //Set Loaded is Symbol
@@ -252,18 +252,30 @@ namespace Infinite_Korean.Categories_Pages
                         WrongScore_Req.Text = "/" + Max_PlayerWrongScore; //Show in UI Max Wrong Score
                         WrongScore_Req.Margin = new Thickness(0,0,23,40); //Update Wrong Score Requarment Margin
                         PlayerScoreWrong_Label.Margin = new Thickness(0, 0, 70, 40); //Update Player Wrong Score Margin
-
+                        LevelAdress = "Symbol"; //Initialize Loaded Level is Symbol
                         await Task.Delay(250); // 1/4 second waiting before continue
                         Level_Choice_Dropdown.IsVisible = true; //Show Level Choice Combo Box
-                        Level_Choice_Btn.IsVisible = true;
-                        Level_Choice_BtnText.IsVisible = true;
+                        Symbol_Level_Choice_Btn.IsVisible = true; //Show Level Choice Button
+                        Level_Choice_BtnText.IsVisible = true; //Show Level Choice Button Text
                         Levels_Design(); //Load Level Design & UI
                         Level_Start(); //Start Symbol Level
-
                         break;
+
                     case 3: // If Translate Button is Pressed
                         Loaded_Level = "Translate";
+                        Max_PlayerCorrectScore = 99; //Set Level Max Correct Score
+                        Max_PlayerWrongScore = 15; //Set Level Max Wrong Score
+                        CorrectScore_Req.Text = "/" + Max_PlayerCorrectScore; //Show in UI Max Correct Score
+                        WrongScore_Req.Text = "/" + Max_PlayerWrongScore; //Show in UI Max Wrong Score
+                        WrongScore_Req.Margin = new Thickness(0, 0, 23, 40); //Update Wrong Score Requarment Margin
+                        PlayerScoreWrong_Label.Margin = new Thickness(0, 0, 70, 40); //Update Player Wrong Score Margin
+                        LevelAdress = "Translate"; //Initialize Loaded Level is Translate
+                        await Task.Delay(250); // 1/4 second waiting before continue
+                        Level_Choice_Dropdown.IsVisible = true; //Show Level Choice Combo Box
+                        Symbol_Level_Choice_Btn.IsVisible = true;//Show Level Choice Button
+                        Level_Choice_BtnText.IsVisible = true; //Show Level Choice Button Text
                         Levels_Design(); //Load Level Design & UI
+                        Level_Start(); //Start Translate Level
                         break;
                 }
             }
@@ -616,6 +628,19 @@ namespace Infinite_Korean.Categories_Pages
                     Numbers_Transcription_List.AddRange(Numbers_Transcription_Lvl2_Arr);
                 }
             }
+            else if(Loaded_Level == "Translate")
+            {
+                if (PlayerScore_Correct == Level2_Req || Level_Choosed == "Lvl2") //If Player Score equal to 10
+                {
+                    Numbers_Translate_List.AddRange(Numbers_Translate_Lvl2_Arr);
+                    Elements_Quantity = 11; //Get a new Quantity of Numbers in the level
+                    Numbers_Transcription_List.AddRange(Numbers_Transcription_Lvl2_Arr);
+                }
+                else if (PlayerScore_Correct == Level3_Req || Level_Choosed == "Lvl3")
+                {
+                    Numbers_Symbol_List.AddRange(Numbers_Symbol_Lvl2_Arr);
+                }
+            }
         }
 
         public async void ScoreCheck() //Track Player Scores
@@ -632,30 +657,55 @@ namespace Infinite_Korean.Categories_Pages
             }
         }
 
-        private void Level_Choice_Btn_Clicked(object sender, EventArgs e)
+        private void Symbol_Level_Choice_Btn_Clicked(object sender, EventArgs e)
         {
             if(Level_Choice_Dropdown.SelectedItem != null)
             {
                 string LevelChoice = Level_Choice_Dropdown.SelectedItem.ToString();
 
-                switch (LevelChoice)
+                if (Loaded_Level == "Symbol")
                 {
-                    case "Level 1 - Translate Numbers [0 - 5]":
-                        Level_Choosed = "Lvl1";
-                        Generate_ButtonsAnswers();
-                        DisplayAlert("Chosen Level: ", LevelChoice, "Ok");
-                        break;
-                    case "Level 2 - Translate Numbers [0 - 10]":
-                        Level_Choosed = "Lvl2";
-                        Generate_ButtonsAnswers();
-                        DisplayAlert("Chosen Level: ", LevelChoice, "Ok");
-                        break;
-                    case "Lvl3 - Transcription Numbers [0 - 10]":
-                        Level_Choosed = "Lvl3";
-                        Generate_ButtonsAnswers();
-                        DisplayAlert("Chosen Level: ", LevelChoice, "Ok");
-                        break;
+                    switch (LevelChoice)
+                    {
+                        case "Level 1 - Translate Numbers [0 - 5]":
+                            Level_Choosed = "Lvl1";
+                            Generate_ButtonsAnswers();
+                            DisplayAlert("Chosen Level: ", LevelChoice, "Ok");
+                            break;
+                        case "Level 2 - Translate Numbers [0 - 10]":
+                            Level_Choosed = "Lvl2";
+                            Generate_ButtonsAnswers();
+                            DisplayAlert("Chosen Level: ", LevelChoice, "Ok");
+                            break;
+                        case "Lvl3 - Transcription Numbers [0 - 10]":
+                            Level_Choosed = "Lvl3";
+                            Generate_ButtonsAnswers();
+                            DisplayAlert("Chosen Level: ", LevelChoice, "Ok");
+                            break;
+                    }
                 }
+                else if (Loaded_Level == "Translate")
+                {
+                    switch (LevelChoice)
+                    {
+                        case "Level 1 - Transcription Numbers [0 - 5]":
+                            Level_Choosed = "Lvl1";
+                            Generate_ButtonsAnswers();
+                            DisplayAlert("Chosen Level: ", LevelChoice, "Ok");
+                            break;
+                        case "Level 2 - Transcription Numbers [0 - 10]":
+                            Level_Choosed = "Lvl2";
+                            Generate_ButtonsAnswers();
+                            DisplayAlert("Chosen Level: ", LevelChoice, "Ok");
+                            break;
+                        case "Lvl3 - Symbols Numbers [0 - 10]":
+                            Level_Choosed = "Lvl3";
+                            Generate_ButtonsAnswers();
+                            DisplayAlert("Chosen Level: ", LevelChoice, "Ok");
+                            break;
+                    }
+                }
+
                 PlayerScore_Correct = 0;
                 PlayerScoreCorrect_Label.Text = PlayerScore_Correct.ToString(); //Update Player Score Label
                 PlayerScore_Wrong = 0;
@@ -665,5 +715,6 @@ namespace Infinite_Korean.Categories_Pages
             }
 
         }
+
     }
 }
