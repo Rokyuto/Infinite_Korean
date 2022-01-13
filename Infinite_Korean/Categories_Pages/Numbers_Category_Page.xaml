@@ -25,9 +25,10 @@
                    HorizontalTextAlignment="Center" VerticalOptions="Start" HorizontalOptions="Center"/>
 
         <!-- Numbers Lesson Page -->
-        <ImageButton x:Name="Lesson_Button" BackgroundColor="Transparent" Source="Button_Default.png" HeightRequest="100" WidthRequest="400" 
-                     Margin="0,175,0,0" HorizontalOptions="Center" VerticalOptions="Start" Clicked="Lesson_Button_Clicked"/>
-            <Label x:Name="LessonButton_Label" Text="Lesson" TextColor="White" FontSize="30" FontFamily="MyFont_Malgun_Semilight" FontAttributes="Italic"
+        <ImageButton x:Name="Lesson_Button" BackgroundColor="Transparent" Source="Button_Default.png" HeightRequest="100" WidthRequest="400"
+                     Margin="0,175,0,0" HorizontalOptions="Center" VerticalOptions="Start" Clicked="Lesson_Button_Clicked" />
+            <!-- Level Button1 Text -->
+            <Label x:Name="Lesson_Button_Label" Text="" TextColor="White" FontSize="30" FontFamily="MyFont_Malgun_Semilight" FontAttributes="Italic"
                    Margin="0,202,0,0" HorizontalTextAlignment="Center" VerticalOptions="Start" HorizontalOptions="Center" >
                 <Label.GestureRecognizers>
                     <TapGestureRecognizer
@@ -35,7 +36,7 @@
                 </Label.GestureRecognizers>
             </Label>
 
-                <!-- Numbers List -->
+        <!-- Numbers List -->
                 <Grid x:Name="LessonText_Grid" Margin="25,150,25,0" IsVisible="False">
                     <!-- 0 -->
                     <Label Text="yeong - 0 - 영" TextColor="White" FontSize="30" VerticalTextAlignment="Center" 

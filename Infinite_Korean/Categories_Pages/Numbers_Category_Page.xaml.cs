@@ -69,6 +69,7 @@ namespace Infinite_Korean.Categories_Pages
         private void Level_Load() //Page Load
         {
             //Set Buttons Texts
+            Lesson_Button_Label.Text = "Lesson";
             Button1_Label.Text = "Transcription";
             Button2_Label.Text = "Symbols";
             Button3_Label.Text = "Translation";
@@ -146,10 +147,10 @@ namespace Infinite_Korean.Categories_Pages
 
             //Show Lesson Button
             Lesson_Button.IsVisible = true;
-            LessonButton_Label.IsVisible = true;
+            Lesson_Button_Label.IsVisible = true;
 
             //Set Buttons Text
-            LessonButton_Label.Text = "Lesson";
+            Lesson_Button_Label.Text = "Lesson";
             Button1_Label.Text = "Transcription";
             Button2_Label.Text = "Symbols";
             Button3_Label.Text = "Translation";
@@ -158,7 +159,7 @@ namespace Infinite_Korean.Categories_Pages
 
         }
 
-        private void Lesson_Button_Clicked(object sender, EventArgs e) //On Lesson Button Click
+        private void Lesson_Button_Clicked(object sender, EventArgs e)
         {
             My_Button_Pressed = 0;
             //Hide Buttons
@@ -167,7 +168,7 @@ namespace Infinite_Korean.Categories_Pages
             My_Button2.IsVisible = false;
             My_Button3.IsVisible = false;
             //Hide Texts
-            LessonButton_Label.Text = "";
+            Lesson_Button_Label.Text = "";
             Button1_Label.Text = "";
             Button2_Label.Text = "";
             Button3_Label.Text = "";
@@ -306,7 +307,7 @@ namespace Infinite_Korean.Categories_Pages
 
             //Hide Lesson Button
             Lesson_Button.IsVisible = false;
-            LessonButton_Label.IsVisible = false;
+            Lesson_Button_Label.IsVisible = false;
         }
 
         //--------------------------------------------------------------- Levels Logyc -------------------------------------------------------------------------------------------------
@@ -704,29 +705,29 @@ namespace Infinite_Korean.Categories_Pages
             {
                 if (PlayerScore_Correct == Level2_Req || Level_Choosed == "Lvl2") //If Player Score equal to 10
                 {
-                    Numbers_Symbol_List.AddRange(Numbers_Symbol_Lvl2_Arr);
+                    Numbers_Symbol_List.AddRange(Numbers_Symbol_Lvl2_Arr); //Add GuessWord List Lvl2 Arr
                     Elements_Quantity = 11; //Get a new Quantity of Numbers in the level
-                    Numbers_Translate_List.AddRange(Numbers_Translate_Lvl2_Arr);
+                    Numbers_Translate_List.AddRange(Numbers_Translate_Lvl2_Arr); //Add Answers List Lvl2 Arr
                 }
                 else if (PlayerScore_Correct == Level3_Req || Level_Choosed == "Lvl3")
                 {
                     Elements_Quantity = 11; //Get a new Quantity of Numbers in the level
                     Numbers_Translate_List.AddRange(Numbers_Translate_Lvl2_Arr);
-                    Numbers_Transcription_List.AddRange(Numbers_Transcription_Lvl2_Arr);
+                    Numbers_Transcription_List.AddRange(Numbers_Transcription_Lvl2_Arr); //Add Answers List Lvl3 Arr
                 }
             }
             else if(Loaded_Level == "Translate")
             {
                 if (PlayerScore_Correct == Level2_Req || Level_Choosed == "Lvl2") //If Player Score equal to 10
                 {
-                    Numbers_Translate_List.AddRange(Numbers_Translate_Lvl2_Arr);
+                    Numbers_Translate_List.AddRange(Numbers_Translate_Lvl2_Arr); //Add GuessWord List Lvl2 Arr
                     Elements_Quantity = 11; //Get a new Quantity of Numbers in the level
-                    Numbers_Symbol_List.AddRange(Numbers_Symbol_Lvl2_Arr);
+                    Numbers_Symbol_List.AddRange(Numbers_Symbol_Lvl2_Arr); //Add Answers List Lvl2 Arr
                 }
                 else if (PlayerScore_Correct == Level3_Req || Level_Choosed == "Lvl3")
                 {
                     //Elements_Quantity = 11; //Get a new Quantity of Numbers in the level
-                    Numbers_Transcription_List.AddRange(Numbers_Transcription_Lvl2_Arr);
+                    Numbers_Transcription_List.AddRange(Numbers_Transcription_Lvl2_Arr); //Add Answers List Lvl3 Arr
                 }
             }
         }
