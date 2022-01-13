@@ -135,6 +135,8 @@ namespace Infinite_Korean.Categories_Pages
             Level_Choice_Dropdown.SelectedItem = null; //Reset Level Choice Combo Box
             Symbol_Level_Choice_Btn.IsVisible = false; //Hide Level Choice Combo Box Button
             Level_Choice_BtnText.IsVisible = false; //Hide Level Choice Combo Box Button Text
+            Symbol_Level_Choice_Btn.IsVisible = false;
+            Level_Choice_BtnText.IsVisible = false;
 
             //Update Player Scores
             PlayerScore_Correct = 0;
@@ -725,6 +727,19 @@ namespace Infinite_Korean.Categories_Pages
                     Numbers_Symbol_List.AddRange(Numbers_Symbol_Lvl2_Arr);
                 }
             }
+            else if(Loaded_Level == "Translate")
+            {
+                if (PlayerScore_Correct == Level2_Req || Level_Choosed == "Lvl2") //If Player Score equal to 10
+                {
+                    Numbers_Translate_List.AddRange(Numbers_Translate_Lvl2_Arr);
+                    Elements_Quantity = 11; //Get a new Quantity of Numbers in the level
+                    Numbers_Transcription_List.AddRange(Numbers_Transcription_Lvl2_Arr);
+                }
+                else if (PlayerScore_Correct == Level3_Req || Level_Choosed == "Lvl3")
+                {
+                    Numbers_Symbol_List.AddRange(Numbers_Symbol_Lvl2_Arr);
+                }
+            }
         }
 
         public async void ScoreCheck() //Track Player Scores
@@ -792,7 +807,27 @@ namespace Infinite_Korean.Categories_Pages
                             break;
                     }
                 }
-
+                else if (Loaded_Level == "Translate")
+                {
+                    switch (LevelChoice)
+                    {
+                        case "Level 1 - Transcription Numbers [0 - 5]":
+                            Level_Choosed = "Lvl1";
+                            Generate_ButtonsAnswers();
+                            DisplayAlert("Chosen Level: ", LevelChoice, "Ok");
+                            break;
+                        case "Level 2 - Transcription Numbers [0 - 10]":
+                            Level_Choosed = "Lvl2";
+                            Generate_ButtonsAnswers();
+                            DisplayAlert("Chosen Level: ", LevelChoice, "Ok");
+                            break;
+                        case "Lvl3 - Symbols Numbers [0 - 10]":
+                            Level_Choosed = "Lvl3";
+                            Generate_ButtonsAnswers();
+                            DisplayAlert("Chosen Level: ", LevelChoice, "Ok");
+                            break;
+                    }
+                }
                 PlayerScore_Correct = 0;
                 PlayerScoreCorrect_Label.Text = PlayerScore_Correct.ToString(); //Update Player Score Label
                 PlayerScore_Wrong = 0;
