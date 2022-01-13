@@ -41,6 +41,7 @@ namespace Infinite_Korean.Categories_Pages
         int GenIndex; //Generate Guess Word
         int CorAswIndex; //Button with Correct Answer
         string SymbolCorrect_Ans; //Symbol Level Correct Answer
+        string TranslateCorrect_Ans; //Translate Level Correct Answer
 
         int PlayerScore_Correct; //Player Correct Score
         int PlayerScore_Wrong; //Player Wrong Score
@@ -131,8 +132,9 @@ namespace Infinite_Korean.Categories_Pages
             Instruction_Label.IsVisible = false;
             Scores_Grid.IsVisible = false; //Hide Scores Items
             Level_Choice_Dropdown.IsVisible = false; //Hide Level Choice Combo Box
-            Symbol_Level_Choice_Btn.IsVisible = false;
-            Level_Choice_BtnText.IsVisible = false;
+            Level_Choice_Dropdown.SelectedItem = null; //Reset Level Choice Combo Box
+            Symbol_Level_Choice_Btn.IsVisible = false; //Hide Level Choice Combo Box Button
+            Level_Choice_BtnText.IsVisible = false; //Hide Level Choice Combo Box Button Text
 
             //Update Player Scores
             PlayerScore_Correct = 0;
@@ -177,7 +179,7 @@ namespace Infinite_Korean.Categories_Pages
             My_Button_Pressed = 1;
             Build_Level();
 
-            if (Button1_Label.Text ==  GenIndex.ToString() || Button1_Label.Text ==  SymbolCorrect_Ans)
+            if (Button1_Label.Text ==  GenIndex.ToString() || Button1_Label.Text == SymbolCorrect_Ans || Button1_Label.Text == TranslateCorrect_Ans)
             {
                 ButtonCorrect();
             }
@@ -192,7 +194,7 @@ namespace Infinite_Korean.Categories_Pages
             My_Button_Pressed = 2;
             Build_Level();
 
-            if (Button2_Label.Text ==  GenIndex.ToString() || Button2_Label.Text ==  SymbolCorrect_Ans)
+            if (Button2_Label.Text ==  GenIndex.ToString() || Button2_Label.Text ==  SymbolCorrect_Ans || Button2_Label.Text == TranslateCorrect_Ans)
             {
                 ButtonCorrect();
             }
@@ -207,7 +209,7 @@ namespace Infinite_Korean.Categories_Pages
             My_Button_Pressed = 3;
             Build_Level();
 
-            if (Button3_Label.Text == GenIndex.ToString() || Button3_Label.Text ==  SymbolCorrect_Ans)
+            if (Button3_Label.Text == GenIndex.ToString() || Button3_Label.Text == SymbolCorrect_Ans || Button3_Label.Text == TranslateCorrect_Ans)
             {
                 ButtonCorrect();
             }
@@ -351,6 +353,21 @@ namespace Infinite_Korean.Categories_Pages
                 GenIndex = MyRandom.Next(Elements_Quantity);
                 GuessWord_Label.Text = Numbers_Symbol_List[GenIndex];
             }
+            else if(Loaded_Level == "Translate")
+            {
+                //Three Levels
+                if (PlayerScore_Correct < Level3_Req || Level_Choosed == "Lvl2") //Levels 1 & 2 - Guess Word is int Number - Translation of the Number
+                {
+                    GenIndex = MyRandom.Next(Elements_Quantity);
+                    GuessWord_Label.Text = Numbers_Translate_List[GenIndex];
+                }
+                if (PlayerScore_Correct >= Level3_Req || Level_Choosed == "Lvl3") //Level 3 - Guess Word is string Transcription of the Number
+                {
+                    GenIndex = MyRandom.Next(Elements_Quantity);
+                    GuessWord_Label.Text = Numbers_Transcription_List[GenIndex];
+                }
+                
+            }
             Generate_ButtonsAnswers(); //Call Function to Apply Correct and Wrong Answers to Buttons
         }
 
@@ -365,8 +382,10 @@ namespace Infinite_Korean.Categories_Pages
             bool IsButton3_Free = true;
 
             //Wrong Buttons Answers
-            int WrongButton_Ans1 = 0;
-            int WrongButton_Ans2 = 0;
+            int WrongButton_Ans1;
+            int WrongButton_Ans2;
+            string Translate_WrongButton1;
+            string Translate_WrongButton2;
 
             if (Loaded_Level == "Transcription")
             {
@@ -400,6 +419,27 @@ namespace Infinite_Korean.Categories_Pages
                         IsButton3_Free = false;
                         break;
                 }
+            }
+            else if (Loaded_Level == "Translate")
+            {
+                TranslateCorrect_Ans = Numbers_Symbol_List[GenIndex]; //Get Element which is correct answer
+                
+                switch (CorAswIndex)
+                {
+                    case 0: //If ID is 0 => Button1 contains the correct answer
+                        Button1_Label.Text = TranslateCorrect_Ans; //Print it on Button1 Label
+                        IsButton1_Free = false;
+                        break;
+                    case 1: //If ID is 1 => Button2 contains the correct answer
+                        Button2_Label.Text = TranslateCorrect_Ans; //Print it on Button2 Label
+                        IsButton2_Free = false;
+                        break;
+                    case 2: //If ID is 2 => Button3 contains the correct answer
+                        Button3_Label.Text = TranslateCorrect_Ans; //Print it on Button3 Label
+                        IsButton3_Free = false;
+                        break;
+                }
+                Generate_TranslateAnswers();
             }
 
             void Generate_TranscrAnswers()
@@ -454,10 +494,9 @@ namespace Infinite_Korean.Categories_Pages
                 }
 
             }
-        
+
             void Generate_SymbolsAnswers_Lvl1_Lvl2()
             {
-                
                 WrongButton_Ans1 = MyRandom.Next(Numbers_Translate_List.Count); //Generate Wrong Answer 1
                 WrongButton_Ans2 = MyRandom.Next(Numbers_Translate_List.Count); //Generate Wrong Answer 2
 
@@ -526,6 +565,47 @@ namespace Infinite_Korean.Categories_Pages
                 {
                     Button2_Label.Text = Numbers_Transcription_List[WrongButton_Ans1]; //Apply Wrong Answer to Button2 Label   
                     Button3_Label.Text = Numbers_Transcription_List[WrongButton_Ans2]; //Apply Wrong Answer to Button3 Label   
+                }
+            }
+
+            void Generate_TranslateAnswers()
+            {
+                WrongButton_Ans1 = MyRandom.Next(Numbers_Symbol_List.Count); //Generate Wrong Answer 1
+                WrongButton_Ans2 = MyRandom.Next(Numbers_Symbol_List.Count); //Generate Wrong Answer 2
+                Translate_WrongButton1 = Numbers_Symbol_List[WrongButton_Ans1];
+                Translate_WrongButton2 = Numbers_Symbol_List[WrongButton_Ans2];
+
+                if (Translate_WrongButton1 == TranslateCorrect_Ans) //If Wrong Answer1 = Correct Answer
+                {
+                    WrongButton_Ans1 = MyRandom.Next(Numbers_Symbol_List.Count); //Generate Wrong Answer 1
+                    Translate_WrongButton1 = Numbers_Symbol_List[WrongButton_Ans1];
+                }
+                if (Translate_WrongButton2 == WrongButton_Ans1.ToString()) //If Wrong Answer1 = Wrong Answer2
+                {
+                    WrongButton_Ans2 = MyRandom.Next(Numbers_Symbol_List.Count - WrongButton_Ans1); //Generate new Wrong Answer2
+                    Translate_WrongButton2 = Numbers_Symbol_List[WrongButton_Ans2];
+                }
+                if (Translate_WrongButton2 == TranslateCorrect_Ans) //If Wrong Answer2 = Correct Answer
+                {
+                    WrongButton_Ans2 = MyRandom.Next(Numbers_Symbol_List.Count); //Generate new Wrong Answer2
+                    Translate_WrongButton2 = Numbers_Symbol_List[WrongButton_Ans2];
+                }
+
+                //Check witch Buttons are FREE to Apply Number
+                if (IsButton1_Free == true && IsButton2_Free == true)
+                {
+                    Button1_Label.Text = Translate_WrongButton1; //Apply Wrong Answer to Button1 Label 
+                    Button2_Label.Text = Translate_WrongButton2; //Apply Wrong Answer to Button2 Label   
+                }
+                if (IsButton1_Free == true && IsButton3_Free == true)
+                {
+                    Button1_Label.Text = Translate_WrongButton1; //Apply Wrong Answer to Button1 Label 
+                    Button3_Label.Text = Translate_WrongButton2; //Apply Wrong Answer to Button3 Label   
+                }
+                if (IsButton2_Free == true && IsButton3_Free == true)
+                {
+                    Button2_Label.Text = Translate_WrongButton1; //Apply Wrong Answer to Button2 Label   
+                    Button3_Label.Text = Translate_WrongButton2; //Apply Wrong Answer to Button3 Label   
                 }
             }
 
@@ -625,6 +705,8 @@ namespace Infinite_Korean.Categories_Pages
                 }
                 else if (PlayerScore_Correct == Level3_Req || Level_Choosed == "Lvl3")
                 {
+                    Elements_Quantity = 11; //Get a new Quantity of Numbers in the level
+                    Numbers_Translate_List.AddRange(Numbers_Translate_Lvl2_Arr);
                     Numbers_Transcription_List.AddRange(Numbers_Transcription_Lvl2_Arr);
                 }
             }
@@ -638,6 +720,8 @@ namespace Infinite_Korean.Categories_Pages
                 }
                 else if (PlayerScore_Correct == Level3_Req || Level_Choosed == "Lvl3")
                 {
+                    Elements_Quantity = 11; //Get a new Quantity of Numbers in the level
+                    Numbers_Transcription_List.AddRange(Numbers_Transcription_Lvl2_Arr);
                     Numbers_Symbol_List.AddRange(Numbers_Symbol_Lvl2_Arr);
                 }
             }
@@ -659,11 +743,35 @@ namespace Infinite_Korean.Categories_Pages
 
         private void Symbol_Level_Choice_Btn_Clicked(object sender, EventArgs e)
         {
+            //check Loaded Level
+
             if(Level_Choice_Dropdown.SelectedItem != null)
             {
                 string LevelChoice = Level_Choice_Dropdown.SelectedItem.ToString();
 
                 if (Loaded_Level == "Symbol")
+                {
+                    switch (LevelChoice)
+                    {
+                        case "Level 1 - Translate Numbers [0 - 5]":
+                            Level_Choosed = "Lvl1";
+                            DisplayAlert("Chosen Level: ", LevelChoice, "Ok");
+                            Generate_ButtonsAnswers();
+                            break;
+                        case "Level 2 - Translate Numbers [0 - 10]":
+                            Level_Choosed = "Lvl2";
+                            //IsLvl2Choosen
+                            DisplayAlert("Chosen Level: ", LevelChoice, "Ok");
+                            Generate_ButtonsAnswers();
+                            break;
+                        case "Lvl3 - Transcription Numbers [0 - 10]":
+                            Level_Choosed = "Lvl3";
+                            DisplayAlert("Chosen Level: ", LevelChoice, "Ok");
+                            Generate_ButtonsAnswers();
+                            break;
+                    }
+                }
+                else if (Loaded_Level == "Translate")
                 {
                     switch (LevelChoice)
                     {
@@ -684,27 +792,6 @@ namespace Infinite_Korean.Categories_Pages
                             break;
                     }
                 }
-                else if (Loaded_Level == "Translate")
-                {
-                    switch (LevelChoice)
-                    {
-                        case "Level 1 - Transcription Numbers [0 - 5]":
-                            Level_Choosed = "Lvl1";
-                            Generate_ButtonsAnswers();
-                            DisplayAlert("Chosen Level: ", LevelChoice, "Ok");
-                            break;
-                        case "Level 2 - Transcription Numbers [0 - 10]":
-                            Level_Choosed = "Lvl2";
-                            Generate_ButtonsAnswers();
-                            DisplayAlert("Chosen Level: ", LevelChoice, "Ok");
-                            break;
-                        case "Lvl3 - Symbols Numbers [0 - 10]":
-                            Level_Choosed = "Lvl3";
-                            Generate_ButtonsAnswers();
-                            DisplayAlert("Chosen Level: ", LevelChoice, "Ok");
-                            break;
-                    }
-                }
 
                 PlayerScore_Correct = 0;
                 PlayerScoreCorrect_Label.Text = PlayerScore_Correct.ToString(); //Update Player Score Label
@@ -712,6 +799,7 @@ namespace Infinite_Korean.Categories_Pages
                 PlayerScoreWrong_Label.Text = PlayerScore_Wrong.ToString(); //Show Player Score Label
 
                 SetButtonsImg();
+                Generate_GuessNum();
             }
 
         }
