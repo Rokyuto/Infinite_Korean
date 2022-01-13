@@ -17,9 +17,9 @@ namespace Infinite_Korean.Categories_Pages.Level_End_Pages
         string Color_Page = "Colors";
 
         //Numbers Page Levels
-        string Transcription_Level = "Transcription";
+    /*    string Transcription_Level = "Transcription";
         string Symbol_Level = "Symbol";
-        string Translate_Level = "Translate";
+        string Translate_Level = "Translate"; */
 
         public Passed_Page()
         {

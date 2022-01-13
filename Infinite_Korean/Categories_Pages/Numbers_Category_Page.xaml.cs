@@ -3,7 +3,6 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
-
 using Xamarin.Forms;
 using Xamarin.Forms.Xaml;
 
@@ -64,6 +63,7 @@ namespace Infinite_Korean.Categories_Pages
 
             //On Page Load
             Level_Load();
+
         }
 
         private void Level_Load() //Page Load
@@ -572,24 +572,27 @@ namespace Infinite_Korean.Categories_Pages
 
             void Generate_TranslateAnswers()
             {
-                WrongButton_Ans1 = MyRandom.Next(Numbers_Symbol_List.Count); //Generate Wrong Answer 1
-                WrongButton_Ans2 = MyRandom.Next(Numbers_Symbol_List.Count); //Generate Wrong Answer 2
+                Random MyRandom1 = new Random();
+                Random MyRandom2 = new Random();
+
+                WrongButton_Ans1 = MyRandom1.Next(0,Numbers_Symbol_List.Count); //Generate Wrong Answer 1
+                WrongButton_Ans2 = MyRandom2.Next(0,Numbers_Symbol_List.Count); //Generate Wrong Answer 2
                 Translate_WrongButton1 = Numbers_Symbol_List[WrongButton_Ans1];
                 Translate_WrongButton2 = Numbers_Symbol_List[WrongButton_Ans2];
 
                 if (Translate_WrongButton1 == TranslateCorrect_Ans) //If Wrong Answer1 = Correct Answer
                 {
-                    WrongButton_Ans1 = MyRandom.Next(Numbers_Symbol_List.Count); //Generate Wrong Answer 1
+                    WrongButton_Ans1 = MyRandom1.Next(Numbers_Symbol_List.Count); //Generate Wrong Answer 1
                     Translate_WrongButton1 = Numbers_Symbol_List[WrongButton_Ans1];
                 }
                 if (Translate_WrongButton2 == WrongButton_Ans1.ToString()) //If Wrong Answer1 = Wrong Answer2
                 {
-                    WrongButton_Ans2 = MyRandom.Next(Numbers_Symbol_List.Count - WrongButton_Ans1); //Generate new Wrong Answer2
+                    WrongButton_Ans2 = MyRandom2.Next(Numbers_Symbol_List.Count - WrongButton_Ans1); //Generate new Wrong Answer2
                     Translate_WrongButton2 = Numbers_Symbol_List[WrongButton_Ans2];
                 }
                 if (Translate_WrongButton2 == TranslateCorrect_Ans) //If Wrong Answer2 = Correct Answer
                 {
-                    WrongButton_Ans2 = MyRandom.Next(Numbers_Symbol_List.Count); //Generate new Wrong Answer2
+                    WrongButton_Ans2 = MyRandom2.Next(Numbers_Symbol_List.Count); //Generate new Wrong Answer2
                     Translate_WrongButton2 = Numbers_Symbol_List[WrongButton_Ans2];
                 }
 
@@ -718,26 +721,12 @@ namespace Infinite_Korean.Categories_Pages
                 {
                     Numbers_Translate_List.AddRange(Numbers_Translate_Lvl2_Arr);
                     Elements_Quantity = 11; //Get a new Quantity of Numbers in the level
-                    Numbers_Transcription_List.AddRange(Numbers_Transcription_Lvl2_Arr);
+                    Numbers_Symbol_List.AddRange(Numbers_Symbol_Lvl2_Arr);
                 }
                 else if (PlayerScore_Correct == Level3_Req || Level_Choosed == "Lvl3")
                 {
-                    Elements_Quantity = 11; //Get a new Quantity of Numbers in the level
+                    //Elements_Quantity = 11; //Get a new Quantity of Numbers in the level
                     Numbers_Transcription_List.AddRange(Numbers_Transcription_Lvl2_Arr);
-                    Numbers_Symbol_List.AddRange(Numbers_Symbol_Lvl2_Arr);
-                }
-            }
-            else if(Loaded_Level == "Translate")
-            {
-                if (PlayerScore_Correct == Level2_Req || Level_Choosed == "Lvl2") //If Player Score equal to 10
-                {
-                    Numbers_Translate_List.AddRange(Numbers_Translate_Lvl2_Arr);
-                    Elements_Quantity = 11; //Get a new Quantity of Numbers in the level
-                    Numbers_Transcription_List.AddRange(Numbers_Transcription_Lvl2_Arr);
-                }
-                else if (PlayerScore_Correct == Level3_Req || Level_Choosed == "Lvl3")
-                {
-                    Numbers_Symbol_List.AddRange(Numbers_Symbol_Lvl2_Arr);
                 }
             }
         }
@@ -836,6 +825,11 @@ namespace Infinite_Korean.Categories_Pages
                 SetButtonsImg();
                 Generate_GuessNum();
             }
+
+         /*   DateTime dt = DateTime.Now;
+            int ms = dt.Millisecond;
+            Console.WriteLine(ms); */
+
 
         }
 

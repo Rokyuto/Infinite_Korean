@@ -14,7 +14,7 @@
         <!-- Set Back Button -->
         <ImageButton BackgroundColor="Transparent" Source="Back_Button.png" HeightRequest="50" WidthRequest="50" Margin="15,15,0,0"
                      HorizontalOptions="Start" VerticalOptions="Start" Clicked="BackButton_Clicked"/>
-       
+
         <!-- Categories Buttons -->
         <Grid Margin="10,150,0,25">
             
