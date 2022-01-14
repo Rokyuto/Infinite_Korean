@@ -186,7 +186,7 @@ namespace Infinite_Korean.Categories_Pages
         {
             Device.BeginInvokeOnMainThread(() =>
             {
-                BackFunc(); //Call Back Function 
+                BackFunc(); //Call Back Function to go to Previous Page 
             });
             return true;
             //return base.OnBackButtonPressed();
@@ -311,14 +311,7 @@ namespace Infinite_Korean.Categories_Pages
             GuessWordBGD.IsVisible = true;
             GuessWord_Label.IsVisible = true;
 
-            //Correct Score
-            CounterCorrect_Img.IsVisible = true;
-            CorrectScore_Req.IsVisible = true;
-            PlayerScoreCorrect_Label.IsVisible = true;
-            //Wrong Score
-            CounterWrong_Img.IsVisible = true;
-            WrongScore_Req.IsVisible = true;
-            PlayerScoreWrong_Label.IsVisible = true;
+            Scores_Grid.IsVisible = true; //Show Scores Items
 
             //Hide Lesson Button
             Lesson_Button.IsVisible = false;

@@ -111,8 +111,7 @@
 
         <!-- Answers Counters -->
         <Grid x:Name="Scores_Grid" IsVisible="False" Margin="5,600,5,10">
-            <Image x:Name="CounterCorrect_Img" Source="CounterCorrect.png" HeightRequest="115" WidthRequest="115" HorizontalOptions="Start" VerticalOptions="End" />
-            <!-- Correct Counter Image -->
+            <Image x:Name="CounterCorrect_Img" Source="CounterCorrect.png" HeightRequest="115" WidthRequest="115" HorizontalOptions="Start" VerticalOptions="End" /> <!-- Correct Counter Image -->
 
             <!-- Correct Counter Texts -->
 
@@ -121,8 +120,7 @@
             <!-- Player Correct Score -->
             <Label x:Name="PlayerScoreCorrect_Label" Text="" TextColor="White" FontFamily="MyFont_Malgun_Regular" FontSize="30" Margin="10,40" WidthRequest="40" HorizontalTextAlignment="End" VerticalOptions="End" HorizontalOptions="Start" />
 
-            <Image x:Name="CounterWrong_Img" Source="CounterWrong.png" HeightRequest="115" WidthRequest="115" HorizontalOptions="End" VerticalOptions="End" />
-            <!-- Wrong Counter Image -->
+            <Image x:Name="CounterWrong_Img" Source="CounterWrong.png" HeightRequest="115" WidthRequest="115" HorizontalOptions="End" VerticalOptions="End" /> <!-- Wrong Counter Image -->
 
             <!-- Wrong Counter Texts -->
 

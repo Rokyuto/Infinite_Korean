@@ -26,13 +26,51 @@
         <!-- Colors Lesson Page -->
         <ImageButton x:Name="Lesson_Button" BackgroundColor="Transparent" Source="Button_Default.png" HeightRequest="100" WidthRequest="400" InputTransparent="True"
                      Margin="0,175,0,0" HorizontalOptions="Center" VerticalOptions="Start" Clicked="Lesson_Button_Clicked"/>
-            <Label x:Name="LessonButton_Label" Text="Lesson" TextColor="White" FontSize="30" FontFamily="MyFont_Malgun_Semilight" FontAttributes="Italic"
+            <Label x:Name="LessonButton_Label" Text="" TextColor="White" FontSize="30" FontFamily="MyFont_Malgun_Semilight" FontAttributes="Italic"
                    Margin="0,202,0,0" HorizontalTextAlignment="Center" VerticalOptions="Start" HorizontalOptions="Center" >
                 <Label.GestureRecognizers>
                     <TapGestureRecognizer
                         Tapped="Lesson_Button_Clicked"/>
                 </Label.GestureRecognizers>
             </Label>
+
+        <!-- Colors List -->
+        <Grid x:Name="LessonText_Grid" Margin="25,150,25,0" IsVisible="False">
+            <!-- White -->
+            <Label Text="white -  - " TextColor="White" FontSize="30" VerticalTextAlignment="Center" 
+                           HorizontalTextAlignment="Center" VerticalOptions="Start" HorizontalOptions="Center" />
+            <!-- Black -->
+            <Label Text="black -  - " TextColor="White" FontSize="30" VerticalTextAlignment="Center" Margin="0,50,0,0"
+                           HorizontalTextAlignment="Center" VerticalOptions="Start" HorizontalOptions="Center" />
+            <!-- Red -->
+            <Label Text="red -  - " TextColor="White" FontSize="30" VerticalTextAlignment="Center" Margin="0,100,0,0"
+                           HorizontalTextAlignment="Center" VerticalOptions="Start" HorizontalOptions="Center" />
+            <!-- Blue -->
+            <Label Text="blue -  - " TextColor="White" FontSize="30" VerticalTextAlignment="Center" Margin="0,150,0,0"
+                          HorizontalTextAlignment="Center" VerticalOptions="Start" HorizontalOptions="Center" />
+            <!-- Purple -->
+            <Label Text="purple -  - " TextColor="White" FontSize="30" VerticalTextAlignment="Center" Margin="0,200,0,0"
+                           HorizontalTextAlignment="Center" VerticalOptions="Start" HorizontalOptions="Center" />
+            <!-- Green -->
+            <Label Text="green -  - " TextColor="White" FontSize="30" VerticalTextAlignment="Center" Margin="0,250,0,0"
+                           HorizontalTextAlignment="Center" VerticalOptions="Start" HorizontalOptions="Center" />
+            <!-- Yellow -->
+            <Label Text="yellow -  - " TextColor="White" FontSize="30" VerticalTextAlignment="Center" Margin="0,300,0,0"
+                           HorizontalTextAlignment="Center" VerticalOptions="Start" HorizontalOptions="Center" />
+            <!-- Orange -->
+            <Label Text="orange -  - " TextColor="White" FontSize="30" VerticalTextAlignment="Center" Margin="0,350,0,0"
+                           HorizontalTextAlignment="Center" VerticalOptions="Start" HorizontalOptions="Center" />
+            <!-- Pink -->
+            <Label Text="pink -  - " TextColor="White" FontSize="30" VerticalTextAlignment="Center" Margin="0,400,0,0"
+                           HorizontalTextAlignment="Center" VerticalOptions="Start" HorizontalOptions="Center" />
+            <!-- Gray -->
+            <Label Text="gray -  - " TextColor="White" FontSize="30" VerticalTextAlignment="Center" Margin="0,450,0,0"
+                           HorizontalTextAlignment="Center" VerticalOptions="Start" HorizontalOptions="Center" />
+            <!-- Brown -->
+            <Label Text="brown -  - " TextColor="White" FontSize="30" VerticalTextAlignment="Center" Margin="0,500,0,0"
+                           HorizontalTextAlignment="Center" VerticalOptions="Start" HorizontalOptions="Center" />
+
+        </Grid>
 
         <!-- Levels Buttons -->
 
@@ -70,25 +108,28 @@
         </Label>
 
         <!-- Answers Counters -->
-        <Grid Margin="15,600,15,15">
-            <Image x:Name="CounterCorrect_Img" Source="CounterCorrect.png" HeightRequest="115" WidthRequest="115" HorizontalOptions="Start" VerticalOptions="End" /> <!-- Correct Counter Image -->
+        <Grid x:Name="Scores_Grid" IsVisible="False" Margin="5,600,5,10">
+            
+            <!-- Correct Counter Image -->
+            <Image x:Name="CounterCorrect_Img" Source="CounterCorrect.png" HeightRequest="115" WidthRequest="115" HorizontalOptions="Start" VerticalOptions="End" />
 
             <!-- Correct Counter Texts -->
 
             <!-- Max Level Correct Score -->
-            <Label x:Name="CorrectScore_Req" Text="/60" TextColor="White" FontFamily="MyFont_Malgun_Regular" FontSize="30" Margin="50,40" VerticalOptions="End" HorizontalOptions="Start" />
+            <Label x:Name="CorrectScore_Req" Text="" TextColor="White" FontFamily="MyFont_Malgun_Regular" FontSize="30" Margin="50,40" VerticalOptions="End" HorizontalOptions="Start" />
             <!-- Player Correct Score -->
             <Label x:Name="PlayerScoreCorrect_Label" Text="" TextColor="White" FontFamily="MyFont_Malgun_Regular" FontSize="30" Margin="10,40" WidthRequest="40" HorizontalTextAlignment="End" VerticalOptions="End" HorizontalOptions="Start" />
-
-            <Image x:Name="CounterWrong_Img" Source="CounterWrong.png" HeightRequest="115" WidthRequest="115" HorizontalOptions="End" VerticalOptions="End" /><!-- Wrong Counter Image -->
+            
+            <!-- Wrong Counter Image -->
+            <Image x:Name="CounterWrong_Img" Source="CounterWrong.png" HeightRequest="115" WidthRequest="115" HorizontalOptions="End" VerticalOptions="End" />
 
             <!-- Wrong Counter Texts -->
 
             <!-- Max Level Wrong Score -->
-            <Label x:Name="WrongScore_Req" Text="/5" TextColor="White" FontFamily="MyFont_Malgun_Regular" FontSize="30" Margin="0,0,30,40" VerticalOptions="End" HorizontalOptions="End" />
+            <Label x:Name="WrongScore_Req" Text="" TextColor="White" FontFamily="MyFont_Malgun_Regular" FontSize="30" Margin="0,0,30,40" VerticalOptions="End" HorizontalOptions="End" />
             <!-- Player Wrong Score -->
             <Label x:Name="PlayerScoreWrong_Label" Text="" TextColor="White" FontFamily="MyFont_Malgun_Regular" FontSize="30" Margin="60,40" WidthRequest="40" HorizontalTextAlignment="End" VerticalOptions="End" HorizontalOptions="End" />
-       
+
         </Grid>
 
     </Grid>
