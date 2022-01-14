@@ -101,6 +101,11 @@ namespace Infinite_Korean.Categories_Pages
 
         private void BackButton_Clicked(object sender, EventArgs e)
         {
+            BackFunc(); //Call Back Function
+        }
+
+        private void BackFunc() //Return to Previous Page
+        {
             if (Loaded_Level == "Categories") //If Player is in Category Page
             {
                 App.Current.MainPage = new Menu_Page(); //Back Button Navigate to Menu Page
@@ -175,6 +180,16 @@ namespace Infinite_Korean.Categories_Pages
 
             //Call Functions
             Build_Level();
+        }
+
+        protected override bool OnBackButtonPressed() //On Mobile Back Button Click
+        {
+            Device.BeginInvokeOnMainThread(() =>
+            {
+                BackFunc(); //Call Back Function 
+            });
+            return true;
+            //return base.OnBackButtonPressed();
         }
 
         private void My_Button1_Clicked(object sender, EventArgs e)
