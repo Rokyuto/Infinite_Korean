@@ -251,13 +251,15 @@ namespace Infinite_Korean.Categories_Pages
                     case 1: // If Transcription Button is Pressed
 
                         Loaded_Level = "Transcription"; //Set Loaded is Transcription
+                        LevelAdress = "Transcription"; //Initialize Loaded Level is Transcription
+
                         Max_PlayerCorrectScore = 60; //Set Level Max Correct Score
                         Max_PlayerWrongScore = 5; //Set Level Max Wrong Score
                         CorrectScore_Req.Text = "/" + Max_PlayerCorrectScore; //Show in UI Max Correct Score
                         WrongScore_Req.Text = "/" + Max_PlayerWrongScore; //Show in UI Max Wrong Score
                         WrongScore_Req.Margin = new Thickness(0, 0, 30, 40); //Update Wrong Score Requarment Margin
                         PlayerScoreWrong_Label.Margin = new Thickness(0, 0, 60,40); //Update Player Wrong Score Margin
-                        LevelAdress = "Transcription"; //Initialize Loaded Level is Transcription
+                        
                         await Task.Delay(250); // 1/4 second waiting before continue
                         Levels_Design(); //Load Level Design & UI
                         Level_Start(); //Start Transription Level
@@ -266,34 +268,43 @@ namespace Infinite_Korean.Categories_Pages
                     case 2: // If Symbol Button is Pressed
 
                         Loaded_Level = "Symbol"; //Set Loaded is Symbol
+                        LevelAdress = "Symbol"; //Initialize Loaded Level is Symbol
+
                         Max_PlayerCorrectScore = 99; //Set Level Max Correct Score
                         Max_PlayerWrongScore = 15; //Set Level Max Wrong Score
                         CorrectScore_Req.Text = "/" + Max_PlayerCorrectScore; //Show in UI Max Correct Score
                         WrongScore_Req.Text = "/" + Max_PlayerWrongScore; //Show in UI Max Wrong Score
                         WrongScore_Req.Margin = new Thickness(0,0,23,40); //Update Wrong Score Requarment Margin
                         PlayerScoreWrong_Label.Margin = new Thickness(0, 0, 70, 40); //Update Player Wrong Score Margin
-                        LevelAdress = "Symbol"; //Initialize Loaded Level is Symbol
+                        
                         await Task.Delay(250); // 1/4 second waiting before continue
+                        
                         Level_Choice_Dropdown.IsVisible = true; //Show Level Choice Combo Box
                         Symbol_Level_Choice_Btn.IsVisible = true; //Show Level Choice Button
                         Level_Choice_BtnText.IsVisible = true; //Show Level Choice Button Text
+                        
                         Levels_Design(); //Load Level Design & UI
                         Level_Start(); //Start Symbol Level
                         break;
 
                     case 3: // If Translate Button is Pressed
+
                         Loaded_Level = "Translate";
+                        LevelAdress = "Translate"; //Initialize Loaded Level is Translate
+
                         Max_PlayerCorrectScore = 99; //Set Level Max Correct Score
                         Max_PlayerWrongScore = 15; //Set Level Max Wrong Score
                         CorrectScore_Req.Text = "/" + Max_PlayerCorrectScore; //Show in UI Max Correct Score
                         WrongScore_Req.Text = "/" + Max_PlayerWrongScore; //Show in UI Max Wrong Score
                         WrongScore_Req.Margin = new Thickness(0, 0, 23, 40); //Update Wrong Score Requarment Margin
                         PlayerScoreWrong_Label.Margin = new Thickness(0, 0, 70, 40); //Update Player Wrong Score Margin
-                        LevelAdress = "Translate"; //Initialize Loaded Level is Translate
+                        
                         await Task.Delay(250); // 1/4 second waiting before continue
+                        
                         Level_Choice_Dropdown.IsVisible = true; //Show Level Choice Combo Box
                         Symbol_Level_Choice_Btn.IsVisible = true;//Show Level Choice Button
                         Level_Choice_BtnText.IsVisible = true; //Show Level Choice Button Text
+                        
                         Levels_Design(); //Load Level Design & UI
                         Level_Start(); //Start Translate Level
                         break;
