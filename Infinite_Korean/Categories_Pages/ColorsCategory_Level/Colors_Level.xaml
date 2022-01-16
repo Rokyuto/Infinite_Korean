@@ -23,9 +23,10 @@
         <Label x:Name="GuessWord_Label" Text="" TextColor="White" FontFamily="MyFont_Malgun_Semilight" FontSize="30" Margin="0,120"
                    HorizontalTextAlignment="Center" VerticalOptions="Start" HorizontalOptions="Center"/>
 
-        <!-- Colors Lesson Page -->
+        <!-- Numbers Lesson Page -->
         <ImageButton x:Name="Lesson_Button" BackgroundColor="Transparent" Source="Button_Default.png" HeightRequest="100" WidthRequest="400"
-                     Margin="0,175,0,0" HorizontalOptions="Center" VerticalOptions="Start" Clicked="Lesson_Button_Clicked"/>
+                     Margin="0,175,0,0" HorizontalOptions="Center" VerticalOptions="Start" Clicked="Lesson_Button_Clicked" />
+            <!-- Level Button1 Text -->
             <Label x:Name="LessonButton_Label" Text="" TextColor="White" FontSize="30" FontFamily="MyFont_Malgun_Semilight" FontAttributes="Italic"
                    Margin="0,202,0,0" HorizontalTextAlignment="Center" VerticalOptions="Start" HorizontalOptions="Center" >
                 <Label.GestureRecognizers>
@@ -36,38 +37,41 @@
 
         <!-- Colors List -->
         <Grid x:Name="LessonText_Grid" Margin="25,150,25,0" IsVisible="False">
+            <!-- Color -->
+            <Label Text="Color - saek  /saek-kkal - 색 / 색깔" TextColor="White" FontSize="30" VerticalTextAlignment="Center" 
+                           HorizontalTextAlignment="Center" VerticalOptions="Start" HorizontalOptions="Center" />
             <!-- White -->
-            <Label Text="white -  - " TextColor="White" FontSize="30" VerticalTextAlignment="Center" 
+            <Label Text="White - Hayan-saek - 하얀색" TextColor="White" FontSize="30" VerticalTextAlignment="Center" 
                            HorizontalTextAlignment="Center" VerticalOptions="Start" HorizontalOptions="Center" />
             <!-- Black -->
-            <Label Text="black -  - " TextColor="White" FontSize="30" VerticalTextAlignment="Center" Margin="0,50,0,0"
+            <Label Text="Black - Geomeun-saek - 검은색" TextColor="White" FontSize="30" VerticalTextAlignment="Center" Margin="0,50,0,0"
                            HorizontalTextAlignment="Center" VerticalOptions="Start" HorizontalOptions="Center" />
             <!-- Red -->
-            <Label Text="red -  - " TextColor="White" FontSize="30" VerticalTextAlignment="Center" Margin="0,100,0,0"
+            <Label Text="Red - Palgan-saek - 빨간색" TextColor="White" FontSize="30" VerticalTextAlignment="Center" Margin="0,100,0,0"
                            HorizontalTextAlignment="Center" VerticalOptions="Start" HorizontalOptions="Center" />
             <!-- Blue -->
-            <Label Text="blue -  - " TextColor="White" FontSize="30" VerticalTextAlignment="Center" Margin="0,150,0,0"
+            <Label Text="Blue - Pharan-saek - 파란색" TextColor="White" FontSize="30" VerticalTextAlignment="Center" Margin="0,150,0,0"
                           HorizontalTextAlignment="Center" VerticalOptions="Start" HorizontalOptions="Center" />
             <!-- Purple -->
-            <Label Text="purple -  - " TextColor="White" FontSize="30" VerticalTextAlignment="Center" Margin="0,200,0,0"
+            <Label Text="Purple - Bora-saek - 보라색" TextColor="White" FontSize="30" VerticalTextAlignment="Center" Margin="0,200,0,0"
                            HorizontalTextAlignment="Center" VerticalOptions="Start" HorizontalOptions="Center" />
             <!-- Green -->
-            <Label Text="green -  - " TextColor="White" FontSize="30" VerticalTextAlignment="Center" Margin="0,250,0,0"
+            <Label Text="Green - Nok-saek - 녹색" TextColor="White" FontSize="30" VerticalTextAlignment="Center" Margin="0,250,0,0"
                            HorizontalTextAlignment="Center" VerticalOptions="Start" HorizontalOptions="Center" />
             <!-- Yellow -->
-            <Label Text="yellow -  - " TextColor="White" FontSize="30" VerticalTextAlignment="Center" Margin="0,300,0,0"
+            <Label Text="Yellow - Noran-saek - 노란색" TextColor="White" FontSize="30" VerticalTextAlignment="Center" Margin="0,300,0,0"
                            HorizontalTextAlignment="Center" VerticalOptions="Start" HorizontalOptions="Center" />
             <!-- Orange -->
-            <Label Text="orange -  - " TextColor="White" FontSize="30" VerticalTextAlignment="Center" Margin="0,350,0,0"
+            <Label Text="Orange - Juhwang-saek - " TextColor="White" FontSize="30" VerticalTextAlignment="Center" Margin="0,350,0,0"
                            HorizontalTextAlignment="Center" VerticalOptions="Start" HorizontalOptions="Center" />
             <!-- Pink -->
-            <Label Text="pink -  - " TextColor="White" FontSize="30" VerticalTextAlignment="Center" Margin="0,400,0,0"
+            <Label Text="Pink - Bunhong-saek - 분홍색" TextColor="White" FontSize="30" VerticalTextAlignment="Center" Margin="0,400,0,0"
                            HorizontalTextAlignment="Center" VerticalOptions="Start" HorizontalOptions="Center" />
             <!-- Gray -->
-            <Label Text="gray -  - " TextColor="White" FontSize="30" VerticalTextAlignment="Center" Margin="0,450,0,0"
+            <Label Text="Gray - Hoe-saek - 회색" TextColor="White" FontSize="30" VerticalTextAlignment="Center" Margin="0,450,0,0"
                            HorizontalTextAlignment="Center" VerticalOptions="Start" HorizontalOptions="Center" />
             <!-- Brown -->
-            <Label Text="brown -  - " TextColor="White" FontSize="30" VerticalTextAlignment="Center" Margin="0,500,0,0"
+            <Label Text="Brown - Gal-saek - 갈색" TextColor="White" FontSize="30" VerticalTextAlignment="Center" Margin="0,500,0,0"
                            HorizontalTextAlignment="Center" VerticalOptions="Start" HorizontalOptions="Center" />
 
         </Grid>
@@ -134,9 +138,9 @@
         <!-- Dropdown for Level Choice -->
         <Picker x:Name="Level_Choice_Dropdown" Title="Levels" TitleColor="White" TextColor="White" VerticalOptions="End" HorizontalOptions="Center" HorizontalTextAlignment="Center" Margin="0,0,0,80" WidthRequest="160" >
             <Picker.Items>
-                <x:String>Level 1 - Translate Numbers [0 - 5]</x:String>
-                <x:String>Level 2 - Translate Numbers [0 - 10]</x:String>
-                <x:String>Lvl3 - Transcription Numbers [0 - 10]</x:String>
+                <x:String>Colors Translation - Lvl1</x:String>
+                <x:String>Colors Translation - Lvl2</x:String>
+                <x:String>Colors Transcription - Lvl3</x:String>
             </Picker.Items>
         </Picker>
         <ImageButton x:Name="Levels_Choice_Btn" IsVisible="False" BackgroundColor="Transparent" Source="Button_Default.png" Clicked="Levels_Choice_Btn_Clicked" WidthRequest="200" HorizontalOptions="Center" VerticalOptions="End" Margin="0,0,0,20"/>
