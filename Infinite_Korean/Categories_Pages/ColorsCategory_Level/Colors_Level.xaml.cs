@@ -38,7 +38,7 @@ namespace Infinite_Korean.Categories_Pages.ColorsCategory_Level
         //Lists
         List<string> List_GuessWords = new List<string>(); //Levels GuessWord List
         List<string> List_Answers = new List<string>(); //Levels Answers List
-        List<string> List_BlackList = new List<string>(); //Levels Answers List
+        List<string> List_BlackList = new List<string>(); //Levels Work List for Random Generation Answers
 
         int Elements_Quantity = 6; //Quantity of Colors in the list [0 - 5]
         int GuessWord_ID; //Guess Word ID
@@ -99,6 +99,11 @@ namespace Infinite_Korean.Categories_Pages.ColorsCategory_Level
             My_Button1.IsEnabled = true;
             My_Button2.IsEnabled = true;
             My_Button3.IsEnabled = true;
+
+            //Set Buttons Text is Enabled
+            Button1_Label.IsEnabled = true;
+            Button2_Label.IsEnabled = true;
+            Button3_Label.IsEnabled = true;
         }
 
         private void BackButton_Clicked(object sender, EventArgs e)
@@ -195,45 +200,66 @@ namespace Infinite_Korean.Categories_Pages.ColorsCategory_Level
         private void My_Button1_Clicked(object sender, EventArgs e)
         {
             My_Button_Pressed = 1;
-            Build_Level();
 
-            if (Button1_Label.Text == Correct_Answer)
+            if (Loaded_Level == "Categories")
             {
-                ButtonCorrect();
+                My_Button1.Source = "Button_Correct.png"; //Set new Image on the Button
+                Build_Level();
             }
-            else
-            {
-                ButtonWrong();
+            else if(Loaded_Level != "Categories")
+            { 
+                if (Button1_Label.Text == Correct_Answer)
+                {
+                    ButtonCorrect();
+                }
+                else
+                {
+                    ButtonWrong();
+                }
             }
         }
 
         private void My_Button2_Clicked(object sender, EventArgs e)
         {
             My_Button_Pressed = 2;
-            Build_Level();
 
-            if (Button2_Label.Text == Correct_Answer)
+            if (Loaded_Level == "Categories")
             {
-                ButtonCorrect();
+                My_Button1.Source = "Button_Correct.png"; //Set new Image on the Button
+                Build_Level();
             }
-            else
+            else if (Loaded_Level != "Categories")
             {
-                ButtonWrong();
+                if (Button2_Label.Text == Correct_Answer)
+                {
+                    ButtonCorrect();
+                }
+                else
+                {
+                    ButtonWrong();
+                }
             }
         }
 
         private void My_Button3_Clicked(object sender, EventArgs e)
         {
             My_Button_Pressed = 3;
-            Build_Level();
 
-            if (Button3_Label.Text == Correct_Answer)
+            if (Loaded_Level == "Categories")
             {
-                ButtonCorrect();
+                My_Button1.Source = "Button_Correct.png"; //Set new Image on the Button
+                Build_Level();
             }
-            else
+            else if (Loaded_Level != "Categories")
             {
-                ButtonWrong();
+                if (Button3_Label.Text == Correct_Answer)
+                {
+                    ButtonCorrect();
+                }
+                else
+                {
+                    ButtonWrong();
+                }
             }
         }
 
@@ -352,7 +378,7 @@ namespace Infinite_Korean.Categories_Pages.ColorsCategory_Level
             PlayerScore_Wrong = 0;
             PlayerScoreWrong_Label.Text = PlayerScore_Correct.ToString();
 
-            List_BlackList.AddRange(List_Answers);
+            List_BlackList.AddRange(List_Answers); //Fill Work List with Answers for Buttons
 
             Generate_GuessNum(); //Call Function to Generate Guess Word
 
@@ -379,18 +405,18 @@ namespace Infinite_Korean.Categories_Pages.ColorsCategory_Level
         private void Generate_ButtonsAnswers() //Generate Transcription Buttons Answers
         {
             Correct_Answer = List_Answers[GuessWord_ID]; //Initialize the Correct Answer
-            List_BlackList.Remove(Correct_Answer); //Remove Correct Answer from Level List to PREVENT DUPLICATE ANSWERS
+            List_BlackList.Remove(Correct_Answer); //Remove Correct Answer from Work List to PREVENT DUPLICATE ANSWERS
 
             //Choose which Button Label to contains the CORRECT Answer
             CorAswButton_ID = MyRandom.Next(3); //Genrate Random Number [0 - 2] EQUAL to Buttons Labels Quantity
 
             Random WrongAnswers_Random = new Random();
-            int WrongAnswer1_ID = WrongAnswers_Random.Next(0, List_BlackList.Count); //Generate Random WrongAnswer1 ID
-            WrongAnswer1 = List_BlackList[WrongAnswer1_ID]; //Initialize Random WrongAnswer1
-            List_BlackList.Remove(WrongAnswer1); //Add WrongAnswer1 to BlackList
+            int WrongAnswer1_ID = WrongAnswers_Random.Next(0, List_BlackList.Count); //Generate Random WrongAnswer1 ID from Work List
+            WrongAnswer1 = List_BlackList[WrongAnswer1_ID]; //Initialize Random WrongAnswer1 in Work List
+            List_BlackList.Remove(WrongAnswer1); //Remove WrongAnswer1 from Work List
 
-            int WrongAnswer2_ID = WrongAnswers_Random.Next(0, List_BlackList.Count);
-            WrongAnswer2 = List_BlackList[WrongAnswer2_ID]; //Initialize Random WrongAnswer2
+            int WrongAnswer2_ID = WrongAnswers_Random.Next(0, List_BlackList.Count); //Generate Random WrongAnswer2 ID from Work List
+            WrongAnswer2 = List_BlackList[WrongAnswer2_ID]; //Initialize Random WrongAnswer2 in Work List
 
             switch (CorAswButton_ID) //Distribute Buyttons Answers
             {
@@ -419,8 +445,8 @@ namespace Infinite_Korean.Categories_Pages.ColorsCategory_Level
                     break;
             }
 
-            List_BlackList.Clear();
-            List_BlackList.AddRange(List_Answers);
+            List_BlackList.Clear(); //Clear Work List
+            List_BlackList.AddRange(List_Answers); //Fill Again Work List
 
         }
 
@@ -430,22 +456,20 @@ namespace Infinite_Korean.Categories_Pages.ColorsCategory_Level
             {
                 case 1:
                     My_Button1.Source = "Button_Correct.png"; //Set new Image on the Button
-                    PlayerScore_Correct++; //Update Correct Score
-                    PlayerScoreCorrect_Label.Text = PlayerScore_Correct.ToString(); //Update Player Score Label
                     break;
 
                 case 2:
                     My_Button2.Source = "Button_Correct.png"; //Set new Image on the Button
-                    PlayerScore_Correct++; //Update Correct Score
-                    PlayerScoreCorrect_Label.Text = PlayerScore_Correct.ToString(); //Update Player Score Label
                     break;
 
                 case 3:
                     My_Button3.Source = "Button_Correct.png"; //Set new Image on the Button
-                    PlayerScore_Correct++; //Update Correct Score
-                    PlayerScoreCorrect_Label.Text = PlayerScore_Correct.ToString(); //Update Player Score Label
                     break;
             }
+
+            PlayerScore_Correct++; //Update Correct Score
+            PlayerScoreCorrect_Label.Text = PlayerScore_Correct.ToString(); //Update Player Score Label
+
             //Call Functions
             BlockAllButtons();
             DelayTime();
@@ -457,27 +481,28 @@ namespace Infinite_Korean.Categories_Pages.ColorsCategory_Level
             {
                 case 1:
                     My_Button1.Source ="Button_Wrong.png"; //Set new Image on the Button
-                    PlayerScore_Wrong++; //Update Wrong Score
-                    PlayerScoreWrong_Label.Text= PlayerScore_Wrong.ToString(); //Update Player Wrong Label
                     My_Button1.IsEnabled = false; //Disable the Button
+                    Button1_Label.IsEnabled = false; //Disable Button Text
                     break;
 
                 case 2:
                     My_Button2.Source ="Button_Wrong.png"; //Set new Image on the Button
-                    PlayerScore_Wrong++; //Update Wrong Score
-                    PlayerScoreWrong_Label.Text= PlayerScore_Wrong.ToString(); //Update Player Wrong Label
                     My_Button2.IsEnabled = false; //Disable the Button
+                    Button2_Label.IsEnabled = false; //Disable Button Text
                     break;
 
                 case 3:
                     My_Button3.Source ="Button_Wrong.png"; //Set new Image on the Button
-                    PlayerScore_Wrong++; //Update Wrong Score
-                    PlayerScoreWrong_Label.Text= PlayerScore_Wrong.ToString(); //Update Player Wrong Label
                     My_Button3.IsEnabled = false; //Disable the Button
+                    Button3_Label.IsEnabled = false; //Disable Button Text
                     break;
 
             }
-            ScoreCheck();
+
+            PlayerScore_Wrong++; //Update Wrong Score
+            PlayerScoreWrong_Label.Text= PlayerScore_Wrong.ToString(); //Update Player Wrong Label
+
+            ScoreCheck(); //Call Function to Check Score
         }
 
         private async void DelayTime()
@@ -597,11 +622,7 @@ namespace Infinite_Korean.Categories_Pages.ColorsCategory_Level
                 Generate_GuessNum();
             }
 
-            /*   DateTime dt = DateTime.Now;
-               int ms = dt.Millisecond;
-               Console.WriteLine(ms); */
-
-
         }
+    
     }
 }

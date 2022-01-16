@@ -97,6 +97,11 @@ namespace Infinite_Korean.Categories_Pages
             My_Button1.IsEnabled = true;
             My_Button2.IsEnabled = true;
             My_Button3.IsEnabled = true;
+
+            //Set Buttons Text is Enabled
+            Button1_Label.IsEnabled = true;
+            Button2_Label.IsEnabled = true;
+            Button3_Label.IsEnabled = true;
         }
 
         private void BackButton_Clicked(object sender, EventArgs e)
@@ -195,45 +200,66 @@ namespace Infinite_Korean.Categories_Pages
         private void My_Button1_Clicked(object sender, EventArgs e)
         {
             My_Button_Pressed = 1;
-            Build_Level();
 
-            if (Button1_Label.Text ==  GenIndex.ToString() || Button1_Label.Text == SymbolCorrect_Ans || Button1_Label.Text == TranslateCorrect_Ans)
+            if (Loaded_Level == "Categories")
             {
-                ButtonCorrect();
+                My_Button1.Source = "Button_Correct.png"; //Set new Image on the Button
+                Build_Level();
             }
-            else
+            else if (Loaded_Level != "Categories")
             {
-                ButtonWrong();
+                if (Button1_Label.Text ==  GenIndex.ToString() || Button1_Label.Text == SymbolCorrect_Ans || Button1_Label.Text == TranslateCorrect_Ans)
+                {
+                    ButtonCorrect();
+                }
+                else
+                {
+                    ButtonWrong();
+                }
             }
         }
 
         private void My_Button2_Clicked(object sender, EventArgs e)
         {
             My_Button_Pressed = 2;
-            Build_Level();
 
-            if (Button2_Label.Text ==  GenIndex.ToString() || Button2_Label.Text ==  SymbolCorrect_Ans || Button2_Label.Text == TranslateCorrect_Ans)
+            if (Loaded_Level == "Categories")
             {
-                ButtonCorrect();
+                My_Button2.Source = "Button_Correct.png"; //Set new Image on the Button
+                Build_Level();
             }
-            else
+            else if (Loaded_Level != "Categories")
             {
-                ButtonWrong();
+                if (Button2_Label.Text ==  GenIndex.ToString() || Button2_Label.Text ==  SymbolCorrect_Ans || Button2_Label.Text == TranslateCorrect_Ans)
+                {
+                    ButtonCorrect();
+                }
+                else
+                {
+                    ButtonWrong();
+                }
             }
         }
 
         private void My_Button3_Clicked(object sender, EventArgs e)
         {
             My_Button_Pressed = 3;
-            Build_Level();
 
-            if (Button3_Label.Text == GenIndex.ToString() || Button3_Label.Text == SymbolCorrect_Ans || Button3_Label.Text == TranslateCorrect_Ans)
+            if (Loaded_Level == "Categories")
             {
-                ButtonCorrect();
+                My_Button3.Source = "Button_Correct.png"; //Set new Image on the Button
+                Build_Level();
             }
-            else
+            else if (Loaded_Level != "Categories")
             {
-                ButtonWrong();
+                if (Button3_Label.Text == GenIndex.ToString() || Button3_Label.Text == SymbolCorrect_Ans || Button3_Label.Text == TranslateCorrect_Ans)
+                {
+                    ButtonCorrect();
+                }
+                else
+                {
+                    ButtonWrong();
+                }
             }
         }
 
@@ -642,22 +668,20 @@ namespace Infinite_Korean.Categories_Pages
             {
                 case 1:
                     My_Button1.Source = "Button_Correct.png"; //Set new Image on the Button
-                    PlayerScore_Correct++; //Update Correct Score
-                    PlayerScoreCorrect_Label.Text = PlayerScore_Correct.ToString(); //Update Player Score Label
                     break;
 
                case 2:
                     My_Button2.Source = "Button_Correct.png"; //Set new Image on the Button
-                    PlayerScore_Correct++; //Update Correct Score
-                    PlayerScoreCorrect_Label.Text = PlayerScore_Correct.ToString(); //Update Player Score Label
                     break;
 
                 case 3:
                     My_Button3.Source = "Button_Correct.png"; //Set new Image on the Button
-                    PlayerScore_Correct++; //Update Correct Score
-                    PlayerScoreCorrect_Label.Text = PlayerScore_Correct.ToString(); //Update Player Score Label
                     break;
             }
+
+            PlayerScore_Correct++; //Update Correct Score
+            PlayerScoreCorrect_Label.Text = PlayerScore_Correct.ToString(); //Update Player Score Label
+
             //Call Functions
             BlockAllButtons();
             DelayTime();
@@ -669,26 +693,27 @@ namespace Infinite_Korean.Categories_Pages
             {
                 case 1:
                     My_Button1.Source ="Button_Wrong.png"; //Set new Image on the Button
-                    PlayerScore_Wrong++; //Update Wrong Score
-                    PlayerScoreWrong_Label.Text= PlayerScore_Wrong.ToString(); //Update Player Wrong Label
                     My_Button1.IsEnabled = false; //Disable the Button
+                    Button1_Label.IsEnabled = false; //Disable Button Text
                     break;
 
                 case 2:
                     My_Button2.Source ="Button_Wrong.png"; //Set new Image on the Button
-                    PlayerScore_Wrong++; //Update Wrong Score
-                    PlayerScoreWrong_Label.Text= PlayerScore_Wrong.ToString(); //Update Player Wrong Label
                     My_Button2.IsEnabled = false; //Disable the Button
+                    Button2_Label.IsEnabled = false; //Disable Button Text
                     break;
 
                 case 3:
                     My_Button3.Source ="Button_Wrong.png"; //Set new Image on the Button
-                    PlayerScore_Wrong++; //Update Wrong Score
-                    PlayerScoreWrong_Label.Text= PlayerScore_Wrong.ToString(); //Update Player Wrong Label
                     My_Button3.IsEnabled = false; //Disable the Button
+                    Button3_Label.IsEnabled = false; //Disable Button Text
                     break;
 
             }
+
+            PlayerScore_Wrong++; //Update Wrong Score
+            PlayerScoreWrong_Label.Text= PlayerScore_Wrong.ToString(); //Update Player Wrong Label
+
             ScoreCheck();
         }
         
