@@ -352,6 +352,8 @@ namespace Infinite_Korean.Categories_Pages.ColorsCategory_Level
             PlayerScore_Wrong = 0;
             PlayerScoreWrong_Label.Text = PlayerScore_Correct.ToString();
 
+            List_BlackList.AddRange(List_Answers);
+
             Generate_GuessNum(); //Call Function to Generate Guess Word
 
         }
@@ -376,28 +378,19 @@ namespace Infinite_Korean.Categories_Pages.ColorsCategory_Level
 
         private void Generate_ButtonsAnswers() //Generate Transcription Buttons Answers
         {
-            List_BlackList.Add(GuessWord); //Add Correct Answer to BlackList
-            List_GuessWords.Remove(GuessWord); //Remove Correct Answer from Level List to PREVENT DUPLICATE ANSWERS
-
             Correct_Answer = List_Answers[GuessWord_ID]; //Initialize the Correct Answer
-            List_BlackList.Add(Correct_Answer); //Add Correct Answer to BlackList
-            List_Answers.Remove(Correct_Answer); //Remove Correct Answer from Level List to PREVENT DUPLICATE ANSWERS
+            List_BlackList.Remove(Correct_Answer); //Remove Correct Answer from Level List to PREVENT DUPLICATE ANSWERS
 
             //Choose which Button Label to contains the CORRECT Answer
             CorAswButton_ID = MyRandom.Next(3); //Genrate Random Number [0 - 2] EQUAL to Buttons Labels Quantity
 
             Random WrongAnswers_Random = new Random();
-            int WrongAnswer1_ID = WrongAnswers_Random.Next(0,List_Answers.Count); //Generate Random WrongAnswer1 ID
-            WrongAnswer1 = List_Answers[WrongAnswer1_ID]; //Initialize Random WrongAnswer1
-            List_BlackList.Add(WrongAnswer1); //Add WrongAnswer1 to BlackList
+            int WrongAnswer1_ID = WrongAnswers_Random.Next(0, List_BlackList.Count); //Generate Random WrongAnswer1 ID
+            WrongAnswer1 = List_BlackList[WrongAnswer1_ID]; //Initialize Random WrongAnswer1
+            List_BlackList.Remove(WrongAnswer1); //Add WrongAnswer1 to BlackList
 
-            List_Answers.Remove(WrongAnswer1); //Remove WrongAnswer1 from Level List to PREVENT DUPLICATE ANSWERS
-
-            List_BlackList.Add(List_GuessWords[WrongAnswer1_ID]);
-            List_GuessWords.RemoveAt(WrongAnswer1_ID);
-
-            int WrongAnswer2_ID = WrongAnswers_Random.Next(0, List_Answers.Count);
-            WrongAnswer2 = List_Answers[WrongAnswer2_ID]; //Initialize Random WrongAnswer2
+            int WrongAnswer2_ID = WrongAnswers_Random.Next(0, List_BlackList.Count);
+            WrongAnswer2 = List_BlackList[WrongAnswer2_ID]; //Initialize Random WrongAnswer2
 
             switch (CorAswButton_ID) //Distribute Buyttons Answers
             {
@@ -426,13 +419,8 @@ namespace Infinite_Korean.Categories_Pages.ColorsCategory_Level
                     break;
             }
 
-            //Add Again Answers after all Buttons have Answers
-            List_Answers.Add(Correct_Answer); //Add Back Correct Answer to Answer List
-            List_Answers.Add(WrongAnswer1); // Add Back Wrong Button to Answer List
-
-            //Add Again Guess Words after all is Donre 
-            List_GuessWords.Add(GuessWord); //Add back Guess Word to Guess List
-            List_GuessWords.Add(List_BlackList[3]); // Add back Word = to Wrong Answer to Guess List
+            List_BlackList.Clear();
+            List_BlackList.AddRange(List_Answers);
 
         }
 
