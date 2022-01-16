@@ -29,7 +29,17 @@ namespace Infinite_Korean
 
         private void ColorButton_Clicked(object sender, EventArgs e)
         {
+            App.Current.MainPage = new Categories_Pages.ColorsCategory_Level.Colors_Level();
+        }
 
+        protected override bool OnBackButtonPressed() //On Mobile Back Button Click
+        {
+            Device.BeginInvokeOnMainThread(() =>
+            {
+                App.Current.MainPage = new MainPage(); // Go to Previous Page - Start Page
+            });
+            return true;
+            //return base.OnBackButtonPressed();
         }
     }
 }

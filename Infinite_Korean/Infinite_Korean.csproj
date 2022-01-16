@@ -23,18 +23,19 @@
   </ItemGroup>
 
   <ItemGroup>
+    <PackageReference Include="Syncfusion.Xamarin.SfComboBox" Version="19.4.0.41" />
     <PackageReference Include="Xamarin.Forms" Version="5.0.0.2196" />
     <PackageReference Include="Xamarin.Essentials" Version="1.7.0" />
   </ItemGroup>
 
   <ItemGroup>
-    <EmbeddedResource Update="Categories_Pages\NumbersCategory_Levels\Lesson_Page.xaml">
+    <EmbeddedResource Update="Categories_Pages\ColorsCategory_Level\Colors_Level.xaml">
       <Generator>MSBuild:UpdateDesignTimeXaml</Generator>
     </EmbeddedResource>
-    <EmbeddedResource Update="Categories_Pages\NumbersCategory_Levels\Passed_Page.xaml">
+    <EmbeddedResource Update="Categories_Pages\Level_End_Pages\Passed_Page.xaml">
       <Generator>MSBuild:UpdateDesignTimeXaml</Generator>
     </EmbeddedResource>
-    <EmbeddedResource Update="Categories_Pages\NumbersCategory_Levels\Transcription_Level.xaml">
+    <EmbeddedResource Update="Categories_Pages\Level_End_Pages\TryAgain_Page.xaml">
       <Generator>MSBuild:UpdateDesignTimeXaml</Generator>
     </EmbeddedResource>
     <EmbeddedResource Update="Categories_Pages\Numbers_Category_Page.xaml">

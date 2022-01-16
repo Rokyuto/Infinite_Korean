@@ -19,5 +19,6 @@ namespace Infinite_Korean
         {
             App.Current.MainPage = new Menu_Page();
         }
+
     }
 }
