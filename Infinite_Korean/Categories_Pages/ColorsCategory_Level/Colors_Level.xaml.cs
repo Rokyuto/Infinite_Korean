@@ -37,7 +37,7 @@ namespace Infinite_Korean.Categories_Pages.ColorsCategory_Level
         List<string> List_Answers = new List<string>(); //Levels Answers List
         List<string> List_WorkList = new List<string>(); //Levels Work List for Random Generation Answers
 
-        int Elements_Quantity = 6; //Quantity of Colors in the list [0 - 5]
+        //int Elements_Quantity = 6; //Quantity of Colors in the list [0 - 5]
         int GuessWord_ID; //Guess Word ID
         string GuessWord; //Guess Word
         string Correct_Answer;
@@ -668,6 +668,7 @@ namespace Infinite_Korean.Categories_Pages.ColorsCategory_Level
                 PlayerScore_Wrong = 0;
                 PlayerScoreWrong_Label.Text = PlayerScore_Wrong.ToString(); //Show Player Score Label
 
+                //Call Functions
                 SetButtonsImg();
                 UpdateLevel();
                 Generate_GuessNum();
