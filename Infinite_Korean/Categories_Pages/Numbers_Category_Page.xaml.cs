@@ -54,9 +54,6 @@ namespace Infinite_Korean.Categories_Pages
         int Level3_Req = 50;//Requarment for Level 3 in Symbol Level
         string Level_Choosed;
 
-        //public static string PageAdress; //Initialize to which Page to Append End Level Pages ( Passed Page and Try Again Page )
-        //public static string LevelAdress; //Initialize to which Level to Append End Level Pages ( Passed Page and Try Again Page )
-
         public Numbers_Category_Page()
         {
             InitializeComponent();
@@ -279,7 +276,7 @@ namespace Infinite_Korean.Categories_Pages
                         Loaded_Level = "Transcription"; //Set Loaded is Transcription
                         Level_End_Pages.Passed_Page.LevelAdress = "Transcription"; //Initialize Loaded Level is Transcription
 
-                        Max_PlayerCorrectScore = 10; //Set Level Max Correct Score
+                        Max_PlayerCorrectScore = 60; //Set Level Max Correct Score
                         Max_PlayerWrongScore = 5; //Set Level Max Wrong Score
                         CorrectScore_Req.Text = "/" + Max_PlayerCorrectScore; //Show in UI Max Correct Score
                         WrongScore_Req.Text = "/" + Max_PlayerWrongScore; //Show in UI Max Wrong Score

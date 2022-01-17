@@ -20,9 +20,6 @@ namespace Infinite_Korean.Categories_Pages.ColorsCategory_Level
         int My_Button_Pressed = 0; //Track for which Button is pressed 
         string Loaded_Level; //Track what happen with Page - Is it Category, Transcription, Symbol or Translation Page
 
-        //public static string PageAdress; //Initialize to which Page to Append End Level Pages ( Passed Page and Try Again Page )
-        //public static string LevelAdress; //Initialize to which Level to Append End Level Pages ( Passed Page and Try Again Page )
-
         //Levels Variables
 
         //Transcriptions
@@ -288,7 +285,7 @@ namespace Infinite_Korean.Categories_Pages.ColorsCategory_Level
                         Loaded_Level = "Transcription"; //Set Loaded is Transcription
                         Level_End_Pages.Passed_Page.LevelAdress = "Transcription"; //Initialize Loaded Level is Transcription
 
-                        Max_PlayerCorrectScore = 10; //Set Level Max Correct Score
+                        Max_PlayerCorrectScore = 60; //Set Level Max Correct Score
                         Max_PlayerWrongScore = 5; //Set Level Max Wrong Score
                         CorrectScore_Req.Text = "/" + Max_PlayerCorrectScore; //Show in UI Max Correct Score
                         WrongScore_Req.Text = "/" + Max_PlayerWrongScore; //Show in UI Max Wrong Score
@@ -539,50 +536,92 @@ namespace Infinite_Korean.Categories_Pages.ColorsCategory_Level
                 case "Transcription":
                     if(PlayerScore_Correct == Level2_Req || Level_Choosed == "Lvl2")
                     {
-                        List_GuessWords.AddRange(Colors_Transcription_Lvl2_Arr);             
-                        List_Answers.AddRange(Colors_Translate_Lvl2_Arr);
+                        List_GuessWords.AddRange(Colors_Transcription_Lvl2_Arr); //Add Lvl2 Transcription Lvl2 Arr to Guess Word List            
+                        List_Answers.AddRange(Colors_Translate_Lvl2_Arr); //Add Lvl2 Translate Arr to Answers List
                     }
                     break;
 
                 case "Symbol":
-                    if (PlayerScore_Correct == Level2_Req || Level_Choosed == "Lvl2")
+                    if(Level_Choosed == "Lvl1") //If Choosen Level is Lvl1
                     {
-                        List_GuessWords.AddRange(Colors_Symbol_Lvl2_Arr);
-                        List_Answers.AddRange(Colors_Translate_Lvl2_Arr);
-
-                        Elements_Quantity = 11;
-                    }
-                    else if(PlayerScore_Correct == Level3_Req || Level_Choosed == "Lvl3")
-                    {
-                        if(List_GuessWords.Count != Elements_Quantity)
-                        {
-                            List_GuessWords.AddRange(Colors_Symbol_Lvl2_Arr);
-                        }
-
+                        //Clear Level Lists
+                        List_GuessWords.Clear();
                         List_Answers.Clear();
+
+                        //Add Lvl1 Arrays to Level List
+                        List_GuessWords.AddRange(Colors_Symbol_Arr);
+                        List_Answers.AddRange(Colors_Translate_Arr);
+                    }
+                    if (PlayerScore_Correct == Level2_Req || Level_Choosed == "Lvl2") //If Player Score reach Lvl2 Requarment or Choosen Level is Lvl2
+                    {
+                        //Clear Level Lists
+                        List_GuessWords.Clear();
+                        List_Answers.Clear();
+
+                        //Add Symbols Arrays to Guess Words List
+                        List_GuessWords.AddRange(Colors_Symbol_Arr);
+                        List_GuessWords.AddRange(Colors_Symbol_Lvl2_Arr);
+
+                        //Add Translate Arrays to Answers List
+                        List_Answers.AddRange(Colors_Translate_Arr);
+                        List_Answers.AddRange(Colors_Translate_Lvl2_Arr);
+                        
+                    }
+                    else if(PlayerScore_Correct == Level3_Req || Level_Choosed == "Lvl3") //If Player Score reach Lvl3 Requarment or Choosen Level is Lvl3
+                    {
+                        //Clear Level Lists
+                        List_GuessWords.Clear();
+                        List_Answers.Clear();
+
+                        //Add Symbol Arrays to Guess Words List
+                        List_GuessWords.AddRange(Colors_Symbol_Arr);
+                        List_GuessWords.AddRange(Colors_Symbol_Lvl2_Arr);
+
+                        //Add Transcription Arrays to Answers List
                         List_Answers.AddRange(Colors_Transcription_Arr);
                         List_Answers.AddRange(Colors_Transcription_Lvl2_Arr);
                     }
                     break;
 
                 case "Translate":
-                    if(PlayerScore_Correct == Level2_Req || Level_Choosed == "Lvl2")
+                    if (Level_Choosed == "Lvl1") //If Choosen Level is Lvl1
                     {
+                        //Clear Level Lists
+                        List_GuessWords.Clear();
+                        List_Answers.Clear();
+
+                        //Add Lvl1 Arrays to Level Lists
+                        List_GuessWords.AddRange(Colors_Translate_Arr);
+                        List_Answers.AddRange(Colors_Symbol_Arr);
+                    }
+                    if (PlayerScore_Correct == Level2_Req || Level_Choosed == "Lvl2") //If Player Score reach Lvl2 Requarment or Choosen Level is Lvl2
+                    {
+                        //Clear Level Lists
+                        List_GuessWords.Clear();
+                        List_Answers.Clear();
+
+                        //Add Lvl1 Arrays to the Lists
+                        List_GuessWords.AddRange(Colors_Translate_Arr);
+                        List_Answers.AddRange(Colors_Symbol_Arr);
+
+                        //Add Lvl2 Arrays to the Lists
                         List_GuessWords.AddRange(Colors_Translate_Lvl2_Arr);
                         List_Answers.AddRange(Colors_Symbol_Lvl2_Arr);
 
-                        Elements_Quantity = 11;
                     }
-                    else if(PlayerScore_Correct == Level3_Req || Level_Choosed == "Lvl3")
+                    else if(PlayerScore_Correct == Level3_Req || Level_Choosed == "Lvl3") //If Player Score reach Lvl3 Requarment or Choosen Level is Lvl3
                     {
-                        if (List_GuessWords.Count != Elements_Quantity)
-                        {
-                            List_GuessWords.AddRange(Colors_Translate_Lvl2_Arr);
-                        }
-
+                        //Clear Level Lists
                         List_GuessWords.Clear();
+                        List_Answers.Clear();
+
+                        //Add Transcription Arrays to Guess Word List 
                         List_GuessWords.AddRange(Colors_Transcription_Arr);
                         List_GuessWords.AddRange(Colors_Transcription_Lvl2_Arr);
+
+                        //Add Symbol Arrays to Answers List 
+                        List_Answers.AddRange(Colors_Symbol_Arr);
+                        List_Answers.AddRange(Colors_Symbol_Lvl2_Arr);
                     }
                     break;
             }
@@ -609,70 +648,6 @@ namespace Infinite_Korean.Categories_Pages.ColorsCategory_Level
             {
                 string LevelChoice = Level_Choice_Dropdown.SelectedItem.ToString();
 
-                /*   if (Loaded_Level == "Symbol")
-                   {
-                       switch (LevelChoice)
-                       {
-                           case "Level 1 - Translate Numbers [0 - 5]":
-                               Level_Choosed = "Lvl1";
-                               DisplayAlert("Chosen Level: ", LevelChoice, "Ok");
-                               Generate_ButtonsAnswers();
-                               break;
-                           case "Level 2 - Translate Numbers [0 - 10]":
-                               Level_Choosed = "Lvl2";
-                               DisplayAlert("Chosen Level: ", LevelChoice, "Ok");
-                               Generate_ButtonsAnswers();
-                               break;
-                           case "Lvl3 - Transcription Numbers [0 - 10]":
-                               Level_Choosed = "Lvl3";
-                               DisplayAlert("Chosen Level: ", LevelChoice, "Ok");
-                               Generate_ButtonsAnswers();
-                               break;
-                       }
-                   }
-                   else if (Loaded_Level == "Translate")
-                   {
-                       switch (LevelChoice)
-                       {
-                           case "Level 1 - Translate Numbers [0 - 5]":
-                               Level_Choosed = "Lvl1";
-                               Generate_ButtonsAnswers();
-                               DisplayAlert("Chosen Level: ", LevelChoice, "Ok");
-                               break;
-                           case "Level 2 - Translate Numbers [0 - 10]":
-                               Level_Choosed = "Lvl2";
-                               Generate_ButtonsAnswers();
-                               DisplayAlert("Chosen Level: ", LevelChoice, "Ok");
-                               break;
-                           case "Lvl3 - Transcription Numbers [0 - 10]":
-                               Level_Choosed = "Lvl3";
-                               Generate_ButtonsAnswers();
-                               DisplayAlert("Chosen Level: ", LevelChoice, "Ok");
-                               break;
-                       }
-                   }
-                   else if (Loaded_Level == "Translate")
-                   {
-                       switch (LevelChoice)
-                       {
-                           case "Level 1 - Transcription Numbers [0 - 5]":
-                               Level_Choosed = "Lvl1";
-                               Generate_ButtonsAnswers();
-                               DisplayAlert("Chosen Level: ", LevelChoice, "Ok");
-                               break;
-                           case "Level 2 - Transcription Numbers [0 - 10]":
-                               Level_Choosed = "Lvl2";
-                               Generate_ButtonsAnswers();
-                               DisplayAlert("Chosen Level: ", LevelChoice, "Ok");
-                               break;
-                           case "Lvl3 - Symbols Numbers [0 - 10]":
-                               Level_Choosed = "Lvl3";
-                               Generate_ButtonsAnswers();
-                               DisplayAlert("Chosen Level: ", LevelChoice, "Ok");
-                               break;
-                       }
-                   } */
-
                 switch (LevelChoice)
                 {
                     case "Colors Translation - Lvl1":
@@ -695,8 +670,8 @@ namespace Infinite_Korean.Categories_Pages.ColorsCategory_Level
 
                 SetButtonsImg();
                 UpdateLevel();
-                Generate_ButtonsAnswers();
                 Generate_GuessNum();
+                Generate_ButtonsAnswers();
             }
 
         }
