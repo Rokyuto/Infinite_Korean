@@ -13,13 +13,17 @@ namespace Infinite_Korean.Categories_Pages.Level_End_Pages
     public partial class Passed_Page : ContentPage
     {
         //Variables
+
+        public static string PageAdress; //Initialize from which Page Player is comming
+        public static string LevelAdress; //Initialize which Level is Passed
+
+        //Levels
+        string Category; //Initialize which Category the Player is in
+        string Passed_Level; //Initialize which Level the Player is Passed 
+
+        //Categories
         string Numbers_Page = "Numbers";
         string Color_Page = "Colors";
-
-        //Numbers Page Levels
-    /*    string Transcription_Level = "Transcription";
-        string Symbol_Level = "Symbol";
-        string Translate_Level = "Translate"; */
 
         public Passed_Page()
         {
@@ -29,29 +33,41 @@ namespace Infinite_Korean.Categories_Pages.Level_End_Pages
 
         private void UpdateCongrats_Text()
         {
-            switch (Numbers_Category_Page.LevelAdress)
+            switch (LevelAdress)
             {
                 case "Transcription":
-                    Page_Congrats_Text.Text = "You complete the Numbers Transcription Lesson";
+                    Passed_Level = "Transcription"; //Player Passed Transcription Level
                     break;
                 case "Symbol":
-                    Page_Congrats_Text.Text = "You complete the Numbers Symbol Lesson";
+                    Passed_Level = "Symbol"; //Player Passed Symbol Level
                     break;
                 case "Translate":
-                    Page_Congrats_Text.Text = "You complete the Numbers Translate Lesson";
+                    Passed_Level = "Translate"; //Player Passed Translate Level
                     break;
             }
+
+            switch(PageAdress)
+            {
+                case "Numbers":
+                    Category = "Numbers"; //Player is in Numbers Category
+                    break;
+                case "Colors":
+                    Category = "Colors"; //Player is in Colors Category
+                    break;
+            }
+
+            Page_Congrats_Text.Text = "You complete the " + Category + " " + Passed_Level + " Lesson";
         }
 
         private void Play_Button_Clicked(object sender, EventArgs e)
         {
-            if (ColorsCategory_Level.Colors_Level.PageAdress == Color_Page)
-            {
-                App.Current.MainPage = new ColorsCategory_Level.Colors_Level();
-            }
-            if (Numbers_Category_Page.PageAdress == Numbers_Page)
+            if (PageAdress == Numbers_Page)
             {
                 App.Current.MainPage = new Numbers_Category_Page();
+            }
+            if (PageAdress == Color_Page)
+            {
+                App.Current.MainPage = new ColorsCategory_Level.Colors_Level();
             }
         }
     }

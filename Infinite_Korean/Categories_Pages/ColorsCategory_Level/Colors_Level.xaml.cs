@@ -20,8 +20,8 @@ namespace Infinite_Korean.Categories_Pages.ColorsCategory_Level
         int My_Button_Pressed = 0; //Track for which Button is pressed 
         string Loaded_Level; //Track what happen with Page - Is it Category, Transcription, Symbol or Translation Page
 
-        public static string PageAdress; //Initialize to which Page to Append End Level Pages ( Passed Page and Try Again Page )
-        public static string LevelAdress; //Initialize to which Level to Append End Level Pages ( Passed Page and Try Again Page )
+        //public static string PageAdress; //Initialize to which Page to Append End Level Pages ( Passed Page and Try Again Page )
+        //public static string LevelAdress; //Initialize to which Level to Append End Level Pages ( Passed Page and Try Again Page )
 
         //Levels Variables
 
@@ -286,9 +286,9 @@ namespace Infinite_Korean.Categories_Pages.ColorsCategory_Level
                     case 1: // If Transcription Button is Pressed
 
                         Loaded_Level = "Transcription"; //Set Loaded is Transcription
-                        LevelAdress = "Transcription"; //Initialize Loaded Level is Transcription
+                        Level_End_Pages.Passed_Page.LevelAdress = "Transcription"; //Initialize Loaded Level is Transcription
 
-                        Max_PlayerCorrectScore = 60; //Set Level Max Correct Score
+                        Max_PlayerCorrectScore = 10; //Set Level Max Correct Score
                         Max_PlayerWrongScore = 5; //Set Level Max Wrong Score
                         CorrectScore_Req.Text = "/" + Max_PlayerCorrectScore; //Show in UI Max Correct Score
                         WrongScore_Req.Text = "/" + Max_PlayerWrongScore; //Show in UI Max Wrong Score
@@ -306,7 +306,7 @@ namespace Infinite_Korean.Categories_Pages.ColorsCategory_Level
                     case 2: // If Symbol Button is Pressed
 
                         Loaded_Level = "Symbol"; //Set Loaded is Symbol
-                        LevelAdress = "Symbol"; //Initialize Loaded Level is Symbol
+                        Level_End_Pages.Passed_Page.LevelAdress = "Symbol"; //Initialize Loaded Level is Symbol
 
                         Max_PlayerCorrectScore = 99; //Set Level Max Correct Score
                         Max_PlayerWrongScore = 15; //Set Level Max Wrong Score
@@ -331,7 +331,7 @@ namespace Infinite_Korean.Categories_Pages.ColorsCategory_Level
                     case 3: // If Translate Button is Pressed
 
                         Loaded_Level = "Translate";
-                        LevelAdress = "Translate"; //Initialize Loaded Level is Translate
+                        Level_End_Pages.Passed_Page.LevelAdress = "Translate"; //Initialize Loaded Level is Translate
 
                         Max_PlayerCorrectScore = 99; //Set Level Max Correct Score
                         Max_PlayerWrongScore = 15; //Set Level Max Wrong Score
@@ -590,7 +590,7 @@ namespace Infinite_Korean.Categories_Pages.ColorsCategory_Level
 
         public async void ScoreCheck() //Track Player Scores
         {
-            PageAdress = "Colors";
+            Level_End_Pages.Passed_Page.PageAdress = "Colors";
             if (PlayerScore_Correct == Max_PlayerCorrectScore) //If Player Correct Score = Max Allowed
             {
                 App.Current.MainPage = new Level_End_Pages.Passed_Page(); //Go to Congrats Page

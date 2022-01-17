@@ -24,14 +24,14 @@ namespace Infinite_Korean.Categories_Pages.Level_End_Pages
 
         private void TryAgain_Button_Clicked(object sender, EventArgs e)
         {
-            if (ColorsCategory_Level.Colors_Level.PageAdress == Color_Page)
+            if (Passed_Page.PageAdress == Color_Page)
             {
-                ColorsCategory_Level.Colors_Level.PageAdress = "";
+                Passed_Page.PageAdress = "";
                 App.Current.MainPage = new ColorsCategory_Level.Colors_Level();
             }
-            else if (Numbers_Category_Page.PageAdress == Numbers_Page)
+            else if (Passed_Page.PageAdress == Numbers_Page)
             {
-                Numbers_Category_Page.PageAdress = "";
+                Passed_Page.PageAdress = "";
                 App.Current.MainPage = new Numbers_Category_Page();
             }
         }
