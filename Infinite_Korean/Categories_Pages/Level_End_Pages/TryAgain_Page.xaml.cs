@@ -16,6 +16,7 @@ namespace Infinite_Korean.Categories_Pages.Level_End_Pages
         //Variables
         string Numbers_Page = "Numbers";
         string Color_Page = "Colors";
+        string Animals_Page = "Animals";
 
         public TryAgain_Page()
         {
@@ -33,6 +34,11 @@ namespace Infinite_Korean.Categories_Pages.Level_End_Pages
             {
                 Passed_Page.PageAdress = "";
                 App.Current.MainPage = new Numbers_Category_Page();
+            }
+            else if(Passed_Page.PageAdress == Animals_Page)
+            {
+                Passed_Page.PageAdress = "";
+                App.Current.MainPage = new Animals_Category_Page();
             }
         }
 

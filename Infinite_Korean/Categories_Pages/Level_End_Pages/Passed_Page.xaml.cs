@@ -19,13 +19,14 @@ namespace Infinite_Korean.Categories_Pages.Level_End_Pages
 
         //Levels
         string Category; //Initialize which Category the Player is in
-        string Passed_Level; //Initialize which Level the Player is Passed 
+        public static string Passed_Level; //Initialize which Level the Player is Passed 
 
         //Categories
         string Numbers_Page = "Numbers";
         string Color_Page = "Colors";
+        string Animals_Page = "Animals";
 
-        //public static object Stars_Visualizer;
+        public static int Stars; //Count Player Mistakes when he Pass Level
 
         public Passed_Page()
         {
@@ -35,17 +36,14 @@ namespace Infinite_Korean.Categories_Pages.Level_End_Pages
 
         private void UpdateCongrats_Text()
         {
-
-            switch(ColorsCategory_Level.Colors_Level.Stars)
+            switch(Stars)
             {
                 case 3:
                     Star_3.IsVisible = true;
                     break;
-
                 case 2:
                     Star_2.IsVisible = true;
                     break;
-
                 case 1:
                     Star_1.IsVisible = true;
                     break;
@@ -72,6 +70,9 @@ namespace Infinite_Korean.Categories_Pages.Level_End_Pages
                 case "Colors":
                     Category = "Colors"; //Player is in Colors Category
                     break;
+                case "Animals":
+                    Category = "Animals";
+                    break;
             }
 
             Page_Congrats_Text.Text = "You complete the " + Category + " " + Passed_Level + " Lesson";
@@ -86,6 +87,10 @@ namespace Infinite_Korean.Categories_Pages.Level_End_Pages
             if (PageAdress == Color_Page)
             {
                 App.Current.MainPage = new ColorsCategory_Level.Colors_Level();
+            }
+            if(PageAdress == Animals_Page)
+            {
+                App.Current.MainPage = new Animals_Category_Page();
             }
         }
     }

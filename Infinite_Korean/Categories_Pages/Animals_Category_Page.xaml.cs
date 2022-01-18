@@ -7,10 +7,10 @@ using System.Threading.Tasks;
 using Xamarin.Forms;
 using Xamarin.Forms.Xaml;
 
-namespace Infinite_Korean.Categories_Pages.ColorsCategory_Level
+namespace Infinite_Korean.Categories_Pages
 {
     [XamlCompilation(XamlCompilationOptions.Compile)]
-    public partial class Colors_Level : ContentPage
+    public partial class Animals_Category_Page : ContentPage
     {
 
         Random MyRandom = new Random();
@@ -23,13 +23,13 @@ namespace Infinite_Korean.Categories_Pages.ColorsCategory_Level
         //Levels Variables
 
         //Transcriptions
-        string[] Colors_Transcription_Arr = { "Hayan-saek", "Geomeun-saek", "Palgan-saek", "Pharan-saek", "Bora-saek", "Nok-saek" }; //Array with Korean Colors Transcription
-        string[] Colors_Transcription_Lvl2_Arr = { "Noran-saek", "Juhwang-saek", "Bunhong-saek", "Hoe-saek", "Gal-saek" }; //Array with Korean Colors Transcription Lvl 2
+        string[] Colors_Transcription_Arr = { "Hayan-saek", "Geomeun-saek", "Palgan-saek", "Pharan-saek", "Bora-saek", "Nok-saek" }; //Array with Korean Animals Transcription
+        string[] Colors_Transcription_Lvl2_Arr = { "Noran-saek", "Juhwang-saek", "Bunhong-saek", "Hoe-saek", "Gal-saek" }; //Array with Korean Animals Transcription Lvl 2
         //Symbols
-        string[] Colors_Symbol_Arr = { "하얀색", "검은색", "빨간색", "파란색", "보라색", "녹색" }; //Array with Korean Colors Symbols
-        string[] Colors_Symbol_Lvl2_Arr = { "노란색", "주황색", "분홍색", "회색", "갈색" }; //Array with Korean Colors Symbols Lvl 2
+        string[] Colors_Symbol_Arr = { "하얀색", "검은색", "빨간색", "파란색", "보라색", "녹색" }; //Array with Korean Animals Symbols
+        string[] Colors_Symbol_Lvl2_Arr = { "노란색", "주황색", "분홍색", "회색", "갈색" }; //Array with Korean Animals Symbols Lvl 2
         //Translate
-        string[] Colors_Translate_Arr = {"White", "Black", "Red","Blue","Pirple","Green"}; //Array with Korean Symbols Meaning - Answers
+        string[] Colors_Translate_Arr = { "White", "Black", "Red", "Blue", "Pirple", "Green" }; //Array with Korean Symbols Meaning - Answers
         string[] Colors_Translate_Lvl2_Arr = { "Yellow", "Orange", "Pink", "Gray", "Brown" }; //Array with Korean Symbol Meaning - Answers - Lvl 2
 
         //Lists
@@ -53,10 +53,11 @@ namespace Infinite_Korean.Categories_Pages.ColorsCategory_Level
 
         int Level2_Req = 10; //Requarment for Level 2
         int Level3_Req = 50; //Requarment for Level 3
-                             
+
         string Level_Choosed; //Level Choice
 
-        public Colors_Level()
+
+        public Animals_Category_Page()
         {
             InitializeComponent();
 
@@ -71,7 +72,7 @@ namespace Infinite_Korean.Categories_Pages.ColorsCategory_Level
             Button1_Label.Text = "Transcription";
             Button2_Label.Text = "Symbols";
             Button3_Label.Text = "Translation";
-            Title_Label.Text = "Colors";
+            Title_Label.Text = "Animals";
 
             //Hide Levels Items
             GuessWordBGD.IsVisible = false; //Guess Word Background
@@ -126,7 +127,7 @@ namespace Infinite_Korean.Categories_Pages.ColorsCategory_Level
             Loaded_Level = "Categories";
 
             //Update Page Title
-            Title_Label.Text = "Colors";
+            Title_Label.Text = "Animals";
             Title_Label.FontSize = 40;
 
             //Show Buttons
@@ -181,7 +182,7 @@ namespace Infinite_Korean.Categories_Pages.ColorsCategory_Level
             //return base.OnBackButtonPressed();
         }
 
-        private void Lesson_Button_Clicked(object sender, EventArgs e)
+        private void Lesson_Button_Clicked(object sender, EventArgs e) //On Lesson Button Clicked
         {
             My_Button_Pressed = 0;
             //Hide Buttons
@@ -198,7 +199,7 @@ namespace Infinite_Korean.Categories_Pages.ColorsCategory_Level
             Build_Level(); //Build Lesson Page
         }
 
-        private void My_Button1_Clicked(object sender, EventArgs e)
+        private void My_Button1_Clicked(object sender, EventArgs e) //On Button1 Clicked
         {
             My_Button_Pressed = 1;
 
@@ -207,8 +208,8 @@ namespace Infinite_Korean.Categories_Pages.ColorsCategory_Level
                 My_Button1.Source = "Button_Correct.png"; //Set new Image on the Button
                 Build_Level();
             }
-            else if(Loaded_Level != "Categories")
-            { 
+            else if (Loaded_Level != "Categories")
+            {
                 if (Button1_Label.Text == Correct_Answer)
                 {
                     ButtonCorrect();
@@ -220,7 +221,7 @@ namespace Infinite_Korean.Categories_Pages.ColorsCategory_Level
             }
         }
 
-        private void My_Button2_Clicked(object sender, EventArgs e)
+        private void My_Button2_Clicked(object sender, EventArgs e) //On Button1 Clicked
         {
             My_Button_Pressed = 2;
 
@@ -239,29 +240,30 @@ namespace Infinite_Korean.Categories_Pages.ColorsCategory_Level
                 {
                     ButtonWrong();
                 }
+
             }
         }
 
-        private void My_Button3_Clicked(object sender, EventArgs e)
+        private void My_Button3_Clicked(object sender, EventArgs e) //On Button3 Clicked
         {
-            My_Button_Pressed = 3;
+                My_Button_Pressed = 3;
 
-            if (Loaded_Level == "Categories")
-            {
-                My_Button3.Source = "Button_Correct.png"; //Set new Image on the Button
-                Build_Level();
-            }
-            else if (Loaded_Level != "Categories")
-            {
-                if (Button3_Label.Text == Correct_Answer)
+                if (Loaded_Level == "Categories")
                 {
-                    ButtonCorrect();
+                    My_Button3.Source = "Button_Correct.png"; //Set new Image on the Button
+                    Build_Level();
                 }
-                else
+                else if (Loaded_Level != "Categories")
                 {
-                    ButtonWrong();
+                    if (Button3_Label.Text == Correct_Answer)
+                    {
+                        ButtonCorrect();
+                    }
+                    else
+                    {
+                        ButtonWrong();
+                    }
                 }
-            }
         }
 
         private async void Build_Level() //Track Pressed Buttons and Load Levels
@@ -311,11 +313,11 @@ namespace Infinite_Korean.Categories_Pages.ColorsCategory_Level
                         List_Answers.AddRange(Colors_Translate_Arr);
 
                         await Task.Delay(250); // 1/4 second waiting before continue
-                        
+
                         Level_Choice_Dropdown.IsVisible = true; //Show Level Choice Combo Box
                         Levels_Choice_Btn.IsVisible = true; //Show Level Choice Button
                         Level_Choice_BtnText.IsVisible = true; //Show Level Choice Button Text
-                        
+
                         Levels_Design(); //Load Level Design & UI
                         Level_Start(); //Start Symbol Level
                         break;
@@ -336,11 +338,11 @@ namespace Infinite_Korean.Categories_Pages.ColorsCategory_Level
                         List_Answers.AddRange(Colors_Symbol_Arr);
 
                         await Task.Delay(250); // 1/4 second waiting before continue
-                        
+
                         Level_Choice_Dropdown.IsVisible = true; //Show Level Choice Combo Box
                         Levels_Choice_Btn.IsVisible = true;//Show Level Choice Button
                         Level_Choice_BtnText.IsVisible = true; //Show Level Choice Button Text
-                        
+
                         Levels_Design(); //Load Level Design & UI
                         Level_Start(); //Start Translate Level
                         break;
@@ -367,7 +369,7 @@ namespace Infinite_Korean.Categories_Pages.ColorsCategory_Level
 
         //--------------------------------------------------------------- Levels Logyc -------------------------------------------------------------------------------------------------
 
-        private void Level_Start()
+        private void Level_Start() //Level Start
         {
             Scores_Grid.IsVisible = true; //Show Scores Items
 
@@ -385,7 +387,7 @@ namespace Infinite_Korean.Categories_Pages.ColorsCategory_Level
 
         }
 
-        private void BlockAllButtons()
+        private void BlockAllButtons() //lock Button Func
         {
             //Set Buttons are DISABLED
             My_Button1.IsEnabled = false;
@@ -394,7 +396,7 @@ namespace Infinite_Korean.Categories_Pages.ColorsCategory_Level
         }
 
         private void Generate_GuessNum() //Generate Random Korean Number
-        {    
+        {
             GuessWord_ID = MyRandom.Next(0, List_GuessWords.Count); //Generate Random Guess Word ID
             GuessWord = List_GuessWords[GuessWord_ID]; //Initialize Guess Word
             GuessWord_Label.Text = GuessWord; //Print it to Guess Word Space
@@ -431,7 +433,7 @@ namespace Infinite_Korean.Categories_Pages.ColorsCategory_Level
 
                 case 1:
                     Button2_Label.Text = Correct_Answer; //Button2 Contains the Correct Answer
-                    
+
                     //Set Other Buttons Wrong Answers
                     Button1_Label.Text = WrongAnswer1;
                     Button3_Label.Text = WrongAnswer2;
@@ -451,7 +453,7 @@ namespace Infinite_Korean.Categories_Pages.ColorsCategory_Level
 
         }
 
-        private void ButtonCorrect()
+        private void ButtonCorrect() //Correct Button Answer
         {
             switch (My_Button_Pressed)
             {
@@ -476,7 +478,7 @@ namespace Infinite_Korean.Categories_Pages.ColorsCategory_Level
             DelayTime();
         }
 
-        private void ButtonWrong()
+        private void ButtonWrong() //Wrong Button Answer
         {
             switch (My_Button_Pressed)
             {
@@ -506,7 +508,7 @@ namespace Infinite_Korean.Categories_Pages.ColorsCategory_Level
             ScoreCheck(); //Call Function to Check Score
         }
 
-        private async void DelayTime()
+        private async void DelayTime() // Next Round 
         {
             await Task.Delay(250); // 1/4 second waiting before continue
 
@@ -526,10 +528,10 @@ namespace Infinite_Korean.Categories_Pages.ColorsCategory_Level
 
         private void UpdateLevel() //Increase the Difficulty of the level
         {
-            switch(Loaded_Level)
+            switch (Loaded_Level)
             {
                 case "Transcription":
-                    if(PlayerScore_Correct == Level2_Req || Level_Choosed == "Lvl2")
+                    if (PlayerScore_Correct == Level2_Req || Level_Choosed == "Lvl2")
                     {
                         List_GuessWords.AddRange(Colors_Transcription_Lvl2_Arr); //Add Lvl2 Transcription Lvl2 Arr to Guess Word List            
                         List_Answers.AddRange(Colors_Translate_Lvl2_Arr); //Add Lvl2 Translate Arr to Answers List
@@ -537,7 +539,7 @@ namespace Infinite_Korean.Categories_Pages.ColorsCategory_Level
                     break;
 
                 case "Symbol":
-                    if(Level_Choosed == "Lvl1") //If Choosen Level is Lvl1
+                    if (Level_Choosed == "Lvl1") //If Choosen Level is Lvl1
                     {
                         //Clear Level Lists
                         List_GuessWords.Clear();
@@ -560,9 +562,9 @@ namespace Infinite_Korean.Categories_Pages.ColorsCategory_Level
                         //Add Translate Arrays to Answers List
                         List_Answers.AddRange(Colors_Translate_Arr);
                         List_Answers.AddRange(Colors_Translate_Lvl2_Arr);
-                        
+
                     }
-                    else if(PlayerScore_Correct == Level3_Req || Level_Choosed == "Lvl3") //If Player Score reach Lvl3 Requarment or Choosen Level is Lvl3
+                    else if (PlayerScore_Correct == Level3_Req || Level_Choosed == "Lvl3") //If Player Score reach Lvl3 Requarment or Choosen Level is Lvl3
                     {
                         //Clear Level Lists
                         List_GuessWords.Clear();
@@ -604,7 +606,7 @@ namespace Infinite_Korean.Categories_Pages.ColorsCategory_Level
                         List_Answers.AddRange(Colors_Symbol_Lvl2_Arr);
 
                     }
-                    else if(PlayerScore_Correct == Level3_Req || Level_Choosed == "Lvl3") //If Player Score reach Lvl3 Requarment or Choosen Level is Lvl3
+                    else if (PlayerScore_Correct == Level3_Req || Level_Choosed == "Lvl3") //If Player Score reach Lvl3 Requarment or Choosen Level is Lvl3
                     {
                         //Clear Level Lists
                         List_GuessWords.Clear();
@@ -624,7 +626,7 @@ namespace Infinite_Korean.Categories_Pages.ColorsCategory_Level
 
         public async void ScoreCheck() //Track Player Scores
         {
-            Level_End_Pages.Passed_Page.PageAdress = "Colors";
+            Level_End_Pages.Passed_Page.PageAdress = "Animals";
 
             if (PlayerScore_Correct == Max_PlayerCorrectScore) //If Player Correct Score = Max Allowed
             {
@@ -653,7 +655,7 @@ namespace Infinite_Korean.Categories_Pages.ColorsCategory_Level
 
         }
 
-        private void Levels_Choice_Btn_Clicked(object sender, EventArgs e)
+        private void Levels_Choice_Btn_Clicked(object sender, EventArgs e) //Combo Box 
         {
             if (Level_Choice_Dropdown.SelectedItem != null)
             {
@@ -661,13 +663,13 @@ namespace Infinite_Korean.Categories_Pages.ColorsCategory_Level
 
                 switch (LevelChoice)
                 {
-                    case "Colors Translation - Lvl1":
+                    case "Animals Translation - Lvl1":
                         Level_Choosed = "Lvl1";
                         break;
-                    case "Colors Translation - Lvl2":
+                    case "Animals Translation - Lvl2":
                         Level_Choosed = "Lvl2";
                         break;
-                    case "Colors Transcription - Lvl3":
+                    case "Animals Transcription - Lvl3":
                         Level_Choosed = "Lvl3";
                         break;
                 }
@@ -685,8 +687,6 @@ namespace Infinite_Korean.Categories_Pages.ColorsCategory_Level
                 Generate_GuessNum();
                 Generate_ButtonsAnswers();
             }
-
         }
-
     }
 }

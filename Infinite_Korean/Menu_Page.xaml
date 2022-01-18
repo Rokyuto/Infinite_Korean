@@ -16,7 +16,7 @@
                      HorizontalOptions="Start" VerticalOptions="Start" Clicked="BackButton_Clicked"/>
 
         <!-- Categories Buttons -->
-        <Grid Margin="10,150,0,25">
+        <Grid Margin="10,150,10,25">
             
             <!-- Create Numers Category Button -->
             <ImageButton BackgroundColor="Transparent" Source="Button_Default.png" HeightRequest="60" WidthRequest="200" 
@@ -31,16 +31,28 @@
                 </Label>
 
             <!-- Create Colors Category Button -->
-            <ImageButton BackgroundColor="Transparent" Source="Button_Default.png" HeightRequest="60" WidthRequest="200" 
+            <ImageButton BackgroundColor="Transparent" Source="Button_Default.png" HeightRequest="60" WidthRequest="200"
                         HorizontalOptions="End" VerticalOptions="Start" Clicked="ColorButton_Clicked" />
                 <!-- Colors' Button Text -->
                 <Label Text="Colors" TextColor="White" FontSize="20" FontFamily="MyFont_Malgun_Semilight" 
-                       FontAttributes="Italic" Margin="0,15,70,25" VerticalOptions="Start" HorizontalOptions="End"  >
+                       FontAttributes="Italic" Margin="0,15,70,25" VerticalOptions="Start" HorizontalOptions="End">
                     <Label.GestureRecognizers>
                         <TapGestureRecognizer
                             Tapped="ColorButton_Clicked"/>
                     </Label.GestureRecognizers>
                 </Label>
+            
+            <!-- Create Animals Category Button -->
+            <ImageButton BackgroundColor="Transparent" Source="Button_Default.png" HeightRequest="60" WidthRequest="200" Margin="0,100,0,0"
+                        HorizontalOptions="Start" VerticalOptions="Start" Clicked="Animals_Button_Clicked" />
+            <!-- Animals' Button Text -->
+            <Label Text="Animals" TextColor="White" FontSize="20" FontFamily="MyFont_Malgun_Semilight" 
+                       FontAttributes="Italic" Margin="65,115,70,25" VerticalOptions="Start" HorizontalOptions="Start"  >
+                <Label.GestureRecognizers>
+                    <TapGestureRecognizer
+                            Tapped="Animals_Button_Clicked"/>
+                </Label.GestureRecognizers>
+            </Label>
 
         </Grid>
         

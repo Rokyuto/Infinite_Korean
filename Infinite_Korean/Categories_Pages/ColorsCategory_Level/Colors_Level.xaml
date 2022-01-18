@@ -111,11 +111,6 @@
             </Label.GestureRecognizers>
         </Label>
 
-        <!-- Stars -->
-        <Image x:Name="Colors_Star_1" Source="Stars.png" BackgroundColor="Transparent" HeightRequest="100" IsVisible="False" VerticalOptions="Start" HorizontalOptions="Center" Margin="0,50,0,0" />
-        <Image x:Name="Colors_Star_2" Source="Stars_2.png" BackgroundColor="Transparent" HeightRequest="100" IsVisible="False" VerticalOptions="Start" HorizontalOptions="Center" Margin="0,50,0,0" />
-        <Image x:Name="Colors_Star_3" Source="Stars_3.png" BackgroundColor="Transparent" HeightRequest="100" IsVisible="False" VerticalOptions="Start" HorizontalOptions="Center" Margin="0,50,0,0" />
-
         <!-- Answers Counters -->
         <Grid x:Name="Scores_Grid" IsVisible="False" Margin="5,600,5,10">
             <Image x:Name="CounterCorrect_Img" Source="CounterCorrect.png" HeightRequest="115" WidthRequest="115" HorizontalOptions="Start" VerticalOptions="End" />

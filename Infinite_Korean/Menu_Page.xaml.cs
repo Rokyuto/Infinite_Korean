@@ -41,5 +41,10 @@ namespace Infinite_Korean
             return true;
             //return base.OnBackButtonPressed();
         }
+
+        private void Animals_Button_Clicked(object sender, EventArgs e)
+        {
+            App.Current.MainPage = new Categories_Pages.Animals_Category_Page();
+        }
     }
 }

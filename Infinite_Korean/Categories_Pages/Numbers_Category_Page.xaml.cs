@@ -777,6 +777,19 @@ namespace Infinite_Korean.Categories_Pages
             Level_End_Pages.Passed_Page.PageAdress = "Numbers";
             if (PlayerScore_Correct == Max_PlayerCorrectScore) //If Player Correct Score = Max Allowed
             {
+                if (PlayerScore_Wrong == 0) //If Player do not make Mistakes
+                {
+                    Level_End_Pages.Passed_Page.Stars = 3; // Player receive 3 Stars
+                }
+                else if (PlayerScore_Wrong > 0 && PlayerScore_Wrong <= Max_PlayerWrongScore / 2) //If Player do MAX 2 Mistakes 
+                {
+                    Level_End_Pages.Passed_Page.Stars = 2; // Player receive 2 Stars
+                }
+                else if (PlayerScore_Wrong > Max_PlayerWrongScore / 2 && PlayerScore_Wrong <= Max_PlayerWrongScore - 1) //If Player do more than 2 Mistakes 
+                {
+                    Level_End_Pages.Passed_Page.Stars = 1; // Player receive 1 Star
+                }
+
                 App.Current.MainPage = new Level_End_Pages.Passed_Page(); //Go to Congrats Page
             }
             if (PlayerScore_Wrong == Max_PlayerWrongScore) //If Player Wrong Score = Max Allowed
