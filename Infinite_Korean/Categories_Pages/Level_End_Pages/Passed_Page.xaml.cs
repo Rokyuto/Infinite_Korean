@@ -25,6 +25,8 @@ namespace Infinite_Korean.Categories_Pages.Level_End_Pages
         string Numbers_Page = "Numbers";
         string Color_Page = "Colors";
 
+        //public static object Stars_Visualizer;
+
         public Passed_Page()
         {
             InitializeComponent();
@@ -33,6 +35,22 @@ namespace Infinite_Korean.Categories_Pages.Level_End_Pages
 
         private void UpdateCongrats_Text()
         {
+
+            switch(ColorsCategory_Level.Colors_Level.Stars)
+            {
+                case 3:
+                    Star_3.IsVisible = true;
+                    break;
+
+                case 2:
+                    Star_2.IsVisible = true;
+                    break;
+
+                case 1:
+                    Star_1.IsVisible = true;
+                    break;
+            }
+
             switch (LevelAdress)
             {
                 case "Transcription":
@@ -62,7 +80,7 @@ namespace Infinite_Korean.Categories_Pages.Level_End_Pages
         private void Play_Button_Clicked(object sender, EventArgs e)
         {
             if (PageAdress == Numbers_Page)
-            {
+            {   
                 App.Current.MainPage = new Numbers_Category_Page();
             }
             if (PageAdress == Color_Page)

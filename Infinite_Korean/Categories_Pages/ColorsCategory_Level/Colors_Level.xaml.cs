@@ -37,7 +37,6 @@ namespace Infinite_Korean.Categories_Pages.ColorsCategory_Level
         List<string> List_Answers = new List<string>(); //Levels Answers List
         List<string> List_WorkList = new List<string>(); //Levels Work List for Random Generation Answers
 
-        //int Elements_Quantity = 6; //Quantity of Colors in the list [0 - 5]
         int GuessWord_ID; //Guess Word ID
         string GuessWord; //Guess Word
         string Correct_Answer;
@@ -56,6 +55,8 @@ namespace Infinite_Korean.Categories_Pages.ColorsCategory_Level
         int Level3_Req = 50; //Requarment for Level 3
                              
         string Level_Choosed; //Level Choice
+
+        public static int Stars;
 
         public Colors_Level()
         {
@@ -196,11 +197,7 @@ namespace Infinite_Korean.Categories_Pages.ColorsCategory_Level
             Button2_Label.Text = "";
             Button3_Label.Text = "";
 
-            if (Loaded_Level == "Categories")
-            {
-                My_Button2.Source = "Button_Correct.png"; //Set new Image on the Button
-                Build_Level(); //Build Lesson Page
-            }
+            Build_Level(); //Build Lesson Page
         }
 
         private void My_Button1_Clicked(object sender, EventArgs e)
@@ -285,7 +282,7 @@ namespace Infinite_Korean.Categories_Pages.ColorsCategory_Level
                         Loaded_Level = "Transcription"; //Set Loaded is Transcription
                         Level_End_Pages.Passed_Page.LevelAdress = "Transcription"; //Initialize Loaded Level is Transcription
 
-                        Max_PlayerCorrectScore = 60; //Set Level Max Correct Score
+                        Max_PlayerCorrectScore = 5; //Set Level Max Correct Score - 60
                         Max_PlayerWrongScore = 5; //Set Level Max Wrong Score
                         CorrectScore_Req.Text = "/" + Max_PlayerCorrectScore; //Show in UI Max Correct Score
                         WrongScore_Req.Text = "/" + Max_PlayerWrongScore; //Show in UI Max Wrong Score
@@ -630,20 +627,36 @@ namespace Infinite_Korean.Categories_Pages.ColorsCategory_Level
         public async void ScoreCheck() //Track Player Scores
         {
             Level_End_Pages.Passed_Page.PageAdress = "Colors";
+
             if (PlayerScore_Correct == Max_PlayerCorrectScore) //If Player Correct Score = Max Allowed
             {
+                if (PlayerScore_Wrong == 0) //If Player do not make Mistakes
+                {
+                    Stars = 3; // Player receive 3 Stars
+                }
+                else if (PlayerScore_Wrong > 0 && PlayerScore_Wrong <= Max_PlayerWrongScore / 2) //If Player do MAX 2 Mistakes 
+                {
+                    Stars = 2; // Player receive 2 Stars
+                }
+                else if (PlayerScore_Wrong > Max_PlayerWrongScore / 2 && PlayerScore_Wrong <= Max_PlayerWrongScore - 1) //If Player do more than 2 Mistakes 
+                {
+                    Stars = 1; // Player receive 1 Star
+                }
+
                 App.Current.MainPage = new Level_End_Pages.Passed_Page(); //Go to Congrats Page
+
             }
+
             if (PlayerScore_Wrong == Max_PlayerWrongScore) //If Player Wrong Score = Max Allowed
             {
                 await Task.Delay(250); // 1/4 second waiting before continue
                 App.Current.MainPage = new Level_End_Pages.TryAgain_Page(); //Go to Try Again Page
             }
+
         }
 
         private void Levels_Choice_Btn_Clicked(object sender, EventArgs e)
         {
-
             if (Level_Choice_Dropdown.SelectedItem != null)
             {
                 string LevelChoice = Level_Choice_Dropdown.SelectedItem.ToString();

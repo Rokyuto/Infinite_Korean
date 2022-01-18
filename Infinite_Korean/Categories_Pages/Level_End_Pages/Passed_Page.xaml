@@ -7,7 +7,10 @@
         <!-- Load Page Background -->
         <Image Source="GradientBGD.png" HorizontalOptions="Fill" VerticalOptions="Fill" Aspect="AspectFill"/>
 
-        <!-- Add Stars -->
+        <!-- Stars -->
+        <Image x:Name="Star_1" Source="Stars.png" BackgroundColor="Transparent" HeightRequest="100" IsVisible="False" VerticalOptions="Start" HorizontalOptions="Center" Margin="0,50,0,0" />
+        <Image x:Name="Star_2" Source="Stars_2.png" BackgroundColor="Transparent" HeightRequest="100" IsVisible="False" VerticalOptions="Start" HorizontalOptions="Center" Margin="0,50,0,0" />
+        <Image x:Name="Star_3" Source="Stars_3.png" BackgroundColor="Transparent" HeightRequest="100" IsVisible="False" VerticalOptions="Start" HorizontalOptions="Center" Margin="0,50,0,0" />
 
         <!-- Page Texts-->
         <Label Text="Congratulations" TextColor="LightBlue" FontFamily="MyFont_Malgun_Bold" FontSize="40" 

@@ -9,24 +9,24 @@
         <Image Source="GradientBGD.png" HorizontalOptions="Fill" VerticalOptions="Fill" Aspect="AspectFill"/>
 
         <Label x:Name="Title_Label" Text="" TextColor="#54b4ff" FontSize="40" FontFamily="MyFont_Malgun_Bold" FontAttributes="Bold,Italic" Margin="0,20,0,0"
-               VerticalOptions="Start" HorizontalOptions="CenterAndExpand" />
+               VerticalOptions="Start" HorizontalOptions="Center" />
         
         <!-- Set Back Button -->
         <ImageButton x:Name="BackButton" BackgroundColor="Transparent" Source="Back_Button.png" HeightRequest="50" WidthRequest="50" 
                      Margin="15,15,0,0" HorizontalOptions="Start" VerticalOptions="Start" Clicked="BackButton_Clicked"/>
 
         <!-- Page instructions for the user -->
-        <Label x:Name="Instruction_Label" Text="Choose the correct answer" TextColor="White" FontFamily="MyFont_Malgun_Bold" FontSize="22" Margin="40,22,15,15" VerticalOptions="Start" HorizontalOptions="Center" />
+        <Label x:Name="Instruction_Label" Text="Choose the correct answer" TextColor="White" FontFamily="MyFont_Malgun_Bold" FontSize="22" Margin="40,25,15,15" VerticalOptions="Start" HorizontalOptions="Center" />
 
         <!-- Guessing's Word Background -->
-        <Image x:Name="GuessWordBGD" Source="GuessWordBGD.png" HeightRequest="125" WidthRequest="400" Margin="10,75" VerticalOptions="Start" HorizontalOptions="Center"/>
-        <Label x:Name="GuessWord_Label" Text="" TextColor="White" FontFamily="MyFont_Malgun_Semilight" FontSize="30" Margin="0,120"
+        <Image x:Name="GuessWordBGD" Source="GuessWordBGD.png" HeightRequest="125" WidthRequest="400" Margin="10,90" VerticalOptions="Start" HorizontalOptions="Center"/>
+        <Label x:Name="GuessWord_Label" Text="" TextColor="White" FontFamily="MyFont_Malgun_Semilight" FontSize="30" Margin="0,135"
                    HorizontalTextAlignment="Center" VerticalOptions="Start" HorizontalOptions="Center"/>
-
+        
         <!-- Numbers Lesson Page -->
         <ImageButton x:Name="Lesson_Button" BackgroundColor="Transparent" Source="Button_Default.png" HeightRequest="100" WidthRequest="400"
                      Margin="0,175,0,0" HorizontalOptions="Center" VerticalOptions="Start" Clicked="Lesson_Button_Clicked" />
-            <!-- Level Button1 Text -->
+            <!-- Lesson Button Text -->
             <Label x:Name="LessonButton_Label" Text="" TextColor="White" FontSize="30" FontFamily="MyFont_Malgun_Semilight" FontAttributes="Italic"
                    Margin="0,202,0,0" HorizontalTextAlignment="Center" VerticalOptions="Start" HorizontalOptions="Center" >
                 <Label.GestureRecognizers>
@@ -110,6 +110,11 @@
                     Tapped="My_Button3_Clicked"/>
             </Label.GestureRecognizers>
         </Label>
+
+        <!-- Stars -->
+        <Image x:Name="Colors_Star_1" Source="Stars.png" BackgroundColor="Transparent" HeightRequest="100" IsVisible="False" VerticalOptions="Start" HorizontalOptions="Center" Margin="0,50,0,0" />
+        <Image x:Name="Colors_Star_2" Source="Stars_2.png" BackgroundColor="Transparent" HeightRequest="100" IsVisible="False" VerticalOptions="Start" HorizontalOptions="Center" Margin="0,50,0,0" />
+        <Image x:Name="Colors_Star_3" Source="Stars_3.png" BackgroundColor="Transparent" HeightRequest="100" IsVisible="False" VerticalOptions="Start" HorizontalOptions="Center" Margin="0,50,0,0" />
 
         <!-- Answers Counters -->
         <Grid x:Name="Scores_Grid" IsVisible="False" Margin="5,600,5,10">

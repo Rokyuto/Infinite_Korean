@@ -66,7 +66,7 @@ namespace Infinite_Korean.Categories_Pages
         private void Level_Load() //Page Load
         {
             //Set Buttons Texts
-            Lesson_Button_Label.Text = "Lesson";
+            LessonButton_Label.Text = "Lesson";
             Button1_Label.Text = "Transcription";
             Button2_Label.Text = "Symbols";
             Button3_Label.Text = "Translation";
@@ -154,10 +154,10 @@ namespace Infinite_Korean.Categories_Pages
 
             //Show Lesson Button
             Lesson_Button.IsVisible = true;
-            Lesson_Button_Label.IsVisible = true;
+            LessonButton_Label.IsVisible = true;
 
             //Set Buttons Text
-            Lesson_Button_Label.Text = "Lesson";
+            LessonButton_Label.Text = "Lesson";
             Button1_Label.Text = "Transcription";
             Button2_Label.Text = "Symbols";
             Button3_Label.Text = "Translation";
@@ -175,13 +175,12 @@ namespace Infinite_Korean.Categories_Pages
             My_Button2.IsVisible = false;
             My_Button3.IsVisible = false;
             //Hide Texts
-            Lesson_Button_Label.Text = "";
+            LessonButton_Label.Text = "";
             Button1_Label.Text = "";
             Button2_Label.Text = "";
             Button3_Label.Text = "";
 
-            //Call Functions
-            Build_Level();
+            Build_Level(); //Build Lesson Page
         }
 
         protected override bool OnBackButtonPressed() //On Mobile Back Button Click
@@ -349,7 +348,7 @@ namespace Infinite_Korean.Categories_Pages
 
             //Hide Lesson Button
             Lesson_Button.IsVisible = false;
-            Lesson_Button_Label.IsVisible = false;
+            LessonButton_Label.IsVisible = false;
         }
 
         //--------------------------------------------------------------- Levels Logyc -------------------------------------------------------------------------------------------------
