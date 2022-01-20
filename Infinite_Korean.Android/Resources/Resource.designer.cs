@@ -14,7 +14,7 @@ namespace Infinite_Korean.Droid
 {
 	
 	
-	[global::System.CodeDom.Compiler.GeneratedCodeAttribute("Xamarin.Android.Build.Tasks", "12.1.99.62")]
+	[global::System.CodeDom.Compiler.GeneratedCodeAttribute("Xamarin.Android.Build.Tasks", "12.1.99.123")]
 	public partial class Resource
 	{
 		

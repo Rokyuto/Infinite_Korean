@@ -1,4 +1,4 @@
-<Project Sdk="Microsoft.NET.Sdk">
+﻿<Project Sdk="Microsoft.NET.Sdk">
 
   <PropertyGroup>
     <TargetFramework>netstandard2.0</TargetFramework>
@@ -11,20 +11,30 @@
   </PropertyGroup>
 
   <ItemGroup>
+    <None Remove="Categories_Pages\Animals_csv.csv" />
+    <None Remove="csv\Animals\Animals_Symols.csv" />
+    <None Remove="csv\Animals\Korean_Animals_Transcription.csv" />
     <None Remove="Fonts\malgun.ttf" />
     <None Remove="Fonts\malgunbd.ttf" />
     <None Remove="Fonts\malgunsl.ttf" />
+    <None Remove="Korean_Animals_Translate.csv" />
+    <None Remove="Korean_Animals_Translate.txt" />
   </ItemGroup>
 
   <ItemGroup>
+    <EmbeddedResource Include="csv\Animals\Animals_Symols.csv" />
+    <EmbeddedResource Include="csv\Animals\Korean_Animals_Transcription.csv" />
     <EmbeddedResource Include="Fonts\malgun.ttf" />
     <EmbeddedResource Include="Fonts\malgunbd.ttf" />
     <EmbeddedResource Include="Fonts\malgunsl.ttf" />
+    <EmbeddedResource Include="csv\Animals\Korean_Animals_Translate.csv" />
   </ItemGroup>
 
   <ItemGroup>
-    <PackageReference Include="Syncfusion.Xamarin.SfComboBox" Version="19.4.0.41" />
-    <PackageReference Include="Xamarin.Forms" Version="5.0.0.2196" />
+    <PackageReference Include="CsvHelper" Version="27.2.1" />
+    <PackageReference Include="Syncfusion.Xamarin.SfComboBox" Version="19.4.0.43" />
+    <PackageReference Include="System.IO" Version="4.3.0" />
+    <PackageReference Include="Xamarin.Forms" Version="5.0.0.2291" />
     <PackageReference Include="Xamarin.Essentials" Version="1.7.0" />
   </ItemGroup>
 

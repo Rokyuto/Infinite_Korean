@@ -62,7 +62,7 @@
             <Label Text="Yellow - Noran-saek - 노란색" TextColor="White" FontSize="25" VerticalTextAlignment="Center" Margin="0,380,0,0"
                            HorizontalTextAlignment="Center" VerticalOptions="Start" HorizontalOptions="Center" />
             <!-- Orange -->
-            <Label Text="Orange - Juhwang-saek - " TextColor="White" FontSize="25" VerticalTextAlignment="Center" Margin="0,430,0,0"
+            <Label Text="Orange - Juhwang-saek - 주황색" TextColor="White" FontSize="25" VerticalTextAlignment="Center" Margin="0,430,0,0"
                            HorizontalTextAlignment="Center" VerticalOptions="Start" HorizontalOptions="Center" />
             <!-- Pink -->
             <Label Text="Pink - Bunhong-saek - 분홍색" TextColor="White" FontSize="25" VerticalTextAlignment="Center" Margin="0,480,0,0"
