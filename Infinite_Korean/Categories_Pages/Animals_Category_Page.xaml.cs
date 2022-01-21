@@ -10,8 +10,9 @@ namespace Infinite_Korean.Categories_Pages
     [XamlCompilation(XamlCompilationOptions.Compile)]
     public partial class Animals_Category_Page : ContentPage
     {
-
+        //Initialize Random
         Random MyRandom = new Random();
+
         //Variables
 
         //Category Variables
@@ -20,21 +21,19 @@ namespace Infinite_Korean.Categories_Pages
 
         //Levels Variables
 
-        //Transcriptions
-        //string[] Colors_Transcription_Arr = { "Hayan-saek", "Geomeun-saek", "Palgan-saek", "Pharan-saek", "Bora-saek", "Nok-saek" }; //Array with Korean Animals Transcription
-        string[] Colors_Transcription_Lvl2_Arr = { "Noran-saek", "Juhwang-saek", "Bunhong-saek", "Hoe-saek", "Gal-saek" }; //Array with Korean Animals Transcription Lvl 2
-        //Symbols
-        //string[] Colors_Symbol_Arr = { "하얀색", "검은색", "빨간색", "파란색", "보라색", "녹색" }; //Array with Korean Animals Symbols
-        string[] Colors_Symbol_Lvl2_Arr = { "노란색", "주황색", "분홍색", "회색", "갈색" }; //Array with Korean Animals Symbols Lvl 2
-        //Translate
-        //string[] Colors_Translate_Arr = { "White", "Black", "Red", "Blue", "Pirple", "Green" }; //Array with Korean Symbols Meaning - Answers
-        string[] Colors_Translate_Lvl2_Arr = { "Yellow", "Orange", "Pink", "Gray", "Brown" }; //Array with Korean Symbol Meaning - Answers - Lvl 2
-
         //Lists
 
-        List<string> List_Colors_Translate_Lvl1 = new List<string>(); // List with Korean Symbols Meaning - Translation Lvl1
-        List<string> List_Colors_Transcription_Lvl1 = new List<string>(); // List with Korean Animals Transcription Lvl1
-        List<string> List_Colors_Symbol_Lvl1 = new List<string>(); // List with Korean Animals Symbol Lvl1
+        // Lists with Korean Symbols Meaning - Translation
+        List<string> List_Colors_Translate_Lvl1 = new List<string>(); 
+        List<string> List_Colors_Translate_Lvl2 = new List<string>();
+
+        // Lists with Korean Animals Transcription
+        List<string> List_Colors_Transcription_Lvl1 = new List<string>();
+        List<string> List_Colors_Transcription_Lvl2 = new List<string>();
+
+        // Lists with Korean Animals Symbol
+        List<string> List_Colors_Symbol_Lvl1 = new List<string>(); 
+        List<string> List_Colors_Symbol_Lvl2 = new List<string>();
 
         List<string> List_GuessWords = new List<string>(); //Levels GuessWord List
         List<string> List_Answers = new List<string>(); //Levels Answers List
@@ -70,10 +69,6 @@ namespace Infinite_Korean.Categories_Pages
 
         private void Read_Animals_Translate_txt() //Load & Read Animals .csv files for Words
         {
-            //Create Work Lists to stack Words from .csv file
-            var Translate_List = new List<string>();
-            var Transcription_List = new List<string>();
-            var Symbols_List = new List<string>();
 
             //Get File Location\ Connect to Current Page
             var tmp = System.Reflection.IntrospectionExtensions.GetTypeInfo(typeof(Animals_Category_Page)).Assembly;
@@ -89,23 +84,53 @@ namespace Infinite_Korean.Categories_Pages
             StreamReader Transcription_File_Reader = new StreamReader(Transcription_File);
             StreamReader Symbols_File_Reader = new StreamReader(Symbol_File);
 
-            //Fill Work List with Words from .csv file
+            int Current_Element_ID = 0; //Track Quantity of Elements in each List
+
+            //Fill Main Translate Lists with Translate Words from .csv file
             while (Translate_File_Reader.ReadLine() is string word) //Read current String Word
             {
-                Translate_List.Add(word); //Add it to Translate List
-            }
-            while (Transcription_File_Reader.ReadLine() is string word) //Read current String Word
-            {
-                Transcription_List.Add(word); //Add it to Transcription List
-            }
-            while(Symbols_File_Reader.ReadLine() is string word) //Read current String Word
-            {
-                Symbols_List.Add(word); //Add it to Symbol List
+                if(Current_Element_ID < 6)
+                {
+                    List_Colors_Translate_Lvl1.Add(word); //Fill Translate List Lvl1 
+                }
+                else
+                {
+                    List_Colors_Translate_Lvl2.Add(word); //Fill Translate List Lvl2
+                }
+                Current_Element_ID++;
             }
 
-            List_Colors_Translate_Lvl1.AddRange(Translate_List); //Fill Main Translate List Lvl1 with Translate Words from .csv file
-            List_Colors_Transcription_Lvl1.AddRange(Transcription_List); //Fill Main Transcription List Lvl1 with Transcription Words from .csv file
-            List_Colors_Symbol_Lvl1.AddRange(Symbols_List); //Fill Main Symbol List Lvl1 with Symbol Words from .csv file
+            Current_Element_ID = 0; //Clear Quantity | Start again counting
+
+            //Fill Main Transcription Lists with Transcription Words from .csv file
+            while (Transcription_File_Reader.ReadLine() is string word) //Read current String Word
+            {
+                if (Current_Element_ID < 6)
+                {
+                    List_Colors_Transcription_Lvl1.Add(word); //Fill Transcription List Lvl1
+                }
+                else
+                {
+                    List_Colors_Transcription_Lvl2.Add(word); //Fill Transcription List Lvl2
+                }
+                Current_Element_ID++;
+            }
+
+            Current_Element_ID = 0; //Clear Quantity | Start again counting
+
+            while (Symbols_File_Reader.ReadLine() is string word) //Read current String Word
+            {
+                if (Current_Element_ID < 6)
+                {
+                    List_Colors_Symbol_Lvl1.Add(word); //Fill Symbol List Lvl1
+                }
+                else
+                {
+                    List_Colors_Symbol_Lvl2.Add(word); //Fill Symbol List Lvl2
+                }
+                Current_Element_ID++;
+            }
+
         }
 
         private void Level_Load() //Page Load
@@ -577,8 +602,8 @@ namespace Infinite_Korean.Categories_Pages
                 case "Transcription":
                     if (PlayerScore_Correct == Level2_Req || Level_Choosed == "Lvl2")
                     {
-                        List_GuessWords.AddRange(Colors_Transcription_Lvl2_Arr); //Add Lvl2 Transcription Lvl2 Arr to Guess Word List            
-                        List_Answers.AddRange(Colors_Translate_Lvl2_Arr); //Add Lvl2 Translate Arr to Answers List
+                        List_GuessWords.AddRange(List_Colors_Transcription_Lvl2); //Add Lvl2 Transcription Lvl2 Lists to Guess Word List            
+                        List_Answers.AddRange(List_Colors_Translate_Lvl2); //Add Lvl2 Translate Lists to Answers List
                     }
                     break;
 
@@ -589,7 +614,7 @@ namespace Infinite_Korean.Categories_Pages
                         List_GuessWords.Clear();
                         List_Answers.Clear();
 
-                        //Add Lvl1 Arrays to Level List
+                        //Add Lvl1 Lists to Level List
                         List_GuessWords.AddRange(List_Colors_Symbol_Lvl1);
                         List_Answers.AddRange(List_Colors_Translate_Lvl1);
                     }
@@ -599,13 +624,13 @@ namespace Infinite_Korean.Categories_Pages
                         List_GuessWords.Clear();
                         List_Answers.Clear();
 
-                        //Add Symbols Arrays to Guess Words List
+                        //Add Symbols Lists to Guess Words List
                         List_GuessWords.AddRange(List_Colors_Symbol_Lvl1);
-                        List_GuessWords.AddRange(Colors_Symbol_Lvl2_Arr);
+                        List_GuessWords.AddRange(List_Colors_Symbol_Lvl2);
 
-                        //Add Translate Arrays to Answers List
+                        //Add Translate Lists to Answers List
                         List_Answers.AddRange(List_Colors_Translate_Lvl1);
-                        List_Answers.AddRange(Colors_Translate_Lvl2_Arr);
+                        List_Answers.AddRange(List_Colors_Translate_Lvl2);
 
                     }
                     else if (PlayerScore_Correct == Level3_Req || Level_Choosed == "Lvl3") //If Player Score reach Lvl3 Requarment or Choosen Level is Lvl3
@@ -614,13 +639,13 @@ namespace Infinite_Korean.Categories_Pages
                         List_GuessWords.Clear();
                         List_Answers.Clear();
 
-                        //Add Symbol Arrays to Guess Words List
+                        //Add Symbol Lists to Guess Words List
                         List_GuessWords.AddRange(List_Colors_Symbol_Lvl1);
-                        List_GuessWords.AddRange(Colors_Symbol_Lvl2_Arr);
+                        List_GuessWords.AddRange(List_Colors_Symbol_Lvl2);
 
-                        //Add Transcription Arrays to Answers List
+                        //Add Transcription Lists to Answers List
                         List_Answers.AddRange(List_Colors_Transcription_Lvl1);
-                        List_Answers.AddRange(Colors_Transcription_Lvl2_Arr);
+                        List_Answers.AddRange(List_Colors_Transcription_Lvl2);
                     }
                     break;
 
@@ -631,7 +656,7 @@ namespace Infinite_Korean.Categories_Pages
                         List_GuessWords.Clear();
                         List_Answers.Clear();
 
-                        //Add Lvl1 Arrays to Level Lists
+                        //Add Lvl1 Lists to Level Lists
                         List_GuessWords.AddRange(List_Colors_Translate_Lvl1);
                         List_Answers.AddRange(List_Colors_Symbol_Lvl1);
                     }
@@ -641,13 +666,13 @@ namespace Infinite_Korean.Categories_Pages
                         List_GuessWords.Clear();
                         List_Answers.Clear();
 
-                        //Add Lvl1 Arrays to the Lists
+                        //Add Lvl1 Lists to the Lists
                         List_GuessWords.AddRange(List_Colors_Translate_Lvl1);
                         List_Answers.AddRange(List_Colors_Symbol_Lvl1);
 
-                        //Add Lvl2 Arrays to the Lists
-                        List_GuessWords.AddRange(Colors_Translate_Lvl2_Arr);
-                        List_Answers.AddRange(Colors_Symbol_Lvl2_Arr);
+                        //Add Lvl2 Lists to the Lists
+                        List_GuessWords.AddRange(List_Colors_Translate_Lvl2);
+                        List_Answers.AddRange(List_Colors_Symbol_Lvl2);
 
                     }
                     else if (PlayerScore_Correct == Level3_Req || Level_Choosed == "Lvl3") //If Player Score reach Lvl3 Requarment or Choosen Level is Lvl3
@@ -656,13 +681,13 @@ namespace Infinite_Korean.Categories_Pages
                         List_GuessWords.Clear();
                         List_Answers.Clear();
 
-                        //Add Transcription Arrays to Guess Word List 
+                        //Add Transcription Lists to Guess Word List 
                         List_GuessWords.AddRange(List_Colors_Transcription_Lvl1);
-                        List_GuessWords.AddRange(Colors_Transcription_Lvl2_Arr);
+                        List_GuessWords.AddRange(List_Colors_Transcription_Lvl2);
 
-                        //Add Symbol Arrays to Answers List 
+                        //Add Symbol Lists to Answers List 
                         List_Answers.AddRange(List_Colors_Symbol_Lvl1);
-                        List_Answers.AddRange(Colors_Symbol_Lvl2_Arr);
+                        List_Answers.AddRange(List_Colors_Symbol_Lvl2);
                     }
                     break;
             }
