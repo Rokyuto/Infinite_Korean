@@ -14,6 +14,9 @@
     <None Remove="Categories_Pages\Animals_csv.csv" />
     <None Remove="csv\Animals\Animals_Symols.csv" />
     <None Remove="csv\Animals\Korean_Animals_Transcription.csv" />
+    <None Remove="csv\Colors\Colors_Symols.csv" />
+    <None Remove="csv\Colors\Colors_Transcription.csv" />
+    <None Remove="csv\Colors\Colors_Translate.csv" />
     <None Remove="Fonts\malgun.ttf" />
     <None Remove="Fonts\malgunbd.ttf" />
     <None Remove="Fonts\malgunsl.ttf" />
@@ -24,6 +27,9 @@
   <ItemGroup>
     <EmbeddedResource Include="csv\Animals\Animals_Symols.csv" />
     <EmbeddedResource Include="csv\Animals\Korean_Animals_Transcription.csv" />
+    <EmbeddedResource Include="csv\Colors\Colors_Symols.csv" />
+    <EmbeddedResource Include="csv\Colors\Colors_Transcription.csv" />
+    <EmbeddedResource Include="csv\Colors\Colors_Translate.csv" />
     <EmbeddedResource Include="Fonts\malgun.ttf" />
     <EmbeddedResource Include="Fonts\malgunbd.ttf" />
     <EmbeddedResource Include="Fonts\malgunsl.ttf" />
@@ -39,6 +45,9 @@
   </ItemGroup>
 
   <ItemGroup>
+    <EmbeddedResource Update="Categories_Pages\Animals_2_Category_Page.xaml">
+      <Generator>MSBuild:UpdateDesignTimeXaml</Generator>
+    </EmbeddedResource>
     <EmbeddedResource Update="Categories_Pages\Animals_Category_Page.xaml">
       <Generator>MSBuild:UpdateDesignTimeXaml</Generator>
     </EmbeddedResource>
@@ -51,11 +60,12 @@
     <EmbeddedResource Update="Categories_Pages\Level_End_Pages\TryAgain_Page.xaml">
       <Generator>MSBuild:UpdateDesignTimeXaml</Generator>
     </EmbeddedResource>
-    <EmbeddedResource Update="Categories_Pages\Numbers_Category_Page.xaml">
-      <Generator>MSBuild:UpdateDesignTimeXaml</Generator>
-    </EmbeddedResource>
     <EmbeddedResource Update="Menu_Page.xaml">
       <Generator>MSBuild:UpdateDesignTimeXaml</Generator>
     </EmbeddedResource>
+  </ItemGroup>
+
+  <ItemGroup>
+    <Folder Include="csv\Animals_2\" />
   </ItemGroup>
 </Project>

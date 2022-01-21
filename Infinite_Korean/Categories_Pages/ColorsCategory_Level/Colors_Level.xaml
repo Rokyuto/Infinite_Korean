@@ -148,7 +148,7 @@
                            HorizontalTextAlignment="Center" Margin="0,0,0,38" >
             <Label.GestureRecognizers>
                 <TapGestureRecognizer
-                            Tapped="Levels_Choice_Btn_Clicked"/>
+                    Tapped="Levels_Choice_Btn_Clicked"/>
             </Label.GestureRecognizers>
         </Label>
 

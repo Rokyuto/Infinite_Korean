@@ -23,7 +23,7 @@
         <Label x:Name="GuessWord_Label" Text="" TextColor="White" FontFamily="MyFont_Malgun_Semilight" FontSize="30" Margin="0,135"
                    HorizontalTextAlignment="Center" VerticalOptions="Start" HorizontalOptions="Center"/>
 
-        <!-- Numbers Lesson Page -->
+        <!-- Animals Lesson Page -->
         <ImageButton x:Name="Lesson_Button" BackgroundColor="Transparent" Source="Button_Default.png" HeightRequest="100" WidthRequest="400"
                      Margin="0,175,0,0" HorizontalOptions="Center" VerticalOptions="Start" Clicked="Lesson_Button_Clicked"/>
         <!-- Leson Button Text -->
@@ -35,43 +35,43 @@
             </Label.GestureRecognizers>
         </Label>
 
-        <!-- Colors List -->
+        <!-- Animals List -->
         <Grid x:Name="LessonText_Grid" Margin="25,80,25,0" IsVisible="False">
             <!-- Color -->
-            <Label Text=" saek-kkal - 색 / 색깔" TextColor="#54b4ff" FontSize="27" VerticalTextAlignment="Center"
+            <Label Text=" dongmul - 동물" TextColor="#54b4ff" FontSize="27" VerticalTextAlignment="Center"
                            HorizontalTextAlignment="Center" VerticalOptions="Start" HorizontalOptions="Center" />
-            <!-- White -->
-            <Label Text="White - Hayan-saek - 하얀색" TextColor="White" FontSize="25" VerticalTextAlignment="Center" Margin="0,80,0,0"
+            <!-- Dog -->
+            <Label Text="Dog - Gae - 개" TextColor="White" FontSize="25" VerticalTextAlignment="Center" Margin="0,80,0,0"
                            HorizontalTextAlignment="Center" VerticalOptions="Start" HorizontalOptions="Center" />
-            <!-- Black -->
-            <Label Text="Black - Geomeun-saek - 검은색" TextColor="White" FontSize="25" VerticalTextAlignment="Center" Margin="0,130,0,0"
+            <!-- Puppy -->
+            <Label Text="Puppy - Gangaji - 강아지" TextColor="White" FontSize="25" VerticalTextAlignment="Center" Margin="0,130,0,0"
                            HorizontalTextAlignment="Center" VerticalOptions="Start" HorizontalOptions="Center" />
-            <!-- Red -->
-            <Label Text="Red - Palgan-saek - 빨간색" TextColor="White" FontSize="25" VerticalTextAlignment="Center" Margin="0,180,0,0"
+            <!-- Cat -->
+            <Label Text="Cat - Goyangi - 고양이" TextColor="White" FontSize="25" VerticalTextAlignment="Center" Margin="0,180,0,0"
                            HorizontalTextAlignment="Center" VerticalOptions="Start" HorizontalOptions="Center" />
-            <!-- Blue -->
-            <Label Text="Blue - Pharan-saek - 파란색" TextColor="White" FontSize="25" VerticalTextAlignment="Center" Margin="0,230,0,0"
+            <!-- Bird -->
+            <Label Text="Bird - Sae - 새" TextColor="White" FontSize="25" VerticalTextAlignment="Center" Margin="0,230,0,0"
                           HorizontalTextAlignment="Center" VerticalOptions="Start" HorizontalOptions="Center" />
-            <!-- Purple -->
-            <Label Text="Purple - Bora-saek - 보라색" TextColor="White" FontSize="25" VerticalTextAlignment="Center" Margin="0,280,0,0"
+            <!-- Fish -->
+            <Label Text="Fish - Mulgogi - 물고기" TextColor="White" FontSize="25" VerticalTextAlignment="Center" Margin="0,280,0,0"
                            HorizontalTextAlignment="Center" VerticalOptions="Start" HorizontalOptions="Center" />
-            <!-- Green -->
-            <Label Text="Green - Nok-saek - 녹색" TextColor="White" FontSize="25" VerticalTextAlignment="Center" Margin="0,330,0,0"
+            <!-- Rabbit -->
+            <Label Text="Rabbit - Tokki - 토끼" TextColor="White" FontSize="25" VerticalTextAlignment="Center" Margin="0,330,0,0"
                            HorizontalTextAlignment="Center" VerticalOptions="Start" HorizontalOptions="Center" />
-            <!-- Yellow -->
-            <Label Text="Yellow - Noran-saek - 노란색" TextColor="White" FontSize="25" VerticalTextAlignment="Center" Margin="0,380,0,0"
+            <!-- Wolf -->
+            <Label Text="Wolf - Neukdae - 늑대" TextColor="White" FontSize="25" VerticalTextAlignment="Center" Margin="0,380,0,0"
                            HorizontalTextAlignment="Center" VerticalOptions="Start" HorizontalOptions="Center" />
-            <!-- Orange -->
-            <Label Text="Orange - Juhwang-saek - " TextColor="White" FontSize="25" VerticalTextAlignment="Center" Margin="0,430,0,0"
+            <!-- Fox -->
+            <Label Text="Fox - Yeou - 여우" TextColor="White" FontSize="25" VerticalTextAlignment="Center" Margin="0,430,0,0"
                            HorizontalTextAlignment="Center" VerticalOptions="Start" HorizontalOptions="Center" />
-            <!-- Pink -->
-            <Label Text="Pink - Bunhong-saek - 분홍색" TextColor="White" FontSize="25" VerticalTextAlignment="Center" Margin="0,480,0,0"
+            <!-- Bear -->
+            <Label Text="Bear - Gom - 곰" TextColor="White" FontSize="25" VerticalTextAlignment="Center" Margin="0,480,0,0"
                            HorizontalTextAlignment="Center" VerticalOptions="Start" HorizontalOptions="Center" />
-            <!-- Gray -->
-            <Label Text="Gray - Hoe-saek - 회색" TextColor="White" FontSize="25" VerticalTextAlignment="Center" Margin="0,530,0,0"
+            <!-- Frog -->
+            <Label Text="Frog - Gaeguri - 개구리" TextColor="White" FontSize="25" VerticalTextAlignment="Center" Margin="0,530,0,0"
                            HorizontalTextAlignment="Center" VerticalOptions="Start" HorizontalOptions="Center" />
-            <!-- Brown -->
-            <Label Text="Brown - Gal-saek - 갈색" TextColor="White" FontSize="25" VerticalTextAlignment="Center" Margin="0,580,0,0"
+            <!-- Shark -->
+            <Label Text="Shark - Sangeo - 상어" TextColor="White" FontSize="25" VerticalTextAlignment="Center" Margin="0,580,0,0"
                            HorizontalTextAlignment="Center" VerticalOptions="Start" HorizontalOptions="Center" />
 
         </Grid>
@@ -151,7 +151,6 @@
                         Tapped="Levels_Choice_Btn_Clicked"/>
                 </Label.GestureRecognizers>
             </Label>
-
 
     </Grid>
 

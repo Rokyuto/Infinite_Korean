@@ -162,6 +162,10 @@ namespace Infinite_Korean.Categories_Pages
             Button2_Label.Text = "Symbols";
             Button3_Label.Text = "Translation";
 
+            //Reset Levels Picker
+            Level_Choice_Dropdown.SelectedIndex = -1;
+            Level_Choosed = null;
+
             SetButtonsImg();
 
         }
@@ -799,11 +803,10 @@ namespace Infinite_Korean.Categories_Pages
             }
         }
 
-        private void Symbol_Level_Choice_Btn_Clicked(object sender, EventArgs e)
+        private void Level_Choice_Btn_Clicked(object sender, EventArgs e) //Levels Picker
         {
-            //check Loaded Level
 
-            if(Level_Choice_Dropdown.SelectedItem != null)
+            if(Level_Choice_Dropdown.SelectedItem != null) //If it's Choosen Item 
             {
                 string LevelChoice = Level_Choice_Dropdown.SelectedItem.ToString();
 
@@ -813,19 +816,12 @@ namespace Infinite_Korean.Categories_Pages
                     {
                         case "Level 1 - Translate Numbers [0 - 5]":
                             Level_Choosed = "Lvl1";
-                            DisplayAlert("Chosen Level: ", LevelChoice, "Ok");
-                            Generate_ButtonsAnswers();
                             break;
                         case "Level 2 - Translate Numbers [0 - 10]":
                             Level_Choosed = "Lvl2";
-                            //IsLvl2Choosen
-                            DisplayAlert("Chosen Level: ", LevelChoice, "Ok");
-                            Generate_ButtonsAnswers();
                             break;
                         case "Lvl3 - Transcription Numbers [0 - 10]":
                             Level_Choosed = "Lvl3";
-                            DisplayAlert("Chosen Level: ", LevelChoice, "Ok");
-                            Generate_ButtonsAnswers();
                             break;
                     }
                 }
@@ -835,18 +831,12 @@ namespace Infinite_Korean.Categories_Pages
                     {
                         case "Level 1 - Translate Numbers [0 - 5]":
                             Level_Choosed = "Lvl1";
-                            Generate_ButtonsAnswers();
-                            DisplayAlert("Chosen Level: ", LevelChoice, "Ok");
                             break;
                         case "Level 2 - Translate Numbers [0 - 10]":
                             Level_Choosed = "Lvl2";
-                            Generate_ButtonsAnswers();
-                            DisplayAlert("Chosen Level: ", LevelChoice, "Ok");
                             break;
                         case "Lvl3 - Transcription Numbers [0 - 10]":
                             Level_Choosed = "Lvl3";
-                            Generate_ButtonsAnswers();
-                            DisplayAlert("Chosen Level: ", LevelChoice, "Ok");
                             break;
                     }
                 }
@@ -856,21 +846,19 @@ namespace Infinite_Korean.Categories_Pages
                     {
                         case "Level 1 - Transcription Numbers [0 - 5]":
                             Level_Choosed = "Lvl1";
-                            Generate_ButtonsAnswers();
-                            DisplayAlert("Chosen Level: ", LevelChoice, "Ok");
                             break;
                         case "Level 2 - Transcription Numbers [0 - 10]":
                             Level_Choosed = "Lvl2";
-                            Generate_ButtonsAnswers();
-                            DisplayAlert("Chosen Level: ", LevelChoice, "Ok");
                             break;
                         case "Lvl3 - Symbols Numbers [0 - 10]":
                             Level_Choosed = "Lvl3";
-                            Generate_ButtonsAnswers();
-                            DisplayAlert("Chosen Level: ", LevelChoice, "Ok");
                             break;
                     }
                 }
+
+                DisplayAlert("Chosen Level: ", LevelChoice, "Ok");
+                Generate_ButtonsAnswers();
+
                 PlayerScore_Correct = 0;
                 PlayerScoreCorrect_Label.Text = PlayerScore_Correct.ToString(); //Update Player Score Label
                 PlayerScore_Wrong = 0;
@@ -879,11 +867,6 @@ namespace Infinite_Korean.Categories_Pages
                 SetButtonsImg();
                 Generate_GuessNum();
             }
-
-         /*   DateTime dt = DateTime.Now;
-            int ms = dt.Millisecond;
-            Console.WriteLine(ms); */
-
 
         }
 

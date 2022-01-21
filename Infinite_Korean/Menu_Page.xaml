@@ -54,6 +54,18 @@
                 </Label.GestureRecognizers>
             </Label>
 
+            <!-- Create Animals 2 Category Button -->
+            <ImageButton BackgroundColor="Transparent" Source="Button_Default.png" HeightRequest="60" WidthRequest="200" Margin="0,100,0,0"
+                        HorizontalOptions="End" VerticalOptions="Start" Clicked="Animals2_Button_Clicked" />
+            <!-- Animals 2' Button Text -->
+            <Label Text="Animals 2" TextColor="White" FontSize="20" FontFamily="MyFont_Malgun_Semilight" 
+                       FontAttributes="Italic" Margin="0,115,55,25" VerticalOptions="Start" HorizontalOptions="End"  >
+                <Label.GestureRecognizers>
+                    <TapGestureRecognizer
+                            Tapped="Animals2_Button_Clicked"/>
+                </Label.GestureRecognizers>
+            </Label>
+
         </Grid>
         
     </Grid>
