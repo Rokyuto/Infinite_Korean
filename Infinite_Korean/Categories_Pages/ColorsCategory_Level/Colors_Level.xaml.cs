@@ -70,11 +70,11 @@ namespace Infinite_Korean.Categories_Pages.ColorsCategory_Level
             Read_Colors_Translate_txt(); //Load & Read Animals .csv files for Words
         }
 
-        private void Read_Colors_Translate_txt() //Load & Read Animals .csv files for Words
+        private void Read_Colors_Translate_txt() //Load & Read Animals .csv files for Words                                 
         {
 
             //Get File Location\ Connect to Current Page
-            var tmp = System.Reflection.IntrospectionExtensions.GetTypeInfo(typeof(Animals_Category_Page)).Assembly;
+            var tmp = System.Reflection.IntrospectionExtensions.GetTypeInfo(typeof(Colors_Level)).Assembly;
 
             //Get/Find .csv Files
             Stream Translate_File = tmp.GetManifestResourceStream("Infinite_Korean.csv.Colors.Colors_Translate.csv");

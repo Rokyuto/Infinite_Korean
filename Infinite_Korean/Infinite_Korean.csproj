@@ -17,6 +17,9 @@
     <None Remove="csv\Colors\Colors_Symols.csv" />
     <None Remove="csv\Colors\Colors_Transcription.csv" />
     <None Remove="csv\Colors\Colors_Translate.csv" />
+    <None Remove="csv\Numbers\Numbers_Symbols.csv" />
+    <None Remove="csv\Numbers\Numbers_Transcription.csv" />
+    <None Remove="csv\Numbers\Numbers_Translate.csv" />
     <None Remove="Fonts\malgun.ttf" />
     <None Remove="Fonts\malgunbd.ttf" />
     <None Remove="Fonts\malgunsl.ttf" />
@@ -30,6 +33,9 @@
     <EmbeddedResource Include="csv\Colors\Colors_Symols.csv" />
     <EmbeddedResource Include="csv\Colors\Colors_Transcription.csv" />
     <EmbeddedResource Include="csv\Colors\Colors_Translate.csv" />
+    <EmbeddedResource Include="csv\Numbers\Numbers_Symbols.csv" />
+    <EmbeddedResource Include="csv\Numbers\Numbers_Transcription.csv" />
+    <EmbeddedResource Include="csv\Numbers\Numbers_Translate.csv" />
     <EmbeddedResource Include="Fonts\malgun.ttf" />
     <EmbeddedResource Include="Fonts\malgunbd.ttf" />
     <EmbeddedResource Include="Fonts\malgunsl.ttf" />
