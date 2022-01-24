@@ -20,6 +20,9 @@
     <None Remove="csv\Colors\Colors_Symols.csv" />
     <None Remove="csv\Colors\Colors_Transcription.csv" />
     <None Remove="csv\Colors\Colors_Translate.csv" />
+    <None Remove="csv\Fruits\Fruits_Symbols.csv" />
+    <None Remove="csv\Fruits\Fruits_Transcription.csv" />
+    <None Remove="csv\Fruits\Fruits_Translate.csv" />
     <None Remove="csv\Numbers\Numbers_Symbols.csv" />
     <None Remove="csv\Numbers\Numbers_Transcription.csv" />
     <None Remove="csv\Numbers\Numbers_Translate.csv" />
@@ -39,6 +42,9 @@
     <EmbeddedResource Include="csv\Colors\Colors_Symols.csv" />
     <EmbeddedResource Include="csv\Colors\Colors_Transcription.csv" />
     <EmbeddedResource Include="csv\Colors\Colors_Translate.csv" />
+    <EmbeddedResource Include="csv\Fruits\Fruits_Symbols.csv" />
+    <EmbeddedResource Include="csv\Fruits\Fruits_Transcription.csv" />
+    <EmbeddedResource Include="csv\Fruits\Fruits_Translate.csv" />
     <EmbeddedResource Include="csv\Numbers\Numbers_Symbols.csv" />
     <EmbeddedResource Include="csv\Numbers\Numbers_Transcription.csv" />
     <EmbeddedResource Include="csv\Numbers\Numbers_Translate.csv" />
@@ -64,6 +70,9 @@
       <Generator>MSBuild:UpdateDesignTimeXaml</Generator>
     </EmbeddedResource>
     <EmbeddedResource Update="Categories_Pages\ColorsCategory_Level\Colors_Level.xaml">
+      <Generator>MSBuild:UpdateDesignTimeXaml</Generator>
+    </EmbeddedResource>
+    <EmbeddedResource Update="Categories_Pages\Fruit_Category_Page.xaml">
       <Generator>MSBuild:UpdateDesignTimeXaml</Generator>
     </EmbeddedResource>
     <EmbeddedResource Update="Categories_Pages\Level_End_Pages\Passed_Page.xaml">

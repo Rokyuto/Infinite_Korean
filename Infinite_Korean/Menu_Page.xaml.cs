@@ -17,6 +17,16 @@ namespace Infinite_Korean
             InitializeComponent();
         }
 
+        protected override bool OnBackButtonPressed() //On Mobile Back Button Click
+        {
+            Device.BeginInvokeOnMainThread(() =>
+            {
+                App.Current.MainPage = new MainPage(); // Go to Previous Page - Start Page
+            });
+            return true;
+            //return base.OnBackButtonPressed();
+        }
+
         private void BackButton_Clicked(object sender, EventArgs e)
         {
             App.Current.MainPage = new MainPage();
@@ -32,16 +42,6 @@ namespace Infinite_Korean
             App.Current.MainPage = new Categories_Pages.ColorsCategory_Level.Colors_Level();
         }
 
-        protected override bool OnBackButtonPressed() //On Mobile Back Button Click
-        {
-            Device.BeginInvokeOnMainThread(() =>
-            {
-                App.Current.MainPage = new MainPage(); // Go to Previous Page - Start Page
-            });
-            return true;
-            //return base.OnBackButtonPressed();
-        }
-
         private void Animals_Button_Clicked(object sender, EventArgs e)
         {
             App.Current.MainPage = new Categories_Pages.Animals_Category_Page();
@@ -50,6 +50,11 @@ namespace Infinite_Korean
         private void Animals2_Button_Clicked(object sender, EventArgs e)
         {
             App.Current.MainPage = new Categories_Pages.Animals_2_Category_Page();
+        }
+
+        private void Fruits_Button_Clicked(object sender, EventArgs e)
+        {
+            App.Current.MainPage = new Categories_Pages.Fruit_Category_Page();
         }
     }
 }

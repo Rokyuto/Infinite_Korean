@@ -26,6 +26,7 @@ namespace Infinite_Korean.Categories_Pages.Level_End_Pages
         string Color_Page = "Colors";
         string Animals_Page = "Animals";
         string Animals_2_Page = "Animals_2";
+        string Fruits_Page = "Fruits";
 
         public static int Stars; //Count Player Mistakes when he Pass Level
 
@@ -77,6 +78,10 @@ namespace Infinite_Korean.Categories_Pages.Level_End_Pages
                 case "Animals_2":
                     Category = "Animals 2";
                     break;
+                case "Fruits":
+                    Category = "Fruits";
+                    break;
+
             }
 
             Page_Congrats_Text.Text = "You complete the " + Category + " " + Passed_Level + " Lesson";
@@ -99,6 +104,10 @@ namespace Infinite_Korean.Categories_Pages.Level_End_Pages
             if (PageAdress == Animals_2_Page)
             {
                 App.Current.MainPage = new Animals_2_Category_Page();
+            }
+            if (PageAdress == Fruits_Page)
+            {
+                App.Current.MainPage = new Fruit_Category_Page();
             }
         }
     }

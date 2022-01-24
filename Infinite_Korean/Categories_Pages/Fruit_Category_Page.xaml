@@ -1,0 +1,157 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             x:Class="Infinite_Korean.Categories_Pages.Fruit_Category_Page">
+    
+    <Grid>
+
+        <!-- Load Page Background -->
+        <Image Source="GradientBGD.png" HorizontalOptions="Fill" VerticalOptions="Fill" Aspect="AspectFill"/>
+
+        <Label x:Name="Title_Label" Text="" TextColor="#54b4ff" FontSize="40" FontFamily="MyFont_Malgun_Bold" FontAttributes="Bold,Italic" Margin="0,20,0,50"
+               VerticalOptions="Start" HorizontalOptions="Center" />
+
+        <!-- Set Back Button -->
+        <ImageButton x:Name="BackButton" BackgroundColor="Transparent" Source="Back_Button.png" HeightRequest="50" WidthRequest="50" 
+                     Margin="15,15,0,0" HorizontalOptions="Start" VerticalOptions="Start" Clicked="BackButton_Clicked"/>
+
+        <!-- Page instructions for the user -->
+        <Label x:Name="Instruction_Label" Text="Choose the correct answer" TextColor="White" FontFamily="MyFont_Malgun_Bold" FontSize="22" Margin="40,25,15,15" VerticalOptions="Start" HorizontalOptions="Center" />
+
+        <!-- Guessing's Word Background -->
+        <Image x:Name="GuessWordBGD" Source="GuessWordBGD.png" HeightRequest="125" WidthRequest="400" Margin="10,90,10,00" VerticalOptions="Start" HorizontalOptions="Center"/>
+        <Label x:Name="GuessWord_Label" Text="" TextColor="White" FontFamily="MyFont_Malgun_Semilight" FontSize="30" Margin="0,135"
+                   HorizontalTextAlignment="Center" VerticalOptions="Start" HorizontalOptions="Center"/>
+
+        <!-- Fruits Lesson Page -->
+        <ImageButton x:Name="Lesson_Button" BackgroundColor="Transparent" Source="Button_Default.png" HeightRequest="100" WidthRequest="400"
+                     Margin="0,175,0,0" HorizontalOptions="Center" VerticalOptions="Start" Clicked="Lesson_Button_Clicked"/>
+        <!-- Leson Button Text -->
+        <Label x:Name="LessonButton_Label" Text="" TextColor="White" FontSize="30" FontFamily="MyFont_Malgun_Semilight" FontAttributes="Italic"
+                   Margin="0,202,0,0" HorizontalTextAlignment="Center" VerticalOptions="Start" HorizontalOptions="Center" >
+            <Label.GestureRecognizers>
+                <TapGestureRecognizer
+                    Tapped="Lesson_Button_Clicked"/>
+            </Label.GestureRecognizers>
+        </Label>
+
+        <!-- Fruits List -->
+        <Grid x:Name="LessonText_Grid" Margin="15,80,15,0" IsVisible="False">
+            <!-- Fruit -->
+            <Label Text="gwail - 과일" TextColor="#54b4ff" FontSize="27" VerticalTextAlignment="Center"
+                           HorizontalTextAlignment="Center" VerticalOptions="Start" HorizontalOptions="Center" />
+            <!-- Strawberry -->
+            <Label Text="strawberry - ttalgi - 딸기" TextColor="White" FontSize="25" VerticalTextAlignment="Center" Margin="0,80,0,0"
+                           HorizontalTextAlignment="Center" VerticalOptions="Start" HorizontalOptions="Center" />
+            <!-- Apple -->
+            <Label Text="apple - sagwa - 사과" TextColor="White" FontSize="25" VerticalTextAlignment="Center" Margin="0,130,0,0"
+                           HorizontalTextAlignment="Center" VerticalOptions="Start" HorizontalOptions="Center" />
+            <!-- Cherry -->
+            <Label Text="cherry - cheri - 체리" TextColor="White" FontSize="25" VerticalTextAlignment="Center" Margin="0,180,0,0"
+                           HorizontalTextAlignment="Center" VerticalOptions="Start" HorizontalOptions="Center" />
+            <!-- Grapes -->
+            <Label Text="grapes - podo - 포도" TextColor="White" FontSize="25" VerticalTextAlignment="Center" Margin="0,230,0,0"
+                          HorizontalTextAlignment="Center" VerticalOptions="Start" HorizontalOptions="Center" />
+            <!-- Orange -->
+            <Label Text="orange - orenji - 오렌지" TextColor="White" FontSize="25" VerticalTextAlignment="Center" Margin="0,280,0,0"
+                           HorizontalTextAlignment="Center" VerticalOptions="Start" HorizontalOptions="Center" />
+            <!-- Peach -->
+            <Label Text="peach - boksunga - 복숭아" TextColor="White" FontSize="25" VerticalTextAlignment="Center" Margin="0,330,0,0"
+                           HorizontalTextAlignment="Center" VerticalOptions="Start" HorizontalOptions="Center" />
+            <!-- Lemon -->
+            <Label Text="lemon - remon - 레몬" TextColor="White" FontSize="25" VerticalTextAlignment="Center" Margin="0,380,0,0"
+                           HorizontalTextAlignment="Center" VerticalOptions="Start" HorizontalOptions="Center" />
+            <!-- Pear -->
+            <Label Text="pear - bae - 배" TextColor="White" FontSize="25" VerticalTextAlignment="Center" Margin="0,430,0,0"
+                           HorizontalTextAlignment="Center" VerticalOptions="Start" HorizontalOptions="Center" />
+            <!-- Pineapple -->
+            <Label Text="pineapple - painaepeul - 파인애플" TextColor="White" FontSize="25" VerticalTextAlignment="Center" Margin="0,480,0,0"
+                           HorizontalTextAlignment="Center" VerticalOptions="Start" HorizontalOptions="Center" />
+            <!-- Watermelon -->
+            <Label Text="watermelon - subak - 수박" TextColor="White" FontSize="25" VerticalTextAlignment="Center" Margin="0,530,0,0"
+                           HorizontalTextAlignment="Center" VerticalOptions="Start" HorizontalOptions="Center" />
+            <!-- Melon -->
+            <Label Text="melon - mellon - 멜론" TextColor="White" FontSize="25" VerticalTextAlignment="Center" Margin="0,580,0,0"
+                           HorizontalTextAlignment="Center" VerticalOptions="Start" HorizontalOptions="Center" />
+
+        </Grid>
+
+        <!-- Levels Buttons -->
+
+        <ImageButton x:Name="My_Button1" BackgroundColor="Transparent" Source="Button_Default.png" HeightRequest="100" WidthRequest="400"
+                     Margin="0,275,0,0" HorizontalOptions="Center" VerticalOptions="Start" Clicked="My_Button1_Clicked" />
+        <!-- Level Button1 Text -->
+        <Label x:Name="Button1_Label" Text="" TextColor="White" FontSize="30" FontFamily="MyFont_Malgun_Semilight" 
+                   FontAttributes="Italic" Margin="0,302,0,0" HorizontalTextAlignment="Center" VerticalOptions="Start" HorizontalOptions="Center" >
+            <Label.GestureRecognizers>
+                <TapGestureRecognizer
+                    Tapped="My_Button1_Clicked"/>
+            </Label.GestureRecognizers>
+        </Label>
+
+        <ImageButton x:Name="My_Button2" BackgroundColor="Transparent" Source="Button_Default.png" HeightRequest="100" WidthRequest="400"
+                     Margin="0,375,0,0" HorizontalOptions="Center" VerticalOptions="Start" Clicked="My_Button2_Clicked"/>
+        <!-- Level Button2 Text -->
+        <Label x:Name="Button2_Label" Text="" TextColor="White" FontSize="30" FontFamily="MyFont_Malgun_Semilight"
+                   FontAttributes="Italic" Margin="0,402,0,0" HorizontalTextAlignment="Center" VerticalOptions="Start" HorizontalOptions="Center" >
+            <Label.GestureRecognizers>
+                <TapGestureRecognizer
+                    Tapped="My_Button2_Clicked"/>
+            </Label.GestureRecognizers>
+        </Label>
+
+        <ImageButton x:Name="My_Button3" BackgroundColor="Transparent" Source="Button_Default.png" HeightRequest="100" WidthRequest="400"
+                     Margin="0,475,0,0" HorizontalOptions="Center" VerticalOptions="Start" Clicked="My_Button3_Clicked" />
+        <!-- Level Button3 Text -->
+        <Label x:Name="Button3_Label" Text="" TextColor="White" FontSize="30" FontFamily="MyFont_Malgun_Semilight" 
+                   Margin="0,502,0,0" HorizontalTextAlignment="Center" VerticalOptions="Start" HorizontalOptions="Center" >
+            <Label.GestureRecognizers>
+                <TapGestureRecognizer
+                    Tapped="My_Button3_Clicked"/>
+            </Label.GestureRecognizers>
+        </Label>
+
+        <!-- Answers Counters -->
+        <Grid x:Name="Scores_Grid" IsVisible="False" Margin="5,600,5,10">
+            <Image x:Name="CounterCorrect_Img" Source="CounterCorrect.png" HeightRequest="115" WidthRequest="115" HorizontalOptions="Start" VerticalOptions="End" />
+            <!-- Correct Counter Image -->
+
+            <!-- Correct Counter Texts -->
+
+            <!-- Max Level Correct Score -->
+            <Label x:Name="CorrectScore_Req" Text="" TextColor="White" FontFamily="MyFont_Malgun_Regular" FontSize="30" Margin="50,40" VerticalOptions="End" HorizontalOptions="Start" />
+            <!-- Player Correct Score -->
+            <Label x:Name="PlayerScoreCorrect_Label" Text="" TextColor="White" FontFamily="MyFont_Malgun_Regular" FontSize="30" Margin="10,40" WidthRequest="40" HorizontalTextAlignment="End" VerticalOptions="End" HorizontalOptions="Start" />
+
+            <Image x:Name="CounterWrong_Img" Source="CounterWrong.png" HeightRequest="115" WidthRequest="115" HorizontalOptions="End" VerticalOptions="End" />
+            <!-- Wrong Counter Image -->
+
+            <!-- Wrong Counter Texts -->
+
+            <!-- Max Level Wrong Score -->
+            <Label x:Name="WrongScore_Req" Text="" TextColor="White" FontFamily="MyFont_Malgun_Regular" FontSize="30" Margin="0,0,30,40" VerticalOptions="End" HorizontalOptions="End" />
+            <!-- Player Wrong Score -->
+            <Label x:Name="PlayerScoreWrong_Label" Text="" TextColor="White" FontFamily="MyFont_Malgun_Regular" FontSize="30" Margin="60,40" WidthRequest="40" HorizontalTextAlignment="End" VerticalOptions="End" HorizontalOptions="End" />
+
+        </Grid>
+
+        <!-- Dropdown for Level Choice -->
+        <Picker x:Name="Level_Choice_Dropdown" Title="Levels" TitleColor="White" TextColor="White" VerticalOptions="End" HorizontalOptions="Center" HorizontalTextAlignment="Center" Margin="0,0,0,80" WidthRequest="160" >
+            <Picker.Items>
+                <x:String>Fruits Translation - Lvl1</x:String>
+                <x:String>Fruits Translation - Lvl2</x:String>
+                <x:String>Fruits Transcription - Lvl3</x:String>
+            </Picker.Items>
+        </Picker>
+            <ImageButton x:Name="Levels_Choice_Btn" IsVisible="False" BackgroundColor="Transparent" Source="Button_Default.png" Clicked="Levels_Choice_Btn_Clicked" WidthRequest="200" HorizontalOptions="Center" VerticalOptions="End" Margin="0,0,0,20"/>
+                <Label x:Name="Level_Choice_BtnText" IsVisible="False" Text="Choice" TextColor="White" FontSize="20" VerticalOptions="End" HorizontalOptions="Center" 
+                           HorizontalTextAlignment="Center" Margin="0,0,0,38" >
+                    <Label.GestureRecognizers>
+                        <TapGestureRecognizer
+                            Tapped="Levels_Choice_Btn_Clicked"/>
+                    </Label.GestureRecognizers>
+                </Label>
+
+    </Grid>
+
+</ContentPage>

@@ -66,6 +66,18 @@
                 </Label.GestureRecognizers>
             </Label>
 
+            <!-- Create Fruits Category Button -->
+            <ImageButton x:Name="Fruits_Button" BackgroundColor="Transparent" Source="Button_Default.png" HeightRequest="60" WidthRequest="200" Margin="0,215,70,25"
+                        HorizontalOptions="Start" VerticalOptions="Start" Clicked="Fruits_Button_Clicked" />
+            <!-- Fruits Button Text -->
+            <Label x:Name="Fruits_Button_Text" Text="Fruits" TextColor="White" FontSize="20" FontFamily="MyFont_Malgun_Semilight" 
+                       FontAttributes="Italic" Margin="77.5,230,55,25" VerticalOptions="Start" HorizontalOptions="Start"  >
+                <Label.GestureRecognizers>
+                    <TapGestureRecognizer
+                            Tapped="Fruits_Button_Clicked"/>
+                </Label.GestureRecognizers>
+            </Label>
+
         </Grid>
         
     </Grid>

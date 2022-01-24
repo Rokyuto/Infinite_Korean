@@ -11,7 +11,7 @@ using Xamarin.Forms.Xaml;
 namespace Infinite_Korean.Categories_Pages
 {
     [XamlCompilation(XamlCompilationOptions.Compile)]
-    public partial class Animals_2_Category_Page : ContentPage
+    public partial class Fruit_Category_Page : ContentPage
     {
         //Initialize Random
         Random MyRandom = new Random();
@@ -27,16 +27,16 @@ namespace Infinite_Korean.Categories_Pages
         //Lists
 
         // Lists with Korean Symbols Meaning - Translation
-        List<string> List_Animals_2_Translate_Lvl1 = new List<string>();
-        List<string> List_Animals_2_Translate_Lvl2 = new List<string>();
+        List<string> List_Fruit_Translate_Lvl1 = new List<string>();
+        List<string> List_Fruit_Translate_Lvl2 = new List<string>();
 
-        // Lists with Korean Animals_2 Transcription
-        List<string> List_Animals_2_Transcription_Lvl1 = new List<string>();
-        List<string> List_Animals_2_Transcription_Lvl2 = new List<string>();
+        // Lists with Korean Fruit Transcription
+        List<string> List_Fruit_Transcription_Lvl1 = new List<string>();
+        List<string> List_Fruit_Transcription_Lvl2 = new List<string>();
 
-        // Lists with Korean Animals_2 Symbol
-        List<string> List_Animals_2_Symbol_Lvl1 = new List<string>();
-        List<string> List_Animals_2_Symbol_Lvl2 = new List<string>();
+        // Lists with Korean Fruit Symbol
+        List<string> List_Fruit_Symbol_Lvl1 = new List<string>();
+        List<string> List_Fruit_Symbol_Lvl2 = new List<string>();
 
         List<string> List_GuessWords = new List<string>(); //Levels GuessWord List
         List<string> List_Answers = new List<string>(); //Levels Answers List
@@ -60,13 +60,12 @@ namespace Infinite_Korean.Categories_Pages
         int Level3_Req = 50; //Requarment for Level 3
 
         string Level_Choosed; //Level Choice
-
-        public Animals_2_Category_Page()
+        public Fruit_Category_Page()
         {
             InitializeComponent();
             //On Page Load
             Level_Load(); //Load Level UI
-            Read_Animals_2_csv_files(); //Load & Read Animals_2 .csv files
+            Read_Fruit_csv_files(); //Load & Read Fruit .csv files
         }
 
         private void Level_Load() //Page Load
@@ -76,7 +75,7 @@ namespace Infinite_Korean.Categories_Pages
             Button1_Label.Text = "Transcription";
             Button2_Label.Text = "Symbols";
             Button3_Label.Text = "Translation";
-            Title_Label.Text = "Animals 2";
+            Title_Label.Text = "Fruits";
 
             //Hide Levels Items
             GuessWordBGD.IsVisible = false; //Guess Word Background
@@ -109,15 +108,15 @@ namespace Infinite_Korean.Categories_Pages
             Button3_Label.IsEnabled = true;
         }
 
-        private void Read_Animals_2_csv_files()
+        private void Read_Fruit_csv_files()
         {
             //Get File Location\ Connect to Current Page
-            var tmp = System.Reflection.IntrospectionExtensions.GetTypeInfo(typeof(Animals_2_Category_Page)).Assembly;
+            var tmp = System.Reflection.IntrospectionExtensions.GetTypeInfo(typeof(Fruit_Category_Page)).Assembly;
 
             //Get/Find .csv files
-            Stream Translate_File = tmp.GetManifestResourceStream("Infinite_Korean.csv.Animals_2.Animals_2_Translate.csv");
-            Stream Transcription_File = tmp.GetManifestResourceStream("Infinite_Korean.csv.Animals_2.Animals_2_Transcription.csv");
-            Stream Symbol_File = tmp.GetManifestResourceStream("Infinite_Korean.csv.Animals_2.Animals_2_Symbols.csv");
+            Stream Translate_File = tmp.GetManifestResourceStream("Infinite_Korean.csv.Fruits.Fruits_Translate.csv");
+            Stream Transcription_File = tmp.GetManifestResourceStream("Infinite_Korean.csv.Fruits.Fruits_Transcription.csv");
+            Stream Symbol_File = tmp.GetManifestResourceStream("Infinite_Korean.csv.Fruits.Fruits_Symbols.csv");
 
             //Read .csv files
             StreamReader Translate_File_Reader = new StreamReader(Translate_File);
@@ -131,11 +130,11 @@ namespace Infinite_Korean.Categories_Pages
             {
                 if (Current_Element < 7)
                 {
-                    List_Animals_2_Translate_Lvl1.Add(word);
+                    List_Fruit_Translate_Lvl1.Add(word);
                 }
                 else
                 {
-                    List_Animals_2_Translate_Lvl2.Add(word);
+                    List_Fruit_Translate_Lvl2.Add(word);
                 }
                 Current_Element++;
             }
@@ -147,11 +146,11 @@ namespace Infinite_Korean.Categories_Pages
             {
                 if (Current_Element < 7)
                 {
-                    List_Animals_2_Transcription_Lvl1.Add(word);
+                    List_Fruit_Transcription_Lvl1.Add(word);
                 }
                 else
                 {
-                    List_Animals_2_Transcription_Lvl2.Add(word);
+                    List_Fruit_Transcription_Lvl2.Add(word);
                 }
                 Current_Element++;
             }
@@ -163,11 +162,11 @@ namespace Infinite_Korean.Categories_Pages
             {
                 if (Current_Element < 7)
                 {
-                    List_Animals_2_Symbol_Lvl1.Add(word);
+                    List_Fruit_Symbol_Lvl1.Add(word);
                 }
                 else
                 {
-                    List_Animals_2_Symbol_Lvl2.Add(word);
+                    List_Fruit_Symbol_Lvl2.Add(word);
                 }
                 Current_Element++;
             }
@@ -196,7 +195,7 @@ namespace Infinite_Korean.Categories_Pages
             Loaded_Level = "Categories";
 
             //Update Page Title
-            Title_Label.Text = "Animals 2";
+            Title_Label.Text = "Fruits";
             Title_Label.FontSize = 40;
 
             //Show Buttons
@@ -362,8 +361,8 @@ namespace Infinite_Korean.Categories_Pages
                         WrongScore_Req.Margin = new Thickness(0, 0, 30, 40); //Update Wrong Score Requarment Margin
                         PlayerScoreWrong_Label.Margin = new Thickness(0, 0, 60, 40); //Update Player Wrong Score Margin
 
-                        List_GuessWords.AddRange(List_Animals_2_Transcription_Lvl1);
-                        List_Answers.AddRange(List_Animals_2_Translate_Lvl1);
+                        List_GuessWords.AddRange(List_Fruit_Transcription_Lvl1);
+                        List_Answers.AddRange(List_Fruit_Translate_Lvl1);
 
                         await Task.Delay(250); // 1/4 second waiting before continue
                         Levels_Design(); //Load Level Design & UI
@@ -382,8 +381,8 @@ namespace Infinite_Korean.Categories_Pages
                         WrongScore_Req.Margin = new Thickness(0, 0, 26, 40); //Update Wrong Score Requarment Margin
                         PlayerScoreWrong_Label.Margin = new Thickness(0, 0, 70, 40); //Update Player Wrong Score Margin
 
-                        List_GuessWords.AddRange(List_Animals_2_Symbol_Lvl1);
-                        List_Answers.AddRange(List_Animals_2_Translate_Lvl1);
+                        List_GuessWords.AddRange(List_Fruit_Symbol_Lvl1);
+                        List_Answers.AddRange(List_Fruit_Translate_Lvl1);
 
                         await Task.Delay(250); // 1/4 second waiting before continue
 
@@ -407,8 +406,8 @@ namespace Infinite_Korean.Categories_Pages
                         WrongScore_Req.Margin = new Thickness(0, 0, 26, 40); //Update Wrong Score Requarment Margin
                         PlayerScoreWrong_Label.Margin = new Thickness(0, 0, 70, 40); //Update Player Wrong Score Margin
 
-                        List_GuessWords.AddRange(List_Animals_2_Translate_Lvl1);
-                        List_Answers.AddRange(List_Animals_2_Symbol_Lvl1);
+                        List_GuessWords.AddRange(List_Fruit_Translate_Lvl1);
+                        List_Answers.AddRange(List_Fruit_Symbol_Lvl1);
 
                         await Task.Delay(250); // 1/4 second waiting before continue
 
@@ -606,8 +605,8 @@ namespace Infinite_Korean.Categories_Pages
                 case "Transcription":
                     if (PlayerScore_Correct == Level2_Req || Level_Choosed == "Lvl2")
                     {
-                        List_GuessWords.AddRange(List_Animals_2_Transcription_Lvl2); //Add Lvl2 Transcription Lvl2 Lists to Guess Word List            
-                        List_Answers.AddRange(List_Animals_2_Translate_Lvl2); //Add Lvl2 Translate Lists to Answers List
+                        List_GuessWords.AddRange(List_Fruit_Transcription_Lvl2); //Add Lvl2 Transcription Lvl2 Lists to Guess Word List            
+                        List_Answers.AddRange(List_Fruit_Translate_Lvl2); //Add Lvl2 Translate Lists to Answers List
                     }
                     break;
 
@@ -619,8 +618,8 @@ namespace Infinite_Korean.Categories_Pages
                         List_Answers.Clear();
 
                         //Add Lvl1 Lists to Level List
-                        List_GuessWords.AddRange(List_Animals_2_Symbol_Lvl1);
-                        List_Answers.AddRange(List_Animals_2_Translate_Lvl1);
+                        List_GuessWords.AddRange(List_Fruit_Symbol_Lvl1);
+                        List_Answers.AddRange(List_Fruit_Translate_Lvl1);
                     }
                     if (PlayerScore_Correct == Level2_Req || Level_Choosed == "Lvl2") //If Player Score reach Lvl2 Requarment or Choosen Level is Lvl2
                     {
@@ -629,12 +628,12 @@ namespace Infinite_Korean.Categories_Pages
                         List_Answers.Clear();
 
                         //Add Symbols Lists to Guess Words List
-                        List_GuessWords.AddRange(List_Animals_2_Symbol_Lvl1);
-                        List_GuessWords.AddRange(List_Animals_2_Symbol_Lvl2);
+                        List_GuessWords.AddRange(List_Fruit_Symbol_Lvl1);
+                        List_GuessWords.AddRange(List_Fruit_Symbol_Lvl2);
 
                         //Add Translate Lists to Answers List
-                        List_Answers.AddRange(List_Animals_2_Translate_Lvl1);
-                        List_Answers.AddRange(List_Animals_2_Translate_Lvl2);
+                        List_Answers.AddRange(List_Fruit_Translate_Lvl1);
+                        List_Answers.AddRange(List_Fruit_Translate_Lvl2);
 
                     }
                     else if (PlayerScore_Correct == Level3_Req || Level_Choosed == "Lvl3") //If Player Score reach Lvl3 Requarment or Choosen Level is Lvl3
@@ -644,12 +643,12 @@ namespace Infinite_Korean.Categories_Pages
                         List_Answers.Clear();
 
                         //Add Symbol Lists to Guess Words List
-                        List_GuessWords.AddRange(List_Animals_2_Symbol_Lvl1);
-                        List_GuessWords.AddRange(List_Animals_2_Symbol_Lvl2);
+                        List_GuessWords.AddRange(List_Fruit_Symbol_Lvl1);
+                        List_GuessWords.AddRange(List_Fruit_Symbol_Lvl2);
 
                         //Add Transcription Lists to Answers List
-                        List_Answers.AddRange(List_Animals_2_Transcription_Lvl1);
-                        List_Answers.AddRange(List_Animals_2_Transcription_Lvl2);
+                        List_Answers.AddRange(List_Fruit_Transcription_Lvl1);
+                        List_Answers.AddRange(List_Fruit_Transcription_Lvl2);
                     }
                     break;
 
@@ -661,8 +660,8 @@ namespace Infinite_Korean.Categories_Pages
                         List_Answers.Clear();
 
                         //Add Lvl1 Lists to Level Lists
-                        List_GuessWords.AddRange(List_Animals_2_Translate_Lvl1);
-                        List_Answers.AddRange(List_Animals_2_Symbol_Lvl1);
+                        List_GuessWords.AddRange(List_Fruit_Translate_Lvl1);
+                        List_Answers.AddRange(List_Fruit_Symbol_Lvl1);
                     }
                     if (PlayerScore_Correct == Level2_Req || Level_Choosed == "Lvl2") //If Player Score reach Lvl2 Requarment or Choosen Level is Lvl2
                     {
@@ -671,12 +670,12 @@ namespace Infinite_Korean.Categories_Pages
                         List_Answers.Clear();
 
                         //Add Lvl1 Lists to the Lists
-                        List_GuessWords.AddRange(List_Animals_2_Translate_Lvl1);
-                        List_Answers.AddRange(List_Animals_2_Symbol_Lvl1);
+                        List_GuessWords.AddRange(List_Fruit_Translate_Lvl1);
+                        List_Answers.AddRange(List_Fruit_Symbol_Lvl1);
 
                         //Add Lvl2 Lists to the Lists
-                        List_GuessWords.AddRange(List_Animals_2_Translate_Lvl2);
-                        List_Answers.AddRange(List_Animals_2_Symbol_Lvl2);
+                        List_GuessWords.AddRange(List_Fruit_Translate_Lvl2);
+                        List_Answers.AddRange(List_Fruit_Symbol_Lvl2);
 
                     }
                     else if (PlayerScore_Correct == Level3_Req || Level_Choosed == "Lvl3") //If Player Score reach Lvl3 Requarment or Choosen Level is Lvl3
@@ -686,12 +685,12 @@ namespace Infinite_Korean.Categories_Pages
                         List_Answers.Clear();
 
                         //Add Transcription Lists to Guess Word List 
-                        List_GuessWords.AddRange(List_Animals_2_Transcription_Lvl1);
-                        List_GuessWords.AddRange(List_Animals_2_Transcription_Lvl2);
+                        List_GuessWords.AddRange(List_Fruit_Transcription_Lvl1);
+                        List_GuessWords.AddRange(List_Fruit_Transcription_Lvl2);
 
                         //Add Symbol Lists to Answers List 
-                        List_Answers.AddRange(List_Animals_2_Symbol_Lvl1);
-                        List_Answers.AddRange(List_Animals_2_Symbol_Lvl2);
+                        List_Answers.AddRange(List_Fruit_Symbol_Lvl1);
+                        List_Answers.AddRange(List_Fruit_Symbol_Lvl2);
                     }
                     break;
             }
@@ -699,7 +698,7 @@ namespace Infinite_Korean.Categories_Pages
 
         public async void ScoreCheck() //Track Player Scores
         {
-            Level_End_Pages.Passed_Page.PageAdress = "Animals_2";
+            Level_End_Pages.Passed_Page.PageAdress = "Fruits";
 
             if (PlayerScore_Correct == Max_PlayerCorrectScore) //If Player Correct Score = Max Allowed
             {
@@ -736,13 +735,13 @@ namespace Infinite_Korean.Categories_Pages
 
                 switch (LevelChoice)
                 {
-                    case "Animals Translation - Lvl1":
+                    case "Fruits Translation - Lvl1":
                         Level_Choosed = "Lvl1";
                         break;
-                    case "Animals Translation - Lvl2":
+                    case "Fruits Translation - Lvl2":
                         Level_Choosed = "Lvl2";
                         break;
-                    case "Animals Transcription - Lvl3":
+                    case "Fruits Transcription - Lvl3":
                         Level_Choosed = "Lvl3";
                         break;
                 }
