@@ -64,7 +64,7 @@ namespace Infinite_Korean.Categories_Pages
 
             //On Page Load - Call Funtions
             Level_Load(); //Load Layout 
-            Read_Animals_Translate_txt(); //Load & Read Animals .csv files for Words
+            Read_Animals_csv_files(); //Load & Read Animals .csv files for Words
         }
 
         private void Level_Load() //Page Load
@@ -107,7 +107,7 @@ namespace Infinite_Korean.Categories_Pages
             Button3_Label.IsEnabled = true;
         }
 
-        private void Read_Animals_Translate_txt() //Load & Read Animals .csv files for Words
+        private void Read_Animals_csv_files() //Load & Read Animals .csv files for Words
         {
 
             //Get File Location\ Connect to Current Page

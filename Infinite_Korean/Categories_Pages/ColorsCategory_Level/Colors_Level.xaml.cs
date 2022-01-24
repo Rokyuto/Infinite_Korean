@@ -67,10 +67,10 @@ namespace Infinite_Korean.Categories_Pages.ColorsCategory_Level
             //On Page Load
             Level_Load();
 
-            Read_Colors_Translate_txt(); //Load & Read Animals .csv files for Words
+            Read_Colors_csv_files(); //Load & Read Colors .csv files for Words
         }
 
-        private void Read_Colors_Translate_txt() //Load & Read Animals .csv files for Words                                 
+        private void Read_Colors_csv_files() //Load & Read Colors .csv files for Words                                 
         {
 
             //Get File Location\ Connect to Current Page

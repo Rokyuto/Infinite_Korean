@@ -49,6 +49,7 @@ namespace Infinite_Korean
 
         private void Animals2_Button_Clicked(object sender, EventArgs e)
         {
+            App.Current.MainPage = new Categories_Pages.Animals_2_Category_Page();
         }
     }
 }

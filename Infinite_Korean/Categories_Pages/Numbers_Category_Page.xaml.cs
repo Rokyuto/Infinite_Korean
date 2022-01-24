@@ -29,11 +29,11 @@ namespace Infinite_Korean.Categories_Pages
         List<string> List_Numbers_Translate_Lvl1 = new List<string>();
         List<string> List_Numbers_Translate_Lvl2 = new List<string>();
 
-        // Lists with Korean Animals Transcription
+        // Lists with Korean Numbers Transcription
         List<string> List_Numbers_Transcription_Lvl1 = new List<string>();
         List<string> List_Numbers_Transcription_Lvl2 = new List<string>();
 
-        // Lists with Korean Animals Symbol
+        // Lists with Korean Numbers Symbol
         List<string> List_Numbers_Symbol_Lvl1 = new List<string>();
         List<string> List_Numbers_Symbol_Lvl2 = new List<string>();
 
@@ -66,7 +66,7 @@ namespace Infinite_Korean.Categories_Pages
 
             //On Page Load
             Level_Load();
-            Read_Numbers_Translate_txt(); //Load & Read Animals .csv files for Words
+            Read_Numbers_csv_files(); //Load & Read Animals .csv files for Words
         }
 
         private void Level_Load() //Page Load
@@ -109,12 +109,11 @@ namespace Infinite_Korean.Categories_Pages
             Button3_Label.IsEnabled = true;
         }
 
-        private void Read_Numbers_Translate_txt() //Load & Read Animals .csv files for Words
+        private void Read_Numbers_csv_files() //Load & Read Numbers .csv files for Words
         {
 
             //Get File Location\ Connect to Current Page
             var tmp = System.Reflection.IntrospectionExtensions.GetTypeInfo(typeof(Numbers_Category_Page)).Assembly;
-            //var Transcription_tmp = System.Reflection.IntrospectionExtensions.GetTypeInfo(typeof(Animals_Category_Page)).Assembly;
 
             //Get/Find .csv Files
             Stream Translate_File = tmp.GetManifestResourceStream("Infinite_Korean.csv.Numbers.Numbers_Translate.csv");
@@ -199,7 +198,7 @@ namespace Infinite_Korean.Categories_Pages
             Loaded_Level = "Categories";
 
             //Update Page Title
-            Title_Label.Text = "Animals";
+            Title_Label.Text = "Numbers";
             Title_Label.FontSize = 40;
 
             //Show Buttons

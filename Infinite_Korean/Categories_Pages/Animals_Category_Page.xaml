@@ -37,7 +37,7 @@
 
         <!-- Animals List -->
         <Grid x:Name="LessonText_Grid" Margin="25,80,25,0" IsVisible="False">
-            <!-- Color -->
+            <!-- Animal -->
             <Label Text=" dongmul - 동물" TextColor="#54b4ff" FontSize="27" VerticalTextAlignment="Center"
                            HorizontalTextAlignment="Center" VerticalOptions="Start" HorizontalOptions="Center" />
             <!-- Dog -->
