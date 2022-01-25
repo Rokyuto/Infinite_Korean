@@ -26,6 +26,9 @@
     <None Remove="csv\Numbers\Numbers_Symbols.csv" />
     <None Remove="csv\Numbers\Numbers_Transcription.csv" />
     <None Remove="csv\Numbers\Numbers_Translate.csv" />
+    <None Remove="csv\Vegetables\Vegetables_Symbols.csv" />
+    <None Remove="csv\Vegetables\Vegetables_Transcription.csv" />
+    <None Remove="csv\Vegetables\Vegetables_Translate.csv" />
     <None Remove="Fonts\malgun.ttf" />
     <None Remove="Fonts\malgunbd.ttf" />
     <None Remove="Fonts\malgunsl.ttf" />
@@ -48,6 +51,9 @@
     <EmbeddedResource Include="csv\Numbers\Numbers_Symbols.csv" />
     <EmbeddedResource Include="csv\Numbers\Numbers_Transcription.csv" />
     <EmbeddedResource Include="csv\Numbers\Numbers_Translate.csv" />
+    <EmbeddedResource Include="csv\Vegetables\Vegetables_Symbols.csv" />
+    <EmbeddedResource Include="csv\Vegetables\Vegetables_Transcription.csv" />
+    <EmbeddedResource Include="csv\Vegetables\Vegetables_Translate.csv" />
     <EmbeddedResource Include="Fonts\malgun.ttf" />
     <EmbeddedResource Include="Fonts\malgunbd.ttf" />
     <EmbeddedResource Include="Fonts\malgunsl.ttf" />
@@ -79,6 +85,9 @@
       <Generator>MSBuild:UpdateDesignTimeXaml</Generator>
     </EmbeddedResource>
     <EmbeddedResource Update="Categories_Pages\Level_End_Pages\TryAgain_Page.xaml">
+      <Generator>MSBuild:UpdateDesignTimeXaml</Generator>
+    </EmbeddedResource>
+    <EmbeddedResource Update="Categories_Pages\Vegetables_Category_Page.xaml">
       <Generator>MSBuild:UpdateDesignTimeXaml</Generator>
     </EmbeddedResource>
     <EmbeddedResource Update="Menu_Page.xaml">

@@ -67,14 +67,26 @@
             </Label>
 
             <!-- Create Fruits Category Button -->
-            <ImageButton x:Name="Fruits_Button" BackgroundColor="Transparent" Source="Button_Default.png" HeightRequest="60" WidthRequest="200" Margin="0,215,70,25"
+            <ImageButton x:Name="Fruits_Button" BackgroundColor="Transparent" Source="Button_Default.png" HeightRequest="60" WidthRequest="200" Margin="0,200,70,25"
                         HorizontalOptions="Start" VerticalOptions="Start" Clicked="Fruits_Button_Clicked" />
             <!-- Fruits Button Text -->
             <Label x:Name="Fruits_Button_Text" Text="Fruits" TextColor="White" FontSize="20" FontFamily="MyFont_Malgun_Semilight" 
-                       FontAttributes="Italic" Margin="77.5,230,55,25" VerticalOptions="Start" HorizontalOptions="Start"  >
+                       FontAttributes="Italic" Margin="77,215,55,25" VerticalOptions="Start" HorizontalOptions="Start"  >
                 <Label.GestureRecognizers>
                     <TapGestureRecognizer
                             Tapped="Fruits_Button_Clicked"/>
+                </Label.GestureRecognizers>
+            </Label>
+
+            <!-- Create Vegetables Category Button -->
+            <ImageButton x:Name="Vegetables_Button" BackgroundColor="Transparent" Source="Button_Default.png" HeightRequest="60" WidthRequest="200" Margin="0,200,0,0"
+                        HorizontalOptions="End" VerticalOptions="Start" Clicked="Vegetables_Button_Clicked" />
+            <!-- Vegetables Button Text -->
+            <Label x:Name="Vegetables_Button_Text" Text="Vegetables" TextColor="White" FontSize="20" FontFamily="MyFont_Malgun_Semilight" 
+                       FontAttributes="Italic" Margin="0,215,51,25" VerticalOptions="Start" HorizontalOptions="End"  >
+                <Label.GestureRecognizers>
+                    <TapGestureRecognizer
+                            Tapped="Vegetables_Button_Clicked"/>
                 </Label.GestureRecognizers>
             </Label>
 

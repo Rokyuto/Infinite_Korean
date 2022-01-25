@@ -55,7 +55,7 @@ namespace Infinite_Korean.Categories_Pages.ColorsCategory_Level
         int Max_PlayerCorrectScore = 0; //Max Correct Score
         int Max_PlayerWrongScore = 0; //Max Wrong Score
 
-        int Level2_Req = 10; //Requarment for Level 2
+        int Level2_Req = 15; //Requarment for Level 2
         int Level3_Req = 50; //Requarment for Level 3
                              
         string Level_Choosed; //Level Choice

@@ -56,5 +56,10 @@ namespace Infinite_Korean
         {
             App.Current.MainPage = new Categories_Pages.Fruit_Category_Page();
         }
+
+        private void Vegetables_Button_Clicked(object sender, EventArgs e)
+        {
+            App.Current.MainPage = new Categories_Pages.Vegetables_Category_Page();
+        }
     }
 }
