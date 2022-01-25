@@ -20,6 +20,7 @@ namespace Infinite_Korean.Categories_Pages.Level_End_Pages
         string Animals_2_Page = "Animals_2";
         string Fruits_Page = "Fruits";
         string Vegetables_Page = "Vegetables";
+        string Meats_Page = "Meats";
 
         public TryAgain_Page()
         {
@@ -57,6 +58,11 @@ namespace Infinite_Korean.Categories_Pages.Level_End_Pages
             {
                 Passed_Page.PageAdress = "";
                 App.Current.MainPage = new Vegetables_Category_Page();
+            }
+            else if(Passed_Page.PageAdress == Meats_Page)
+            {
+                Passed_Page.PageAdress = "";
+                App.Current.MainPage = new Meats_Category_Page();
             }
         }
 

@@ -90,6 +90,30 @@
                 </Label.GestureRecognizers>
             </Label>
 
+            <!-- Create Meats Category Button -->
+            <ImageButton x:Name="Meats_Button" BackgroundColor="Transparent" Source="Button_Default.png" HeightRequest="60" WidthRequest="200" Margin="0,100,0,0"
+                        HorizontalOptions="Start" VerticalOptions="Center" Clicked="Meats_Button_Clicked" />
+                <!-- Meats Button Text -->
+                    <Label x:Name="Meats_Button_Text" Text="Meats" TextColor="White" FontSize="20" FontFamily="MyFont_Malgun_Semilight" 
+                       FontAttributes="Italic" Margin="73.5,96,0,0" VerticalOptions="Center" HorizontalOptions="Start"  >
+                        <Label.GestureRecognizers>
+                            <TapGestureRecognizer
+                                Tapped="Meats_Button_Clicked"/>
+                        </Label.GestureRecognizers>
+                    </Label>
+
+            <!-- Create Drinks Category Button -->
+            <ImageButton x:Name="Drinks_Button" BackgroundColor="Transparent" Source="Button_Default.png" HeightRequest="60" WidthRequest="200" Margin="0,100,0,0"
+                        HorizontalOptions="End" VerticalOptions="Center" Clicked="Drinks_Button_Clicked" />
+            <!-- Drinks Button Text -->
+            <Label x:Name="Drinks_Button_Text" Text="Drinks" TextColor="White" FontSize="20" FontFamily="MyFont_Malgun_Semilight" 
+                       FontAttributes="Italic" Margin="0,96,72,0" VerticalOptions="Center" HorizontalOptions="End"  >
+                <Label.GestureRecognizers>
+                    <TapGestureRecognizer
+                            Tapped="Drinks_Button_Clicked"/>
+                </Label.GestureRecognizers>
+            </Label>
+
         </Grid>
         
     </Grid>

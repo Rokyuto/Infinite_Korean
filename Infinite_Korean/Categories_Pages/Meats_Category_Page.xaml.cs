@@ -11,7 +11,7 @@ using Xamarin.Forms.Xaml;
 namespace Infinite_Korean.Categories_Pages
 {
     [XamlCompilation(XamlCompilationOptions.Compile)]
-    public partial class Vegetables_Category_Page : ContentPage
+    public partial class Meats_Category_Page : ContentPage
     {
         //Initialize Random
         Random MyRandom = new Random();
@@ -61,12 +61,12 @@ namespace Infinite_Korean.Categories_Pages
 
         string Level_Choosed; //Level Choice
 
-        public Vegetables_Category_Page()
+        public Meats_Category_Page()
         {
             InitializeComponent();
             //On Page Load
             Level_Load(); //Load Level UI
-            Read_Vegetables_csv_files(); //Load & Read Fruit .csv files
+            Read_Meats_csv_files(); //Load & Read Fruit .csv files
         }
 
         private void Level_Load() //Page Load
@@ -76,7 +76,7 @@ namespace Infinite_Korean.Categories_Pages
             Button1_Label.Text = "Transcription";
             Button2_Label.Text = "Symbols";
             Button3_Label.Text = "Translation";
-            Title_Label.Text = "Vegetables";
+            Title_Label.Text = "Meats";
 
             //Hide Levels Items
             GuessWordBGD.IsVisible = false; //Guess Word Background
@@ -109,15 +109,15 @@ namespace Infinite_Korean.Categories_Pages
             Button3_Label.IsEnabled = true;
         }
 
-        private void Read_Vegetables_csv_files()
+        private void Read_Meats_csv_files()
         {
             //Get File Location\ Connect to Current Page
-            var tmp = System.Reflection.IntrospectionExtensions.GetTypeInfo(typeof(Vegetables_Category_Page)).Assembly;
+            var tmp = System.Reflection.IntrospectionExtensions.GetTypeInfo(typeof(Meats_Category_Page)).Assembly;
 
             //Get/Find .csv files
-            Stream Translate_File = tmp.GetManifestResourceStream("Infinite_Korean.csv.Vegetables.Vegetables_Translate.csv");
-            Stream Transcription_File = tmp.GetManifestResourceStream("Infinite_Korean.csv.Vegetables.Vegetables_Transcription.csv");
-            Stream Symbol_File = tmp.GetManifestResourceStream("Infinite_Korean.csv.Vegetables.Vegetables_Symbols.csv");
+            Stream Translate_File = tmp.GetManifestResourceStream("Infinite_Korean.csv.Meats.Meats_Translate.csv");
+            Stream Transcription_File = tmp.GetManifestResourceStream("Infinite_Korean.csv.Meats.Meats_Transcription.csv");
+            Stream Symbol_File = tmp.GetManifestResourceStream("Infinite_Korean.csv.Meats.Meats_Symols.csv");
 
             //Read .csv files
             StreamReader Translate_File_Reader = new StreamReader(Translate_File);
@@ -196,7 +196,7 @@ namespace Infinite_Korean.Categories_Pages
             Loaded_Level = "Categories";
 
             //Update Page Title
-            Title_Label.Text = "Vegetables";
+            Title_Label.Text = "Meats";
             Title_Label.FontSize = 40;
 
             //Show Buttons
@@ -475,6 +475,7 @@ namespace Infinite_Korean.Categories_Pages
             GuessWord_Label.Text = GuessWord; //Print it to Guess Word Space
 
             Generate_ButtonsAnswers(); //Call Function to Apply Correct and Wrong Answers to Buttons
+
         }
 
         private void Generate_ButtonsAnswers() //Generate Transcription Buttons Answers
@@ -698,7 +699,7 @@ namespace Infinite_Korean.Categories_Pages
 
         public async void ScoreCheck() //Track Player Scores
         {
-            Level_End_Pages.Passed_Page.PageAdress = "Vegetables";
+            Level_End_Pages.Passed_Page.PageAdress = "Meats";
 
             if (PlayerScore_Correct == Max_PlayerCorrectScore) //If Player Correct Score = Max Allowed
             {
@@ -735,13 +736,13 @@ namespace Infinite_Korean.Categories_Pages
 
                 switch (LevelChoice)
                 {
-                    case "Vegetables Translation - Lvl1":
+                    case "Meats Translation - Lvl1":
                         Level_Choosed = "Lvl1";
                         break;
-                    case "Vegetables Translation - Lvl2":
+                    case "Meats Translation - Lvl2":
                         Level_Choosed = "Lvl2";
                         break;
-                    case "Vegetables Transcription - Lvl3":
+                    case "Meats Transcription - Lvl3":
                         Level_Choosed = "Lvl3";
                         break;
                 }

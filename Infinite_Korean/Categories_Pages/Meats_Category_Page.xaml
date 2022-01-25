@@ -1,7 +1,7 @@
 ﻿<?xml version="1.0" encoding="utf-8" ?>
 <ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
              xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
-             x:Class="Infinite_Korean.Categories_Pages.Vegetables_Category_Page">
+             x:Class="Infinite_Korean.Categories_Pages.Meats_Category_Page">
 
     <Grid>
 
@@ -35,43 +35,43 @@
             </Label.GestureRecognizers>
         </Label>
 
-        <!-- Vegetables List -->
-        <Grid x:Name="LessonText_Grid" Margin="15,80,15,0" IsVisible="False">
-            <!-- Vegetable -->
-            <Label Text="yachae - 야채" TextColor="#54b4ff" FontSize="27" VerticalTextAlignment="Center"
+        <!-- Meats List -->
+        <Grid x:Name="LessonText_Grid" Margin="5,80,5,0" IsVisible="False">
+            <!-- Meat -->
+            <Label Text="gogi - 고기" TextColor="#54b4ff" FontSize="27" VerticalTextAlignment="Center"
                            HorizontalTextAlignment="Center" VerticalOptions="Start" HorizontalOptions="Center" />
-            <!-- salad -->
-            <Label Text="salad - saelleodeu - 샐러드" TextColor="White" FontSize="25" VerticalTextAlignment="Center" Margin="0,80,0,0"
+            <!-- beef -->
+            <Label Text="beef - soegogi - 쇠고기" TextColor="White" FontSize="25" VerticalTextAlignment="Center" Margin="0,80,0,0"
                            HorizontalTextAlignment="Center" VerticalOptions="Start" HorizontalOptions="Center" />
-            <!-- tomato -->
-            <Label Text="tomato - tomato - 토마토" TextColor="White" FontSize="25" VerticalTextAlignment="Center" Margin="0,130,0,0"
+            <!-- pork -->
+            <Label Text="pork - dwaejigogi - 돼지고기" TextColor="White" FontSize="25" VerticalTextAlignment="Center" Margin="0,130,0,0"
                            HorizontalTextAlignment="Center" VerticalOptions="Start" HorizontalOptions="Center" />
-            <!-- cucumber -->
-            <Label Text="cucumber - oi - 오이" TextColor="White" FontSize="25" VerticalTextAlignment="Center" Margin="0,180,0,0"
+            <!-- chicken -->
+            <Label Text="chicken - dalgogi - 닭고기" TextColor="White" FontSize="25" VerticalTextAlignment="Center" Margin="0,180,0,0"
                            HorizontalTextAlignment="Center" VerticalOptions="Start" HorizontalOptions="Center" />
-            <!-- potato -->
-            <Label Text="potato - gamja - 감자" TextColor="White" FontSize="25" VerticalTextAlignment="Center" Margin="0,230,0,0"
+            <!-- lamb -->
+            <Label Text="lamb - yanggogi - 양고기" TextColor="White" FontSize="25" VerticalTextAlignment="Center" Margin="0,230,0,0"
                           HorizontalTextAlignment="Center" VerticalOptions="Start" HorizontalOptions="Center" />
-            <!-- carrot -->
-            <Label Text="carrot - danggeun - 당근" TextColor="White" FontSize="25" VerticalTextAlignment="Center" Margin="0,280,0,0"
+            <!-- turkey -->
+            <Label Text="turkey - chilmyeonjo gogi - 칠면조 고기" TextColor="White" FontSize="23" VerticalTextAlignment="Center" Margin="0,280,0,0"
                            HorizontalTextAlignment="Center" VerticalOptions="Start" HorizontalOptions="Center" />
-            <!-- lettuce -->
-            <Label Text="lettuce - sangchu - 상추" TextColor="White" FontSize="25" VerticalTextAlignment="Center" Margin="0,330,0,0"
+            <!-- duck -->
+            <Label Text="duck - origogi - 오리고기" TextColor="White" FontSize="25" VerticalTextAlignment="Center" Margin="0,330,0,0"
                            HorizontalTextAlignment="Center" VerticalOptions="Start" HorizontalOptions="Center" />
-            <!-- radish -->
-            <Label Text="radish - mu - 무" TextColor="White" FontSize="25" VerticalTextAlignment="Center" Margin="0,380,0,0"
+            <!-- salmon -->
+            <Label Text="salmon - yeoneo - 연어" TextColor="White" FontSize="25" VerticalTextAlignment="Center" Margin="0,380,0,0"
                            HorizontalTextAlignment="Center" VerticalOptions="Start" HorizontalOptions="Center" />
-            <!-- cabbage -->
-            <Label Text="cabbage - yangbaechu - 양배추" TextColor="White" FontSize="25" VerticalTextAlignment="Center" Margin="0,430,0,0"
+            <!-- tuna -->
+            <Label Text="tuna - chamchi - 참치" TextColor="White" FontSize="25" VerticalTextAlignment="Center" Margin="0,430,0,0"
                            HorizontalTextAlignment="Center" VerticalOptions="Start" HorizontalOptions="Center" />
-            <!-- mushrooms -->
-            <Label Text="mushrooms - beoseot - 버섯" TextColor="White" FontSize="25" VerticalTextAlignment="Center" Margin="0,480,0,0"
+            <!-- squid -->
+            <Label Text="squid - ojingeo - 오징어" TextColor="White" FontSize="25" VerticalTextAlignment="Center" Margin="0,480,0,0"
                            HorizontalTextAlignment="Center" VerticalOptions="Start" HorizontalOptions="Center" />
-            <!-- beans -->
-            <Label Text="beans - kong - 콩" TextColor="White" FontSize="25" VerticalTextAlignment="Center" Margin="0,530,0,0"
+            <!-- mackerel -->
+            <Label Text="mackerel - godeungeo - 고등어" TextColor="White" FontSize="25" VerticalTextAlignment="Center" Margin="0,530,0,0"
                            HorizontalTextAlignment="Center" VerticalOptions="Start" HorizontalOptions="Center" />
-            <!-- garlic -->
-            <Label Text="garlic - maneul - 마늘" TextColor="White" FontSize="25" VerticalTextAlignment="Center" Margin="0,580,0,0"
+            <!-- octopus -->
+            <Label Text="octopus - muneo, nakji - 문어, 낙지" TextColor="White" FontSize="25" VerticalTextAlignment="Center" Margin="0,580,0,0"
                            HorizontalTextAlignment="Center" VerticalOptions="Start" HorizontalOptions="Center" />
 
         </Grid>
@@ -138,9 +138,9 @@
         <!-- Dropdown for Level Choice -->
         <Picker x:Name="Level_Choice_Dropdown" Title="Levels" TitleColor="White" TextColor="White" VerticalOptions="End" HorizontalOptions="Center" HorizontalTextAlignment="Center" Margin="0,0,0,80" WidthRequest="160" >
             <Picker.Items>
-                <x:String>Vegetables Translation - Lvl1</x:String>
-                <x:String>Vegetables Translation - Lvl2</x:String>
-                <x:String>Vegetables Transcription - Lvl3</x:String>
+                <x:String>Meats Translation - Lvl1</x:String>
+                <x:String>Meats Translation - Lvl2</x:String>
+                <x:String>Meats Transcription - Lvl3</x:String>
             </Picker.Items>
         </Picker>
             <ImageButton x:Name="Levels_Choice_Btn" IsVisible="False" BackgroundColor="Transparent" Source="Button_Default.png" Clicked="Levels_Choice_Btn_Clicked" WidthRequest="200" HorizontalOptions="Center" VerticalOptions="End" Margin="0,0,0,20"/>

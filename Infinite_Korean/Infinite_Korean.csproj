@@ -23,6 +23,9 @@
     <None Remove="csv\Fruits\Fruits_Symbols.csv" />
     <None Remove="csv\Fruits\Fruits_Transcription.csv" />
     <None Remove="csv\Fruits\Fruits_Translate.csv" />
+    <None Remove="csv\Meats\Meats_Symols.csv" />
+    <None Remove="csv\Meats\Meats_Transcription.csv" />
+    <None Remove="csv\Meats\Meats_Translate.csv" />
     <None Remove="csv\Numbers\Numbers_Symbols.csv" />
     <None Remove="csv\Numbers\Numbers_Transcription.csv" />
     <None Remove="csv\Numbers\Numbers_Translate.csv" />
@@ -48,6 +51,9 @@
     <EmbeddedResource Include="csv\Fruits\Fruits_Symbols.csv" />
     <EmbeddedResource Include="csv\Fruits\Fruits_Transcription.csv" />
     <EmbeddedResource Include="csv\Fruits\Fruits_Translate.csv" />
+    <EmbeddedResource Include="csv\Meats\Meats_Symols.csv" />
+    <EmbeddedResource Include="csv\Meats\Meats_Transcription.csv" />
+    <EmbeddedResource Include="csv\Meats\Meats_Translate.csv" />
     <EmbeddedResource Include="csv\Numbers\Numbers_Symbols.csv" />
     <EmbeddedResource Include="csv\Numbers\Numbers_Transcription.csv" />
     <EmbeddedResource Include="csv\Numbers\Numbers_Translate.csv" />
@@ -87,11 +93,21 @@
     <EmbeddedResource Update="Categories_Pages\Level_End_Pages\TryAgain_Page.xaml">
       <Generator>MSBuild:UpdateDesignTimeXaml</Generator>
     </EmbeddedResource>
+    <EmbeddedResource Update="Categories_Pages\Meats_Category_Page.xaml">
+      <Generator>MSBuild:UpdateDesignTimeXaml</Generator>
+    </EmbeddedResource>
     <EmbeddedResource Update="Categories_Pages\Vegetables_Category_Page.xaml">
       <Generator>MSBuild:UpdateDesignTimeXaml</Generator>
     </EmbeddedResource>
     <EmbeddedResource Update="Menu_Page.xaml">
       <Generator>MSBuild:UpdateDesignTimeXaml</Generator>
     </EmbeddedResource>
+  </ItemGroup>
+
+  <ItemGroup>
+    <Folder Include="csv\Drinks\" />
+    <Folder Include="csv\Clothes\" />
+    <Folder Include="csv\Week\" />
+    <Folder Include="csv\Weather\" />
   </ItemGroup>
 </Project>

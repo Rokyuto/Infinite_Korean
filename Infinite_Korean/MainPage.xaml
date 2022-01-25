@@ -15,7 +15,7 @@
         <Label Text="Infinite Korean" TextColor="#54b4ff" FontSize="40" FontFamily="MyFont_Malgun_Semilight" Margin="0,20,0,0" VerticalOptions="Start" HorizontalOptions="Center" />
         
         <!-- App Version -->
-        <Label Text="Version: 7" TextColor="#54b4ff" FontSize="20" FontFamily="MyFont_Malgun_Semilight" Margin="0,0,0,100" VerticalOptions="End" HorizontalOptions="Center" />
+        <Label Text="Version: 6" TextColor="#54b4ff" FontSize="20" FontFamily="MyFont_Malgun_Semilight" Margin="0,0,0,100" VerticalOptions="End" HorizontalOptions="Center" />
 
     </Grid>
     
