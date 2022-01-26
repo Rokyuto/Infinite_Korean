@@ -359,7 +359,7 @@ namespace Infinite_Korean.Categories_Pages
                         Loaded_Level = "Transcription"; //Set Loaded is Transcription
                         Level_End_Pages.Passed_Page.LevelAdress = "Transcription"; //Initialize Loaded Level is Transcription
 
-                        Max_PlayerCorrectScore = 25; //Set Level Max Correct Score
+                        Max_PlayerCorrectScore = 60; //Set Level Max Correct Score
                         Max_PlayerWrongScore = 5; //Set Level Max Wrong Score
                         CorrectScore_Req.Text = "/" + Max_PlayerCorrectScore; //Show in UI Max Correct Score
                         WrongScore_Req.Text = "/" + Max_PlayerWrongScore; //Show in UI Max Wrong Score
@@ -370,6 +370,16 @@ namespace Infinite_Korean.Categories_Pages
                         List_Answers.AddRange(List_Drinks_Translate_Lvl1);
 
                         await Task.Delay(250); // 1/4 second waiting before continue
+
+                        Level_Choice_Dropdown.IsVisible = true; //Show Level Choice Picker
+                        Levels_Choice_Btn.IsVisible = true; //Show Level Choice Button
+                        Level_Choice_BtnText.IsVisible = true; //Show Level Choice Button Text
+
+                        //Add Choice Picker Items
+                        Level_Choice_Dropdown.Items.Clear();
+                        Level_Choice_Dropdown.Items.Add("Drinks Translation - Lvl1");
+                        Level_Choice_Dropdown.Items.Add("Drinks Translation - Lvl2");
+
                         Levels_Design(); //Load Level Design & UI
                         Level_Start(); //Start Transription Level
                         break;
@@ -379,8 +389,8 @@ namespace Infinite_Korean.Categories_Pages
                         Loaded_Level = "Symbol"; //Set Loaded is Symbol
                         Level_End_Pages.Passed_Page.LevelAdress = "Symbol"; //Initialize Loaded Level is Symbol
 
-                        Max_PlayerCorrectScore = 40; //Set Level Max Correct Score
-                        Max_PlayerWrongScore = 10; //Set Level Max Wrong Score
+                        Max_PlayerCorrectScore = 99; //Set Level Max Correct Score
+                        Max_PlayerWrongScore = 15; //Set Level Max Wrong Score
                         CorrectScore_Req.Text = "/" + Max_PlayerCorrectScore; //Show in UI Max Correct Score
                         WrongScore_Req.Text = "/" + Max_PlayerWrongScore; //Show in UI Max Wrong Score
                         WrongScore_Req.Margin = new Thickness(0, 0, 26, 40); //Update Wrong Score Requarment Margin
@@ -391,9 +401,15 @@ namespace Infinite_Korean.Categories_Pages
 
                         await Task.Delay(250); // 1/4 second waiting before continue
 
-                        Level_Choice_Dropdown.IsVisible = true; //Show Level Choice Combo Box
+                        Level_Choice_Dropdown.IsVisible = true; //Show Level Choice Picker
                         Levels_Choice_Btn.IsVisible = true; //Show Level Choice Button
                         Level_Choice_BtnText.IsVisible = true; //Show Level Choice Button Text
+
+                        //Add Choice Picker Items
+                        Level_Choice_Dropdown.Items.Clear();
+                        Level_Choice_Dropdown.Items.Add("Drinks Translation - Lvl1");
+                        Level_Choice_Dropdown.Items.Add("Drinks Translation - Lvl2");
+                        Level_Choice_Dropdown.Items.Add("Drinks Transcription - Lvl3");
 
                         Levels_Design(); //Load Level Design & UI
                         Level_Start(); //Start Symbol Level
@@ -404,8 +420,8 @@ namespace Infinite_Korean.Categories_Pages
                         Loaded_Level = "Translate";
                         Level_End_Pages.Passed_Page.LevelAdress = "Translate"; //Initialize Loaded Level is Translate
 
-                        Max_PlayerCorrectScore = 40; //Set Level Max Correct Score
-                        Max_PlayerWrongScore = 10; //Set Level Max Wrong Score
+                        Max_PlayerCorrectScore = 99; //Set Level Max Correct Score
+                        Max_PlayerWrongScore = 15; //Set Level Max Wrong Score
                         CorrectScore_Req.Text = "/" + Max_PlayerCorrectScore; //Show in UI Max Correct Score
                         WrongScore_Req.Text = "/" + Max_PlayerWrongScore; //Show in UI Max Wrong Score
                         WrongScore_Req.Margin = new Thickness(0, 0, 26, 40); //Update Wrong Score Requarment Margin
@@ -416,9 +432,15 @@ namespace Infinite_Korean.Categories_Pages
 
                         await Task.Delay(250); // 1/4 second waiting before continue
 
-                        Level_Choice_Dropdown.IsVisible = true; //Show Level Choice Combo Box
-                        Levels_Choice_Btn.IsVisible = true;//Show Level Choice Button
+                        Level_Choice_Dropdown.IsVisible = true; //Show Level Choice Picker
+                        Levels_Choice_Btn.IsVisible = true; //Show Level Choice Button
                         Level_Choice_BtnText.IsVisible = true; //Show Level Choice Button Text
+
+                        //Add Choice Picker Items
+                        Level_Choice_Dropdown.Items.Clear();
+                        Level_Choice_Dropdown.Items.Add("Drinks Translation - Lvl1");
+                        Level_Choice_Dropdown.Items.Add("Drinks Translation - Lvl2");
+                        Level_Choice_Dropdown.Items.Add("Drinks Transcription - Lvl3");
 
                         Levels_Design(); //Load Level Design & UI
                         Level_Start(); //Start Translate Level

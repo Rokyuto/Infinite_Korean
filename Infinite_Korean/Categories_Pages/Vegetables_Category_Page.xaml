@@ -138,9 +138,7 @@
         <!-- Dropdown for Level Choice -->
         <Picker x:Name="Level_Choice_Dropdown" Title="Levels" TitleColor="White" TextColor="White" VerticalOptions="End" HorizontalOptions="Center" HorizontalTextAlignment="Center" Margin="0,0,0,80" WidthRequest="160" >
             <Picker.Items>
-                <x:String>Vegetables Translation - Lvl1</x:String>
-                <x:String>Vegetables Translation - Lvl2</x:String>
-                <x:String>Vegetables Transcription - Lvl3</x:String>
+
             </Picker.Items>
         </Picker>
             <ImageButton x:Name="Levels_Choice_Btn" IsVisible="False" BackgroundColor="Transparent" Source="Button_Default.png" Clicked="Levels_Choice_Btn_Clicked" WidthRequest="200" HorizontalOptions="Center" VerticalOptions="End" Margin="0,0,0,20"/>

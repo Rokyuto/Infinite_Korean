@@ -367,6 +367,16 @@ namespace Infinite_Korean.Categories_Pages.ColorsCategory_Level
                         List_Answers.AddRange(List_Colors_Translate_Lvl1);
 
                         await Task.Delay(250); // 1/4 second waiting before continue
+
+                        Level_Choice_Dropdown.IsVisible = true; //Show Level Choice Picker
+                        Levels_Choice_Btn.IsVisible = true; //Show Level Choice Button
+                        Level_Choice_BtnText.IsVisible = true; //Show Level Choice Button Text
+
+                        //Add Choice Picker Items
+                        Level_Choice_Dropdown.Items.Clear();
+                        Level_Choice_Dropdown.Items.Add("Colors Translation - Lvl1");
+                        Level_Choice_Dropdown.Items.Add("Colors Translation - Lvl2");
+
                         Levels_Design(); //Load Level Design & UI
                         Level_Start(); //Start Transription Level
                         break;
@@ -387,11 +397,17 @@ namespace Infinite_Korean.Categories_Pages.ColorsCategory_Level
                         List_Answers.AddRange(List_Colors_Translate_Lvl1);
 
                         await Task.Delay(250); // 1/4 second waiting before continue
-                        
-                        Level_Choice_Dropdown.IsVisible = true; //Show Level Choice Combo Box
+
+                        Level_Choice_Dropdown.IsVisible = true; //Show Level Choice Picker
                         Levels_Choice_Btn.IsVisible = true; //Show Level Choice Button
                         Level_Choice_BtnText.IsVisible = true; //Show Level Choice Button Text
-                        
+
+                        //Add Choice Picker Items
+                        Level_Choice_Dropdown.Items.Clear();
+                        Level_Choice_Dropdown.Items.Add("Colors Translation - Lvl1");
+                        Level_Choice_Dropdown.Items.Add("Colors Translation - Lvl2");
+                        Level_Choice_Dropdown.Items.Add("Colors Transcription - Lvl3");
+
                         Levels_Design(); //Load Level Design & UI
                         Level_Start(); //Start Symbol Level
                         break;
@@ -412,11 +428,17 @@ namespace Infinite_Korean.Categories_Pages.ColorsCategory_Level
                         List_Answers.AddRange(List_Colors_Symbol_Lvl1);
 
                         await Task.Delay(250); // 1/4 second waiting before continue
-                        
-                        Level_Choice_Dropdown.IsVisible = true; //Show Level Choice Combo Box
-                        Levels_Choice_Btn.IsVisible = true;//Show Level Choice Button
+
+                        Level_Choice_Dropdown.IsVisible = true; //Show Level Choice Picker
+                        Levels_Choice_Btn.IsVisible = true; //Show Level Choice Button
                         Level_Choice_BtnText.IsVisible = true; //Show Level Choice Button Text
-                        
+
+                        //Add Choice Picker Items
+                        Level_Choice_Dropdown.Items.Clear();
+                        Level_Choice_Dropdown.Items.Add("Colors Translation - Lvl1");
+                        Level_Choice_Dropdown.Items.Add("Colors Translation - Lvl2");
+                        Level_Choice_Dropdown.Items.Add("Colors Transcription - Lvl3");
+
                         Levels_Design(); //Load Level Design & UI
                         Level_Start(); //Start Translate Level
                         break;

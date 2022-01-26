@@ -36,7 +36,7 @@
             </Label>
 
         <!-- Colors List -->
-        <Grid x:Name="LessonText_Grid" Margin="25,80,25,0" IsVisible="False">
+        <Grid x:Name="LessonText_Grid" Margin="15,80,15,0" IsVisible="False">
             <!-- Color -->
             <Label Text="saek / saek-kkal - 색 / 색깔" TextColor="#54b4ff" FontSize="27" VerticalTextAlignment="Center"
                            HorizontalTextAlignment="Center" VerticalOptions="Start" HorizontalOptions="Center" />
@@ -138,9 +138,7 @@
         <!-- Dropdown for Level Choice -->
         <Picker x:Name="Level_Choice_Dropdown" Title="Levels" TitleColor="White" TextColor="White" VerticalOptions="End" HorizontalOptions="Center" HorizontalTextAlignment="Center" Margin="0,0,0,80" WidthRequest="160" >
             <Picker.Items>
-                <x:String>Colors Translation - Lvl1</x:String>
-                <x:String>Colors Translation - Lvl2</x:String>
-                <x:String>Colors Transcription - Lvl3</x:String>
+
             </Picker.Items>
         </Picker>
         <ImageButton x:Name="Levels_Choice_Btn" IsVisible="False" BackgroundColor="Transparent" Source="Button_Default.png" Clicked="Levels_Choice_Btn_Clicked" WidthRequest="200" HorizontalOptions="Center" VerticalOptions="End" Margin="0,0,0,20"/>

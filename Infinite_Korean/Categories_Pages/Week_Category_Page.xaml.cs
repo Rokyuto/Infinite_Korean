@@ -370,6 +370,16 @@ namespace Infinite_Korean.Categories_Pages
                         List_Answers.AddRange(List_Week_Translate_Lvl1);
 
                         await Task.Delay(250); // 1/4 second waiting before continue
+
+                        Level_Choice_Dropdown.IsVisible = true; //Show Level Choice Picker
+                        Levels_Choice_Btn.IsVisible = true; //Show Level Choice Button
+                        Level_Choice_BtnText.IsVisible = true; //Show Level Choice Button Text
+
+                        //Add Choice Picker Items
+                        Level_Choice_Dropdown.Items.Clear();
+                        Level_Choice_Dropdown.Items.Add("Week Translation - Lvl1");
+                        Level_Choice_Dropdown.Items.Add("Week Translation - Lvl2");
+
                         Levels_Design(); //Load Level Design & UI
                         Level_Start(); //Start Transription Level
                         break;
@@ -391,9 +401,15 @@ namespace Infinite_Korean.Categories_Pages
 
                         await Task.Delay(250); // 1/4 second waiting before continue
 
-                        Level_Choice_Dropdown.IsVisible = true; //Show Level Choice Combo Box
+                        Level_Choice_Dropdown.IsVisible = true; //Show Level Choice Picker
                         Levels_Choice_Btn.IsVisible = true; //Show Level Choice Button
                         Level_Choice_BtnText.IsVisible = true; //Show Level Choice Button Text
+
+                        //Add Choice Picker Items
+                        Level_Choice_Dropdown.Items.Clear();
+                        Level_Choice_Dropdown.Items.Add("Week Translation - Lvl1");
+                        Level_Choice_Dropdown.Items.Add("Week Translation - Lvl2");
+                        Level_Choice_Dropdown.Items.Add("Week Transcription - Lvl3");
 
                         Levels_Design(); //Load Level Design & UI
                         Level_Start(); //Start Symbol Level
@@ -416,9 +432,15 @@ namespace Infinite_Korean.Categories_Pages
 
                         await Task.Delay(250); // 1/4 second waiting before continue
 
-                        Level_Choice_Dropdown.IsVisible = true; //Show Level Choice Combo Box
-                        Levels_Choice_Btn.IsVisible = true;//Show Level Choice Button
+                        Level_Choice_Dropdown.IsVisible = true; //Show Level Choice Picker
+                        Levels_Choice_Btn.IsVisible = true; //Show Level Choice Button
                         Level_Choice_BtnText.IsVisible = true; //Show Level Choice Button Text
+
+                        //Add Choice Picker Items
+                        Level_Choice_Dropdown.Items.Clear();
+                        Level_Choice_Dropdown.Items.Add("Week Translation - Lvl1");
+                        Level_Choice_Dropdown.Items.Add("Week Translation - Lvl2");
+                        Level_Choice_Dropdown.Items.Add("Week Transcription - Lvl3");
 
                         Levels_Design(); //Load Level Design & UI
                         Level_Start(); //Start Translate Level
