@@ -21,6 +21,11 @@ namespace Infinite_Korean.Categories_Pages.Level_End_Pages
         string Fruits_Page = "Fruits";
         string Vegetables_Page = "Vegetables";
         string Meats_Page = "Meats";
+        string Drinks_Page = "Drinks";
+        string Clothes_Page = "Clothes";
+        string Weather_Page = "Weather";
+        string Week_Page = "Week";
+        string Months_Page = "Months";
 
         public TryAgain_Page()
         {
@@ -63,6 +68,31 @@ namespace Infinite_Korean.Categories_Pages.Level_End_Pages
             {
                 Passed_Page.PageAdress = "";
                 App.Current.MainPage = new Meats_Category_Page();
+            }
+            else if(Passed_Page.PageAdress == Drinks_Page)
+            {
+                Passed_Page.PageAdress = "";
+                App.Current.MainPage = new Drinks_Category_Page();
+            }
+            else if(Passed_Page.PageAdress == Clothes_Page)
+            {
+                Passed_Page.PageAdress = "";
+                App.Current.MainPage = new Clothes_Category_Page();
+            }
+            else if(Passed_Page.PageAdress == Weather_Page)
+            {
+                Passed_Page.PageAdress = "";
+                App.Current.MainPage = new Weather_Category_Page();
+            }
+            else if(Passed_Page.PageAdress == Week_Page)
+            {
+                Passed_Page.PageAdress = "";
+                App.Current.MainPage = new Week_Category_Page();
+            }
+            else if (Passed_Page.PageAdress == Months_Page)
+            {
+                Passed_Page.PageAdress = "";
+                App.Current.MainPage = new Months_Category_Page();
             }
         }
 

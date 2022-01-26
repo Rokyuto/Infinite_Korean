@@ -44,7 +44,7 @@
             <Label Text="White - Hayan-saek - 하얀색" TextColor="White" FontSize="25" VerticalTextAlignment="Center" Margin="0,80,0,0"
                            HorizontalTextAlignment="Center" VerticalOptions="Start" HorizontalOptions="Center" />
             <!-- Black -->
-            <Label Text="Black - Geomeun-saek - 검은색" TextColor="White" FontSize="25" VerticalTextAlignment="Center" Margin="0,130,0,0"
+            <Label Text="Black - Geomjeong-saek - 검은색" TextColor="White" FontSize="25" VerticalTextAlignment="Center" Margin="0,130,0,0"
                            HorizontalTextAlignment="Center" VerticalOptions="Start" HorizontalOptions="Center" />
             <!-- Red -->
             <Label Text="Red - Palgan-saek - 빨간색" TextColor="White" FontSize="25" VerticalTextAlignment="Center" Margin="0,180,0,0"

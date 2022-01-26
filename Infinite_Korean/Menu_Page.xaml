@@ -16,7 +16,7 @@
                      HorizontalOptions="Start" VerticalOptions="Start" Clicked="BackButton_Clicked"/>
 
         <!-- Categories Buttons -->
-        <Grid Margin="10,150,10,25">
+        <Grid Margin="10,125,10,25">
             
             <!-- Create Numers Category Button -->
             <ImageButton BackgroundColor="Transparent" Source="Button_Default.png" HeightRequest="60" WidthRequest="200" 
@@ -71,7 +71,7 @@
                         HorizontalOptions="Start" VerticalOptions="Start" Clicked="Fruits_Button_Clicked" />
             <!-- Fruits Button Text -->
             <Label x:Name="Fruits_Button_Text" Text="Fruits" TextColor="White" FontSize="20" FontFamily="MyFont_Malgun_Semilight" 
-                       FontAttributes="Italic" Margin="77,215,55,25" VerticalOptions="Start" HorizontalOptions="Start"  >
+                       FontAttributes="Italic" Margin="75,215,55,25" VerticalOptions="Start" HorizontalOptions="Start"  >
                 <Label.GestureRecognizers>
                     <TapGestureRecognizer
                             Tapped="Fruits_Button_Clicked"/>
@@ -91,11 +91,11 @@
             </Label>
 
             <!-- Create Meats Category Button -->
-            <ImageButton x:Name="Meats_Button" BackgroundColor="Transparent" Source="Button_Default.png" HeightRequest="60" WidthRequest="200" Margin="0,100,0,0"
+            <ImageButton x:Name="Meats_Button" BackgroundColor="Transparent" Source="Button_Default.png" HeightRequest="60" WidthRequest="200" Margin="0,80,0,0"
                         HorizontalOptions="Start" VerticalOptions="Center" Clicked="Meats_Button_Clicked" />
                 <!-- Meats Button Text -->
                     <Label x:Name="Meats_Button_Text" Text="Meats" TextColor="White" FontSize="20" FontFamily="MyFont_Malgun_Semilight" 
-                       FontAttributes="Italic" Margin="73.5,96,0,0" VerticalOptions="Center" HorizontalOptions="Start"  >
+                       FontAttributes="Italic" Margin="72,76,0,0" VerticalOptions="Center" HorizontalOptions="Start"  >
                         <Label.GestureRecognizers>
                             <TapGestureRecognizer
                                 Tapped="Meats_Button_Clicked"/>
@@ -103,14 +103,62 @@
                     </Label>
 
             <!-- Create Drinks Category Button -->
-            <ImageButton x:Name="Drinks_Button" BackgroundColor="Transparent" Source="Button_Default.png" HeightRequest="60" WidthRequest="200" Margin="0,100,0,0"
+            <ImageButton x:Name="Drinks_Button" BackgroundColor="Transparent" Source="Button_Default.png" HeightRequest="60" WidthRequest="200" Margin="0,80,0,0"
                         HorizontalOptions="End" VerticalOptions="Center" Clicked="Drinks_Button_Clicked" />
             <!-- Drinks Button Text -->
             <Label x:Name="Drinks_Button_Text" Text="Drinks" TextColor="White" FontSize="20" FontFamily="MyFont_Malgun_Semilight" 
-                       FontAttributes="Italic" Margin="0,96,72,0" VerticalOptions="Center" HorizontalOptions="End"  >
+                       FontAttributes="Italic" Margin="0,76,72,0" VerticalOptions="Center" HorizontalOptions="End" >
                 <Label.GestureRecognizers>
                     <TapGestureRecognizer
                             Tapped="Drinks_Button_Clicked"/>
+                </Label.GestureRecognizers>
+            </Label>
+
+            <!-- Create Clothes Category Button -->
+            <ImageButton x:Name="Clothes_Button" BackgroundColor="Transparent" Source="Button_Default.png" HeightRequest="60" WidthRequest="200" Margin="0,280,0,0"
+                        HorizontalOptions="Start" VerticalOptions="Center" Clicked="Clothes_Button_Clicked" />
+            <!-- Clothes Button Text -->
+            <Label x:Name="Clothes_Button_Text" Text="Clothes" TextColor="White" FontSize="20" FontFamily="MyFont_Malgun_Semilight" 
+                       FontAttributes="Italic" Margin="66,275,72,0" VerticalOptions="Center" HorizontalOptions="Start" >
+                    <Label.GestureRecognizers>
+                        <TapGestureRecognizer
+                            Tapped="Clothes_Button_Clicked"/>
+                    </Label.GestureRecognizers>
+            </Label>
+
+            <!-- Create Weather Category Button -->
+            <ImageButton x:Name="Weather_Button" BackgroundColor="Transparent" Source="Button_Default.png" HeightRequest="60" WidthRequest="200" Margin="0,280,0,0"
+                        HorizontalOptions="End" VerticalOptions="Center" Clicked="Weather_Button_Clicked" />
+            <!-- Weather Button Text -->
+            <Label x:Name="Weather_Button_Text" Text="Weather" TextColor="White" FontSize="20" FontFamily="MyFont_Malgun_Semilight" 
+                       FontAttributes="Italic" Margin="0,275,62,0" VerticalOptions="Center" HorizontalOptions="End" >
+                <Label.GestureRecognizers>
+                    <TapGestureRecognizer
+                            Tapped="Weather_Button_Clicked"/>
+                </Label.GestureRecognizers>
+            </Label>
+
+            <!-- Create Week Category Button -->
+            <ImageButton x:Name="Week_Button" BackgroundColor="Transparent" Source="Button_Default.png" HeightRequest="60" WidthRequest="200" Margin="0,380,0,25"
+                        HorizontalOptions="Start" VerticalOptions="End" Clicked="Week_Button_Clicked" />
+            <!-- Week Button Text -->
+            <Label x:Name="Week_Button_Text" Text="Week" TextColor="White" FontSize="20" FontFamily="MyFont_Malgun_Semilight" 
+                       FontAttributes="Italic" Margin="75,375,0,45" VerticalOptions="End" HorizontalOptions="Start" >
+                    <Label.GestureRecognizers>
+                        <TapGestureRecognizer
+                            Tapped="Week_Button_Clicked"/>
+                        </Label.GestureRecognizers>
+            </Label>
+
+            <!-- Create Months Category Button -->
+            <ImageButton x:Name="Months_Button" BackgroundColor="Transparent" Source="Button_Default.png" HeightRequest="60" WidthRequest="200" Margin="0,380,0,25"
+                        HorizontalOptions="End" VerticalOptions="End" Clicked="Months_Button_Clicked" />
+            <!-- Months Button Text -->
+            <Label x:Name="Months_Button_Text" Text="Months" TextColor="White" FontSize="20" FontFamily="MyFont_Malgun_Semilight" 
+                       FontAttributes="Italic" Margin="0,0,65,45" VerticalOptions="End" HorizontalOptions="End" >
+                <Label.GestureRecognizers>
+                    <TapGestureRecognizer
+                        Tapped="Months_Button_Clicked"/>
                 </Label.GestureRecognizers>
             </Label>
 

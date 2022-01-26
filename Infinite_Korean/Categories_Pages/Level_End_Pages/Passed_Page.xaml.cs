@@ -29,6 +29,11 @@ namespace Infinite_Korean.Categories_Pages.Level_End_Pages
         string Fruits_Page = "Fruits";
         string Vegetables_Page = "Vegetables";
         string Meats_Page = "Meats";
+        string Drinks_Page = "Drinks";
+        string Clothes_Page = "Clothes";
+        string Weather_Page = "Weather";
+        string Week_Page = "Week";
+        string Months_Page = "Months";
 
         public static int Stars; //Count Player Mistakes when he Pass Level
 
@@ -89,6 +94,21 @@ namespace Infinite_Korean.Categories_Pages.Level_End_Pages
                 case "Meats":
                     Category = "Meats";
                     break;
+                case "Drinks":
+                    Category = "Drinks";
+                    break;
+                case "Clothes":
+                    Category = "Vegetables";
+                    break;
+                case "Weather":
+                    Category = "Meats";
+                    break;
+                case "Week":
+                    Category = "Week";
+                    break;
+                case "Months":
+                    Category = "Months";
+                    break;
             }
 
             Page_Congrats_Text.Text = "You complete the " + Category + " " + Passed_Level + " Lesson";
@@ -123,6 +143,26 @@ namespace Infinite_Korean.Categories_Pages.Level_End_Pages
             if(PageAdress == Meats_Page)
             { 
                 App.Current.MainPage = new Meats_Category_Page();
+            }
+            if(PageAdress == Drinks_Page)
+            {
+                App.Current.MainPage = new Drinks_Category_Page();
+            }
+            if (PageAdress == Clothes_Page)
+            {
+                App.Current.MainPage = new Clothes_Category_Page();
+            }
+            if (PageAdress == Weather_Page)
+            {
+                App.Current.MainPage = new Weather_Category_Page();
+            }
+            if (PageAdress == Week_Page)
+            {
+                App.Current.MainPage = new Week_Category_Page();
+            }
+            if (PageAdress == Months_Page)
+            {
+                App.Current.MainPage = new Months_Category_Page();
             }
         }
     }

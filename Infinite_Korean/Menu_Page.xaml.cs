@@ -69,7 +69,27 @@ namespace Infinite_Korean
 
         private void Drinks_Button_Clicked(object sender, EventArgs e)
         {
+            App.Current.MainPage = new Categories_Pages.Drinks_Category_Page();
+        }
 
+        private void Clothes_Button_Clicked(object sender, EventArgs e)
+        {
+            App.Current.MainPage = new Categories_Pages.Clothes_Category_Page();
+        }
+
+        private void Weather_Button_Clicked(object sender, EventArgs e)
+        {
+            App.Current.MainPage = new Categories_Pages.Weather_Category_Page();
+        }
+
+        private void Week_Button_Clicked(object sender, EventArgs e)
+        {
+            App.Current.MainPage = new Categories_Pages.Week_Category_Page();
+        }
+
+        private void Months_Button_Clicked(object sender, EventArgs e)
+        {
+            App.Current.MainPage = new Categories_Pages.Months_Category_Page();
         }
     }
 }

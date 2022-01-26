@@ -23,7 +23,7 @@
         <Label x:Name="GuessWord_Label" Text="" TextColor="White" FontFamily="MyFont_Malgun_Semilight" FontSize="30" Margin="0,135"
                    HorizontalTextAlignment="Center" VerticalOptions="Start" HorizontalOptions="Center"/>
 
-        <!-- Fruits Lesson Page -->
+        <!-- Vegetables Lesson Page -->
         <ImageButton x:Name="Lesson_Button" BackgroundColor="Transparent" Source="Button_Default.png" HeightRequest="100" WidthRequest="400"
                      Margin="0,175,0,0" HorizontalOptions="Center" VerticalOptions="Start" Clicked="Lesson_Button_Clicked"/>
         <!-- Leson Button Text -->
